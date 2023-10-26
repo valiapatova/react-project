@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg';
 import Header from './components/Header';
 import OurServices from './components/OurServices';
 import About from './components/About';
+import WhyUs from './components/WhyUs';
+import Team from './components/Team';
 
 function App() {
   
@@ -12,229 +14,9 @@ function App() {
       <Header/>
       <OurServices/>       
       <About/>
-
-      <section className="why_section layout_padding">
-        <div className="container">
-          <div className="heading_container heading_center">
-            <h2>
-              Why Choose <span>Us</span>
-            </h2>
-          </div>
-          <div className="why_container">
-            <div className="box">
-              <div className="img-box">
-                <img src="images/w1.png" alt=""/>
-              </div>
-              <div className="detail-box">
-                <h5>
-                  Expert Management
-                </h5>
-                <p>
-                  Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia id, aspernatur nihil.
-                  Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat veritatis unde reiciendis possimus animi autem natus
-                </p>
-              </div>
-            </div>
-            <div className="box">
-              <div className="img-box">
-                <img src="images/w2.png" alt=""/>
-              </div>
-              <div className="detail-box">
-                <h5>
-                  Secure Investment
-                </h5>
-                <p>
-                  Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia id, aspernatur nihil.
-                  Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat veritatis unde reiciendis possimus animi autem natus
-                </p>
-              </div>
-            </div>
-            <div className="box">
-              <div className="img-box">
-                <img src="images/w3.png" alt=""/>
-              </div>
-              <div className="detail-box">
-                <h5>
-                  Instant Trading
-                </h5>
-                <p>
-                  Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia id, aspernatur nihil.
-                  Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat veritatis unde reiciendis possimus animi autem natus
-                </p>
-              </div>
-            </div>
-            <div className="box">
-              <div className="img-box">
-                <img src="images/w4.png" alt=""/>
-              </div>
-              <div className="detail-box">
-                <h5>
-                  Happy Customers
-                </h5>
-                <p>
-                  Incidunt odit rerum tenetur alias architecto asperiores omnis cumque doloribus aperiam numquam! Eligendi corrupti, molestias laborum dolores quod nisi vitae voluptate ipsa? In tempore voluptate ducimus officia id, aspernatur nihil.
-                  Tempore laborum nesciunt ut veniam, nemo officia ullam repudiandae repellat veritatis unde reiciendis possimus animi autem natus
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="btn-box">
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </section>
-
-       
-
-       
-      <section className="team_section layout_padding">
-        <div className="container-fluid">
-          <div className="heading_container heading_center">
-            <h2 className="">
-              Our <span> Team</span>
-            </h2>
-          </div>
-
-          <div className="team_container">
-            <div className="row">
-              <div className="col-lg-3 col-sm-6">
-                <div className="box ">
-                  <div className="img-box">
-                    <img src="images/team-1.jpg" className="img1" alt=""/>
-                  </div>
-                  <div className="detail-box">
-                    <h5>
-                      Joseph Brown
-                    </h5>
-                    <p>
-                      Marketing Head
-                    </p>
-                  </div>
-                  <div className="social_box">
-                    <a href="#">
-                      <i className="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-linkedin" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-youtube-play" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-sm-6">
-                <div className="box ">
-                  <div className="img-box">
-                    <img src="images/team-2.jpg" className="img1" alt=""/>
-                  </div>
-                  <div className="detail-box">
-                    <h5>
-                      Nancy White
-                    </h5>
-                    <p>
-                      Marketing Head
-                    </p>
-                  </div>
-                  <div className="social_box">
-                    <a href="#">
-                      <i className="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-linkedin" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-youtube-play" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-sm-6">
-                <div className="box ">
-                  <div className="img-box">
-                    <img src="images/team-3.jpg" className="img1" alt=""/>
-                  </div>
-                  <div className="detail-box">
-                    <h5>
-                      Earl Martinez
-                    </h5>
-                    <p>
-                      Marketing Head
-                    </p>
-                  </div>
-                  <div className="social_box">
-                    <a href="#">
-                      <i className="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-linkedin" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-youtube-play" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-sm-6">
-                <div className="box ">
-                  <div className="img-box">
-                    <img src="images/team-4.jpg" className="img1" alt=""/>
-                  </div>
-                  <div className="detail-box">
-                    <h5>
-                      Josephine Allard
-                    </h5>
-                    <p>
-                      Marketing Head
-                    </p>
-                  </div>
-                  <div className="social_box">
-                    <a href="#">
-                      <i className="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-twitter" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-linkedin" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                    <a href="#">
-                      <i className="fa fa-youtube-play" aria-hidden="true"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-       
-
-
-       
+      <WhyUs/>
+      <Team/>
+            
 
       <section className="client_section layout_padding">
         <div className="container">
@@ -336,12 +118,7 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
-
-       
-
-
-       
+      </section>           
 
       <section className="info_section layout_padding2">
         <div className="container">
