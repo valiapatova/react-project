@@ -1,7 +1,7 @@
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 // import './App.css'
-import Header from './components/Header';
+import HeaderHome from './components/HeaderHome';
 import OurServices from './components/OurServices';
 import About from './components/About';
 import WhyUs from './components/WhyUs';
@@ -14,7 +14,7 @@ function App() {
   
   return (
     <>
-      <Header/>
+      <HeaderHome/>
       <OurServices/>       
       <About/>
       <WhyUs/>
