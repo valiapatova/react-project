@@ -6,7 +6,7 @@ import OurServices from './components/OurServices';
 import About from './components/About';
 import WhyUs from './components/WhyUs';
 import Team from './components/Team';
-import WhatClientSay from './components/WhatClientSay';
+import WhatClientSay2 from './components/WhatClientSay2';
 import InfoSection from './components/InfoSection';
 import Footer from './components/Footer';
 import SubPageMenuDark from './components/SubPageMenuDark';
@@ -16,14 +16,13 @@ function App() {
   
   return (
     <> 
-    <SubPageMenuDark/>  
-
       <HeaderHome/>
       <OurServices/>       
       <About/>
       <WhyUs/>
       <Team/>
-      <WhatClientSay/>
+      {/* <WhatClientSay/> */}
+      <WhatClientSay2/>
       <InfoSection/>      
       <Footer/>
 
