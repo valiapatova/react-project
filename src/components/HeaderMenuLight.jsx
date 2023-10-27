@@ -1,5 +1,6 @@
-export default function HeaderMenu () {
+export default function HeaderMenuLight () {
     return (
+        
         <header className="header_section">
             <div className="container-fluid">
                 <nav className="navbar navbar-expand-lg custom_nav-container ">
@@ -43,5 +44,7 @@ export default function HeaderMenu () {
                 </nav>
             </div>
         </header>
+
+
     );
 };

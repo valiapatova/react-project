@@ -1,20 +1,11 @@
-import HeaderMenu from "./HeaderMenu";
+import HeaderMenuDark from "./HeaderMenuDark.jsx";
 
 export default function HeaderHome() {
   return (
-    
-    
+
     <div className="hero_area">
 
-      {/* <HeaderMenu/> */}
-
-      <div className="hero_bg_box">
-        <div className="bg_img_box">
-          <img src="images/hero-bg.png" alt="" />
-        </div>
-      </div>
-
-      <HeaderMenu/>
+      <HeaderMenuDark />
 
       <section className="slider_section ">
         <div id="customCarousel1" className="carousel slide" data-ride="carousel">
