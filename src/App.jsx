@@ -7,10 +7,13 @@ import About from './components/About';
 import WhyUs from './components/WhyUs';
 import Team from './components/Team';
 import WhatClientSay2 from './components/WhatClientSay2';
+//import WhatClientSay from './components/WhatClientSay';
 import InfoSection from './components/InfoSection';
 import Footer from './components/Footer';
 import PageAbout from './components/page/PageAbout';
-import PageTeam from './components/page/PageTeam.jsx'
+import PageTeam from './components/page/PageTeam.jsx';
+import PageOurService from './components/page/PageOurService.jsx';
+import PageWhyUs from './components/page/PageWhyUs.jsx';
 
 
 function App() {
@@ -26,8 +29,13 @@ function App() {
       <WhatClientSay2/>
       <InfoSection/>      
       <Footer/>
+
+      {/* Test outher sub page */}
       <PageAbout/>
-      <PageTeam/>
+      <PageTeam/>      
+      <PageOurService/>
+      <PageWhyUs/>
+
 
 
       
