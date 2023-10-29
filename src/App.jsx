@@ -14,6 +14,7 @@ import PageAbout from './components/page/PageAbout';
 import PageTeam from './components/page/PageTeam.jsx';
 import PageOurService from './components/page/PageOurService.jsx';
 import PageWhyUs from './components/page/PageWhyUs.jsx';
+import PageHome from './components/page/PageHome';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Footer/>
 
       {/* Test outher sub page */}
+      <PageHome/>
       <PageAbout/>
       <PageTeam/>      
       <PageOurService/>
