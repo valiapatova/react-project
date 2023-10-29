@@ -9,7 +9,8 @@ import Team from './components/Team';
 import WhatClientSay2 from './components/WhatClientSay2';
 import InfoSection from './components/InfoSection';
 import Footer from './components/Footer';
-import SubPageMenuDark from './components/SubPageMenuDark';
+import PageAbout from './components/page/PageAbout';
+import PageTeam from './components/page/PageTeam.jsx'
 
 
 function App() {
@@ -25,7 +26,11 @@ function App() {
       <WhatClientSay2/>
       <InfoSection/>      
       <Footer/>
+      <PageAbout/>
+      <PageTeam/>
 
+
+      
     </>
   )
 }
