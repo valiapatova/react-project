@@ -69,7 +69,7 @@ export default function WhatClientSay2() {
                                                             Customer
                                                         </h6>
                                                     </div>
-                                                    <i className="fa fa-quote-left" aria-hidden="true"r></i>
+                                                    <i className="fa fa-quote-left" aria-hidden="true"></i>
                                                 </div>
                                                 <p>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -104,7 +104,7 @@ export default function WhatClientSay2() {
                                                             Customer
                                                         </h6>
                                                     </div>
-                                                    <i className="fa fa-quote-left" aria-hidden="true"></i>
+                                                    <i className="fa fa-quote-left" aria-hidden="true" ></i>
                                                 </div>
                                                 <p>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
