@@ -1,4 +1,4 @@
-import SubPageMenuDark from "../SubPageMenuDark.jsx";
+import NavigationMenuDark from "../NavigationMenuDark.jsx";
 import HeaderSlider from "../HeaderSlider.jsx";
 import InfoSection from "../InfoSection.jsx";
 import Footer from "../Footer.jsx";

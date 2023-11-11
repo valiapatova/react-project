@@ -1,4 +1,4 @@
-import SubPageMenuDark from "../SubPageMenuDark.jsx";
+import NavigationMenuDark from "../NavigationMenuDark.jsx";
 import Team from "../Team.jsx";
 import InfoSection from "../InfoSection.jsx";
 import Footer from "../Footer.jsx";
@@ -6,7 +6,7 @@ import Footer from "../Footer.jsx";
 export default function PageAbout(){
     return(
         <div className = "sub_page">
-            <SubPageMenuDark/>
+            <NavigationMenuDark/>
             <Team/>
             <InfoSection/>
             <Footer/>
