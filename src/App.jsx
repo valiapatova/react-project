@@ -1,6 +1,8 @@
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-// import './App.css'
+ //import './App.css'
+
+import { Routes, Route } from 'react-router-dom';
+import NavigationMenuDark from './components/NavigationMenuDark.jsx';
+
 import HeaderHome from './components/HeaderHome';
 import OurServices from './components/OurServices';
 import About from './components/About';
@@ -16,38 +18,35 @@ import PageOurService from './components/page/PageOurService.jsx';
 import PageWhyUs from './components/page/PageWhyUs.jsx';
 import PageHome from './components/page/PageHome';
 import HeaderMenuDark from './components/HeaderMenuDark.jsx';
-import NavigationMenuDark from './components/NavigationMenuDark.jsx';
+
 
 
 function App() {
-  
   return (
-    <> 
-    <NavigationMenuDark/>
-      <HeaderHome/>
-      <OurServices/>       
-      <About/>
-      <WhyUs/>
-      <Team/>
-      {/* <WhatClientSay/> */}
-      <WhatClientSay2/>
-      <InfoSection/>      
-      <Footer/>
-
-      {/* Test outher sub page */}
-      {/* <NavigationMenuDark/> */}
-      {/* <HeaderHome/> */}
-       {/* <PageHome/>
-      <PageAbout/>
-      <PageTeam/>      
-      <PageOurService/>
-      <PageWhyUs/>  */}
+    <>
+    
+      < div className="sub_page">
+     
+        <NavigationMenuDark />
+        
+        <Routes>
+          <Route path="/" element={<HeaderHome/>}/>
+          <Route path="/about" element={<About/>}/>
 
 
+
+        </Routes>
+
+       
+        <InfoSection />
+        <Footer />
 
       
+      </div>
+
     </>
   )
+
 }
 
 export default App
