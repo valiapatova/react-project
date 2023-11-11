@@ -15,12 +15,15 @@ import PageTeam from './components/page/PageTeam.jsx';
 import PageOurService from './components/page/PageOurService.jsx';
 import PageWhyUs from './components/page/PageWhyUs.jsx';
 import PageHome from './components/page/PageHome';
+import HeaderMenuDark from './components/HeaderMenuDark.jsx';
+import SubPageMenuDark from './components/SubPageMenuDark.jsx';
 
 
 function App() {
   
   return (
     <> 
+    <SubPageMenuDark/>
       <HeaderHome/>
       <OurServices/>       
       <About/>
@@ -32,11 +35,13 @@ function App() {
       <Footer/>
 
       {/* Test outher sub page */}
-      <PageHome/>
+      {/* <SubPageMenuDark/> */}
+      {/* <HeaderHome/> */}
+      {/* <PageHome/>
       <PageAbout/>
       <PageTeam/>      
       <PageOurService/>
-      <PageWhyUs/>
+      <PageWhyUs/> */}
 
 
 

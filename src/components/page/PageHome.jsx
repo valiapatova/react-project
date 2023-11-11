@@ -4,16 +4,16 @@ import InfoSection from "../InfoSection.jsx";
 import Footer from "../Footer.jsx";
 import HeaderMenuDark from "../HeaderMenuDark.jsx";
 
-export default function PageHome(){
-    return(
+export default function PageHome() {
+    return (
         <>
-        <div className = "hero_area">
-            <HeaderMenuDark/>
-           <HeaderSlider/>
-         </div>
-            <InfoSection/>
-            <Footer/>
-            </>
+            <div className="hero_area">
+                <HeaderMenuDark />
+                <HeaderSlider />
+            </div>
+            <InfoSection />
+            <Footer />
+        </>
 
 
     );
