@@ -1,4 +1,4 @@
-export default function WhatClientSay2() {
+export default function OurClients() {
     return (
 
         // <!-- client section -->

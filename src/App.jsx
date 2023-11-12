@@ -8,16 +8,18 @@ import OurServices from './components/OurServices';
 import About from './components/About';
 import WhyUs from './components/WhyUs';
 import Team from './components/Team';
-import WhatClientSay2 from './components/WhatClientSay2';
-//import WhatClientSay from './components/WhatClientSay';
+// import WhatClientSay1 from './components/WhatClientSay1';
+import OurClients from './components/OurClients';
 import InfoSection from './components/InfoSection';
 import Footer from './components/Footer';
-import PageAbout from './components/page/PageAbout';
-import PageTeam from './components/page/PageTeam.jsx';
-import PageOurService from './components/page/PageOurService.jsx';
-import PageWhyUs from './components/page/PageWhyUs.jsx';
-import PageHome from './components/page/PageHome';
-import HeaderMenuDark from './components/HeaderMenuDark.jsx';
+
+// import PageAbout from './components/page/PageAbout';
+// import PageTeam from './components/page/PageTeam.jsx';
+// import PageOurService from './components/page/PageOurService.jsx';
+// import PageWhyUs from './components/page/PageWhyUs.jsx';
+// import PageHome from './components/page/PageHome';
+// import HeaderMenuDark from './components/HeaderMenuDark.jsx';
+
 
 
 
@@ -32,6 +34,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HeaderHome/>}/>
           <Route path="/about" element={<About/>}/>
+          <Route path="/services" element={<OurServices/>}/>
+          <Route path="/whyus" element={<WhyUs/>}/>
+          <Route path="/team" element={<Team/>}/>
+          <Route path="/client" element={<OurClients/>}/>         
 
 
 

@@ -1,4 +1,4 @@
-export default function WhatClientSay() {
+export default function WhatClientSay1() {
     return (
         <section className="client_section layout_padding">
             <div className="container">
