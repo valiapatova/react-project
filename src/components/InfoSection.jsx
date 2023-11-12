@@ -7,14 +7,14 @@
                 <div className="row">
                     <div className="col-md-6 col-lg-3 info_col">
                         <div className="info_contact">
-                            <h4>
-                                ж.к "Света Троица", бл.145, вх.Б
-                            </h4>
+                            <h6>
+                               ж.к "Света Троица" бл.145 вх.Б
+                            </h6>
                             <div className="contact_link_box">
                                 <a href="">
                                     <i className="fa fa-map-marker" aria-hidden="true"></i>
                                     <span>
-                                        гр.София
+                                       София
                                     </span>
                                 </a>
                                 <a href="">
@@ -49,17 +49,17 @@
                     <div className="col-md-6 col-lg-3 info_col">
                         <div className="info_detail">
                             <h4>
-                                Информация
+                                "Рагон 14" ООД
                             </h4>
                             <p>
-                                Предлагаме услуги съгласно <strong>"Закона за здравословни и безопасни условия на труд".</strong>
+                                Предлагаме услуги съгласно "Закона за здравословни и безопасни условия на труд".
                             </p>
                         </div>
                     </div>
                     <div className="col-md-6 col-lg-2 mx-auto info_col">
                         <div className="info_link_box">
                             <h4>
-                                Връзки
+                                Препратки
                             </h4>
                             <div className="info_links">
                                 <Link to="/" className="active" >

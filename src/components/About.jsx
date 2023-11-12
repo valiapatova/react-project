@@ -1,13 +1,15 @@
+import {Link} from 'react-router-dom';
+
 export default function About() {
     return (
         <section className="about_section layout_padding">
             <div className="container  ">
                 <div className="heading_container heading_center">
                     <h2>
-                        About <span>Us</span>
+                        За  <span>нас</span>
                     </h2>
                     <p>
-                        Magni quod blanditiis non minus sed aut voluptatum illum quisquam aspernatur ullam vel beatae rerum ipsum voluptatibus
+                    Служба по трудова медицина "РАГОН 14" ООД предоставя комплексно обслужване по осигуряване на здравословни и безопасни условия на труд.
                     </p>
                 </div>
                 <div className="row">
@@ -19,20 +21,17 @@ export default function About() {
                     <div className="col-md-6">
                         <div className="detail-box">
                             <h3>
-                                We Are Finexo
+                                Ние сме "Рагон 14" ООД
                             </h3>
                             <p>
-                                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-                                in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-                                are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-                                the middle of text. All
+                            Служба по трудова медицина "РАГОН 14" ООД е регистрирана в Министерство на здравеопазването под № 575 / 04.07.2014 г.
                             </p>
                             <p>
-                                Molestiae odio earum non qui cumque provident voluptates, repellendus exercitationem, possimus at iste corrupti officiis unde alias eius ducimus reiciendis soluta eveniet. Nobis ullam ab omnis quasi expedita.
+                            Нашите услуги обхващат пълния обем от задължителни дейности съгласно ЗЗБУТ и Наредба № 14 на МЗ
                             </p>
-                            <a href="">
-                                Read More
-                            </a>
+                            <Link to="/whyus">
+                                Нашите клиенти
+                            </Link>
                         </div>
                     </div>
                 </div>

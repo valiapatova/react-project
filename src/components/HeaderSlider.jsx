@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 export default function HeaderSlider() {
     return (
 
@@ -10,22 +11,22 @@ export default function HeaderSlider() {
                                 <div className="col-md-6 ">
                                     <div className="detail-box">
                                         <h1>
-                                            Crypto <br />
-                                            Currency
+                                            Трудова <br />
+                                            Медицина
                                         </h1>
                                         <p>
-                                            Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                        Служба по трудова медицина "РАГОН 14" ООД предоставя комплексно обслужване по осигуряване на здравословни и безопасни условия на труд.
                                         </p>
                                         <div className="btn-box">
-                                            <a href="" className="btn1">
-                                                Read More
-                                            </a>
+                                            <Link to="/whyus" className="btn1">
+                                              Прочети повече
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="img-box">
-                                        <img src="images/slider-img.png" alt="" />
+                                        <img src="images/slider-img1.jpg" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -37,22 +38,22 @@ export default function HeaderSlider() {
                                 <div className="col-md-6 ">
                                     <div className="detail-box">
                                         <h1>
-                                            Crypto <br />
-                                            Currency
+                                        Трудова <br />
+                                        Медицина
                                         </h1>
                                         <p>
-                                            Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                        Разработване на вътрешни правила за осигуряване на здравословни и безопасни условия на труд.
                                         </p>
                                         <div className="btn-box">
-                                            <a href="" className="btn1">
-                                                Read More
-                                            </a>
+                                        <Link to="/about" className="btn1">
+                                                Прочети повече
+                                        </Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="img-box">
-                                        <img src="images/slider-img.png" alt="" />
+                                        <img src="images/slider-img3.gif" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -64,22 +65,22 @@ export default function HeaderSlider() {
                                 <div className="col-md-6 ">
                                     <div className="detail-box">
                                         <h1>
-                                            Crypto <br />
-                                            Currency
+                                            Трудова <br />
+                                            Медицина
                                         </h1>
                                         <p>
-                                            Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                        Разработване на програма и оценка на риска /ЗЗБУТ, чл. 16, ал. 1; Наредба № 5 от 21.05.1999 год.; Наредба № 7 от 08.10.1999 год./
                                         </p>
                                         <div className="btn-box">
-                                            <a href="" className="btn1">
-                                                Read More
-                                            </a>
+                                            <Link to="/whyus" className="btn1">
+                                                Прочети повече
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="img-box">
-                                        <img src="images/slider-img.png" alt="" />
+                                        <img src="images/slider-img.jpg" alt="" />
                                     </div>
                                 </div>
                             </div>
