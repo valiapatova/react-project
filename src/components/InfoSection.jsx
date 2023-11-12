@@ -1,3 +1,5 @@
+ import {Link} from 'react-router-dom';
+
  const InfoSection = function(){
     return (
         <section className="info_section layout_padding2">
@@ -6,25 +8,25 @@
                     <div className="col-md-6 col-lg-3 info_col">
                         <div className="info_contact">
                             <h4>
-                                Address
+                                ж.к "Света Троица", бл.145, вх.Б
                             </h4>
                             <div className="contact_link_box">
                                 <a href="">
                                     <i className="fa fa-map-marker" aria-hidden="true"></i>
                                     <span>
-                                        Location
+                                        гр.София
                                     </span>
                                 </a>
                                 <a href="">
                                     <i className="fa fa-phone" aria-hidden="true"></i>
                                     <span>
-                                        Call +01 1234567890
+                                        Тел:  +359 898 618611
                                     </span>
                                 </a>
                                 <a href="">
                                     <i className="fa fa-envelope" aria-hidden="true"></i>
                                     <span>
-                                        demo@gmail.com
+                                        ragon@abv.bg
                                     </span>
                                 </a>
                             </div>
@@ -47,45 +49,48 @@
                     <div className="col-md-6 col-lg-3 info_col">
                         <div className="info_detail">
                             <h4>
-                                Info
+                                Информация
                             </h4>
                             <p>
-                                necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+                                Предлагаме услуги съгласно <strong>"Закона за здравословни и безопасни условия на труд".</strong>
                             </p>
                         </div>
                     </div>
                     <div className="col-md-6 col-lg-2 mx-auto info_col">
                         <div className="info_link_box">
                             <h4>
-                                Links
+                                Връзки
                             </h4>
                             <div className="info_links">
-                                <a className="active" href="index.html">
-                                    Home
-                                </a>
-                                <a className="" href="about.html">
-                                    About
-                                </a>
-                                <a className="" href="service.html">
-                                    Services
-                                </a>
-                                <a className="" href="why.html">
-                                    Why Us
-                                </a>
-                                <a className="" href="team.html">
-                                    Team
-                                </a>
+                                <Link to="/" className="active" >
+                                    Начало
+                                </Link>
+                                <Link to="/about" className="">
+                                    За нас
+                                </Link>
+                                <Link to="/services" className="">
+                                    Услуги
+                                </Link>
+                                <Link to="/whyus" className="" >
+                                    Защо ние
+                                </Link>
+                                <Link to="/team" className="" >
+                                    Екип
+                                </Link>
+                                <Link to="/clients" className="" >
+                                    Клиенти
+                                </Link>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-6 col-lg-3 info_col ">
                         <h4>
-                            Subscribe
+                            Връзка с нас:
                         </h4>
                         <form action="#">
                             <input type="text" placeholder="Enter email" />
                             <button type="submit">
-                                Subscribe
+                                Изпрати съобщение
                             </button>
                         </form>
                     </div>
