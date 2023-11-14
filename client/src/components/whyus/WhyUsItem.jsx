@@ -1,6 +1,30 @@
-export default function WhyUsItem() {
+export default function WhyUsItem({
+    id,
+    title,
+    category,
+    maxLevel,
+    imageUrl,
+    summary,
+}) {
     return (
         <div className="why_container">
+
+            <div className="box">
+                <div className="img-box">
+                    <img src={imageUrl} alt="" />
+                </div>
+                <div className="detail-box">
+                    <h5>
+                        {title}
+                    </h5>
+                    <p>
+                        {summary}
+                    </p>
+                </div>
+            </div>
+
+
+            {/* 
             <div className="box">
                 <div className="img-box">
                     <img src="images/medicalSimbol-pregledi.png" alt="" />
@@ -65,7 +89,11 @@ export default function WhyUsItem() {
                         Изготвяне на списък на Лични предпазни средства и Работно облекло /ЗЗБУТ и Наредба за безплатно и униформено работно облекло от 28.01.2011 г./natus
                     </p>
                 </div>
-            </div>
+
+
+            </div> */}
+
+
         </div>
     );
 

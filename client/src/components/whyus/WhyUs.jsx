@@ -1,4 +1,4 @@
-import 
+import WhyUsList from './WhyUsList.jsx';
 
 export default function WhyUs() {
     return (
@@ -9,6 +9,8 @@ export default function WhyUs() {
                         Защо да изберете <span>Рагон 14</span>
                     </h2>
                 </div>
+
+                <WhyUsList/>
 
 
                 {/* <div className="why_container">

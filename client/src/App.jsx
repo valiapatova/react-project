@@ -6,7 +6,7 @@ import NavigationMenuDark from './components/NavigationMenuDark.jsx';
 import HeaderHome from './components/HeaderHome';
 import OurServices from './components/OurServices';
 import About from './components/About';
-import WhyUs from './components/WhyUs';
+import WhyUs from './components/whyus/WhyUs.jsx';
 import Team from './components/Team';
 // import WhatClientSay1 from './components/WhatClientSay1';
 import OurClients from './components/OurClients';
