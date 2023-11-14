@@ -23,12 +23,10 @@ const WhyUsList = () => {
         <div>
             {services.map((service) =>
                 <WhyUsItem key={service._id} {...service} />
-             
-                )}
-                </div>
-            );
-        };
-              
-  
+
+            )}
+        </div>
+    );
+};
 
 export default WhyUsList;
