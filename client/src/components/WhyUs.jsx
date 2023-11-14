@@ -1,3 +1,5 @@
+import 
+
 export default function WhyUs() {
     return (
         <section className="why_section layout_padding">
@@ -7,7 +9,9 @@ export default function WhyUs() {
                         Защо да изберете <span>Рагон 14</span>
                     </h2>
                 </div>
-                <div className="why_container">
+
+
+                {/* <div className="why_container">
                     <div className="box">
                         <div className="img-box">
                             <img src="images/medicalSimbol-pregledi.png" alt="" />
@@ -73,7 +77,12 @@ export default function WhyUs() {
                             </p>
                         </div>
                     </div>
-                </div>
+                </div> */}
+
+
+
+
+
                 <div className="btn-box">
                     <a href="">
                         Read More
