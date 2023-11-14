@@ -16,7 +16,7 @@ export default function OurServices() {
                         <div className="col-md-4 ">
                             <div className="box ">
                                 <div className="img-box">
-                                    <img src="images/medicalSimbol2.png" alt="" />
+                                    <img src="images/medicalSimbol-pregledi.png" alt="" />
                                 </div>
                                 <div className="detail-box">
                                     <h5>
@@ -34,7 +34,7 @@ export default function OurServices() {
                         <div className="col-md-4 ">
                             <div className="box ">
                                 <div className="img-box">
-                                    <img src="images/medicalSimvol3.jfif" alt="" />
+                                    <img src="images/medical-simbol-doc.png" alt="" />
                                 </div>
                                 <div className="detail-box">
                                     <h5>
@@ -52,7 +52,7 @@ export default function OurServices() {
                         <div className="col-md-4 ">
                             <div className="box ">
                                 <div className="img-box">
-                                    <img src="images/medical-simbol1.png" alt="" />
+                                    <img src="images/medicalSimvol-ocenka.jfif" alt="" />
                                 </div>
                                 <div className="detail-box">
                                     <h5>

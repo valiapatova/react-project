@@ -10,7 +10,7 @@ export default function WhyUs() {
                 <div className="why_container">
                     <div className="box">
                         <div className="img-box">
-                            <img src="images/w1.png" alt="" />
+                            <img src="images/medicalSimbol-pregledi.png" alt="" />
                         </div>
                         <div className="detail-box">
                             <h5>
@@ -23,7 +23,7 @@ export default function WhyUs() {
                     </div>
                     <div className="box">
                         <div className="img-box">
-                            <img src="images/w2.png" alt="" />
+                            <img src="images/clients-well.jfif" alt="" />
                         </div>
                         <div className="detail-box">
                             <h5>
@@ -36,7 +36,7 @@ export default function WhyUs() {
                     </div>
                     <div className="box">
                         <div className="img-box">
-                            <img src="images/w3.jpg" alt="" />
+                            <img src="images/medical-simbol-doc.png" alt="" />
                         </div>
                         <div className="detail-box">
                             <h5>
@@ -52,7 +52,7 @@ export default function WhyUs() {
                     </div>
                     <div className="box">
                         <div className="img-box">
-                            <img src="images/w4.png" alt="" />
+                            <img src="images/medicalSimvol-ocenka.jfif" alt="" />
                         </div>
                         <div className="detail-box">
                             <h5>
