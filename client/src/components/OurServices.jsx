@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 export default function OurServices() {
     return (
         <section className="service_section layout_padding">
@@ -5,78 +6,73 @@ export default function OurServices() {
                 <div className="container ">
                     <div className="heading_container heading_center">
                         <h2>
-                            Our <span>Services</span>
+                            Нашите <span>услуги</span>
                         </h2>
                         <p>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                            Трите най-търсени услуги
                         </p>
                     </div>
                     <div className="row">
                         <div className="col-md-4 ">
                             <div className="box ">
                                 <div className="img-box">
-                                    <img src="images/s1.png" alt="" />
+                                    <img src="images/medicalSimbol2.png" alt="" />
                                 </div>
                                 <div className="detail-box">
                                     <h5>
-                                        Currency Wallet
+                                        Медицински прегледи на място
                                     </h5>
                                     <p>
-                                        fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                                        The
-                                        point of using
+                                        Службата разполага с вискотехнологична диагностична апаратура и предлага извършване на профилактични медицински прегледи на място в офиса на клиента, както и в собствения офис. Прегледите се извършват от висококвалифицирани медицински специалисти.
                                     </p>
-                                    <a href="">
-                                        Read More
-                                    </a>
+                                    <Link to="/whyus">
+                                        Прочети повече
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-4 ">
                             <div className="box ">
                                 <div className="img-box">
-                                    <img src="images/s2.png" alt="" />
+                                    <img src="images/medicalSimvol3.jfif" alt="" />
                                 </div>
                                 <div className="detail-box">
                                     <h5>
-                                        Security Storage
+                                        Разработване на документи
                                     </h5>
                                     <p>
-                                        fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                                        The
-                                        point of using
+                                        Разработване на вътрешни правила за осигуряване на здравословни и безопасни условия на труд/чл. 277, ал. 1 и ал. 2 от КТ/, включващи:
                                     </p>
-                                    <a href="">
-                                        Read More
-                                    </a>
+                                    <Link to="/whyus">
+                                        Прочети повече
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-4 ">
                             <div className="box ">
                                 <div className="img-box">
-                                    <img src="images/s3.png" alt="" />
+                                    <img src="images/medical-simbol1.png" alt="" />
                                 </div>
                                 <div className="detail-box">
                                     <h5>
-                                        Expert Support
+                                        Оценка на риска
                                     </h5>
                                     <p>
-                                        fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                                        The
-                                        point of using
+                                        Разработване на програма и оценка на риска /ЗЗБУТ, чл. 16, ал. 1; Наредба № 5 от 21.05.1999 год.; Наредба № 7 от 08.10.1999 год./
+
                                     </p>
-                                    <a href="">
-                                        Read More
-                                    </a>
+                                    <Link to="/whyus">
+                                        Прочети повече
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="btn-box">
-                        <a href="">
-                            View All
-                        </a>
+                        <Link to="/whyus">
+                            Виж всички
+                        </Link>
                     </div>
                 </div>
             </div>
