@@ -7,6 +7,7 @@ import HeaderHome from './components/HeaderHome';
 import OurServices from './components/OurServices';
 import About from './components/About';
 import WhyUs from './components/whyus/WhyUs.jsx';
+import WhyUsDetails from './components/whyus/WhyUsDetails.jsx';
 import Team from './components/Team';
 // import WhatClientSay1 from './components/WhatClientSay1';
 import OurClients from './components/OurClients';
@@ -36,6 +37,9 @@ function App() {
           <Route path="/about" element={<About/>}/>
           <Route path="/services" element={<OurServices/>}/>
           <Route path="/whyus" element={<WhyUs/>}/>
+          
+          <Route path="/whyus/:id" element={<WhyUsDetails/>}/> 
+
           <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/>         
 

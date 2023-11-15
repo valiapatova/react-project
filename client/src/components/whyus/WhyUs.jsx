@@ -1,4 +1,5 @@
 import WhyUsList from './WhyUsList.jsx';
+import {Link} from 'react-router-dom';
 
 export default function WhyUs() {
     return (
@@ -13,9 +14,9 @@ export default function WhyUs() {
                 <WhyUsList />
 
                 <div className="btn-box">
-                    <a href="">
-                        Read More
-                    </a>
+                    <Link to="/">
+                        Върни се назад
+                    </Link>
                 </div>
             </div>
         </section>

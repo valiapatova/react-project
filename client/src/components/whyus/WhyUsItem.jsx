@@ -1,5 +1,7 @@
+import {Link} from 'react-router-dom';
+
 export default function WhyUsItem({
-    id,
+    _id,
     title,
     category,
     maxLevel,
@@ -21,6 +23,13 @@ export default function WhyUsItem({
                         {summary}
                     </p>
                 </div>
+
+                <div className="btn-box">
+                    <Link to={`/whyus/${_id}`}>
+                        Детайли
+                    </Link>
+                </div>
+
             </div>
 
         </div>

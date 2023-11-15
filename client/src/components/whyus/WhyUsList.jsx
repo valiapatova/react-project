@@ -10,7 +10,7 @@ const WhyUsList = () => {
     useEffect(() => {
         //const abortController = new AbortController();
 
-        fetch(`${baseUrl}/services`)
+        fetch(`${baseUrl}/whyus`)
             .then(res => res.json())
             .then(data => {
                 setServices(Object.values(data));
@@ -22,7 +22,7 @@ const WhyUsList = () => {
     return (
         <div>
             {services.map((service) =>
-                <WhyUsItem key={service._id} {...service} />
+                <WhyUsItem key={service._id} {...service}  />
 
             )}
         </div>
