@@ -27,7 +27,7 @@ export default function WhyUsDetails() {
             })
             .then(data => setService(data))
             .catch((err) => {
-                navigate('/');
+                navigate('/whyus');
 
             });
 

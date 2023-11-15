@@ -44,7 +44,8 @@ function App() {
           <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/> 
 
-          <Route path="*" element={<NotFound/>}/>      
+          <Route path="*" element={<NotFound/>}/>     
+              
 
         </Routes>
 
