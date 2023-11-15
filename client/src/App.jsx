@@ -13,6 +13,7 @@ import Team from './components/Team';
 import OurClients from './components/OurClients';
 import InfoSection from './components/InfoSection';
 import Footer from './components/Footer';
+import NotFound from './components/NotFound.jsx';
 
 // import PageAbout from './components/page/PageAbout';
 // import PageTeam from './components/page/PageTeam.jsx';
@@ -41,9 +42,9 @@ function App() {
           <Route path="/whyus/:id" element={<WhyUsDetails/>}/> 
 
           <Route path="/team" element={<Team/>}/>
-          <Route path="/clients" element={<OurClients/>}/>         
+          <Route path="/clients" element={<OurClients/>}/> 
 
-
+          <Route path="*" element={<NotFound/>}/>      
 
         </Routes>
 
