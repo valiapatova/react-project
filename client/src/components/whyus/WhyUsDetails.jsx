@@ -1,29 +1,38 @@
-import {useEffect,useState} from 'react';
+import { useEffect, useState } from 'react';
 
-import{useParams, useLocation, useNavigate} from 'react-router-dom';
-import {Link} from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 //const baseUrl='http://localhost:3030/jsonstore/whyus/'
 
 export default function WhyUsDetails() {
-    const{id}=useParams();
+    const { id } = useParams();
     console.log(id);
     //const location=useLocation();
-    const navigate =useNavigate();
+    const navigate = useNavigate();
 
-    const[service,setService]=useState({});
+    const [service, setService] = useState({});
 
     //console.log(location.pathname);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`http://localhost:3030/jsonstore/whyus/${id}`)
-        .then(response=>response.json())
-        .then(data=>setService(data))
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Not Found')
+                }
+                return response.json();
+            })
+            .then(data => setService(data))
+            .catc((err) => {
+                navigate('/whyus');
 
-    },[id]);
+            });
 
-      
+    }, [id]);
+
+
     return (
         <div className="box ">
             <div className="img-box">
