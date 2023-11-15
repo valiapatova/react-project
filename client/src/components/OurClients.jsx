@@ -34,7 +34,7 @@ export default function OurClients() {
                                                             Customer
                                                         </h6>
                                                     </div>
-                                                    <i className="fa fa-quote-left" aria-hidden="true"></i>                                                                                                      
+                                                    <i className="fa fa-quote-left" aria-hidden="true" style={{color:"blue"}} ></i>                                                                                                      
                                                 </div>
                                                 <p>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -69,7 +69,7 @@ export default function OurClients() {
                                                             Customer
                                                         </h6>
                                                     </div>
-                                                    <i className="fa fa-quote-left" aria-hidden="true"></i>
+                                                    <i className="fa fa-quote-left" aria-hidden="true" style={{color:"blue"}}></i>
                                                 </div>
                                                 <p>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -104,7 +104,7 @@ export default function OurClients() {
                                                             Customer
                                                         </h6>
                                                     </div>
-                                                    <i className="fa fa-quote-left" aria-hidden="true" ></i>
+                                                    <i className="fa fa-quote-left" aria-hidden="true" style={{color:"blue"}}></i>
                                                 </div>
                                                 <p>
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -124,11 +124,11 @@ export default function OurClients() {
                     </div>
                     <div className="carousel_btn-box">
                         <a className="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
-                            <i className="fa fa-angle-left" aria-hidden="true"></i>
+                            <i className="fa fa-angle-left" aria-hidden="true" style={{color:"blue"}}></i>
                             <span className="sr-only">Previous</span>
                         </a>
                         <a className="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
-                            <i className="fa fa-angle-right" aria-hidden="true"></i>
+                            <i className="fa fa-angle-right" aria-hidden="true" style={{color:"blue"}}></i>
                             <span className="sr-only">Next</span>
                         </a>
                     </div>
