@@ -8,13 +8,14 @@ import { Link } from 'react-router-dom';
 
 export default function WhyUsDetails() {
     const { id } = useParams();
-    console.log(id);
-    //const location=useLocation();
+    const location=useLocation();
     const navigate = useNavigate();
 
     const [service, setService] = useState({});
 
-    //console.log(location.pathname);
+    console.log(id);
+
+    console.log(location.pathname);
 
     useEffect(() => {
         fetch(`http://localhost:3030/jsonstore/whyus/${id}`)
@@ -25,8 +26,8 @@ export default function WhyUsDetails() {
                 return response.json();
             })
             .then(data => setService(data))
-            .catc((err) => {
-                navigate('/whyus');
+            .catch((err) => {
+                navigate('/');
 
             });
 
