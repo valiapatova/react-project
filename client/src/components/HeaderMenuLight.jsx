@@ -32,7 +32,7 @@ export default function HeaderMenuLight () {
                                 <Link to="/services" className="nav-link" >Услуги</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/whyus" className="nav-link" >Защо Ние</Link>
+                                <Link to="/whyus" className="nav-link" >Каталог услуги</Link>
                             </li>
                             <li className="nav-item">
                                 {/* <a className="nav-link" href="team.html">Team</a> */}
@@ -43,7 +43,7 @@ export default function HeaderMenuLight () {
                             </li>
                             <li className="nav-item">
                                 {/* <a className="nav-link" href="#"> <i className="fa fa-user" aria-hidden="true"></i> Login</a> */}
-                                <Link to="/" className="nav-link" > <i className="fa fa-user" aria-hidden="true"></i> Вход</Link>
+                                <Link to="/login" className="nav-link" > <i className="fa fa-user" aria-hidden="true"></i> Вход</Link>
                             </li>
                             <form className="form-inline">
                                 <button className="btn  my-2 my-sm-0 nav_search-btn" type="submit">

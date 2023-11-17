@@ -31,12 +31,9 @@ import Login from './components/login/Login.jsx'
 function App() {
   return (
     <>
-   
-     <Login/>
-     
+           
       < div className="sub_page">
-        {/* <Login/> */}
-     
+           
         <NavigationMenuDark />
         
         <Routes>
@@ -49,6 +46,7 @@ function App() {
 
           <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/> 
+          <Route path="/login" element={<Login/>}/>
 
           <Route path="*" element={<NotFound/>}/>     
               

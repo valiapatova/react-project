@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import styles from './WhyUsDetails.module.css';
 
 
 //const baseUrl='http://localhost:3030/jsonstore/whyus/'
 
 export default function WhyUsDetails() {
     const { id } = useParams();
-    const location=useLocation();
+    const location = useLocation();
     const navigate = useNavigate();
 
     const [service, setService] = useState({});
@@ -35,20 +36,25 @@ export default function WhyUsDetails() {
 
 
     return (
-        <div className="box ">
-            <div className="img-box">
-                <img src={service.imageUrl} alt="" />
-            </div>
-            <div className="detail-box">
-                <h5>
-                    {service.title}
-                </h5>
-                <p>
-                    {service.summary}
-                </p>
-                <Link to="/whyus">
-                    Върни се назад
-                </Link>
+        <div className={styles.detailContainer}>
+            <div className="box ">
+                <div className="img-box">
+                    <img src={service.imageUrl} alt="" />
+                </div>
+                <div className="detail-box">
+                    <h5>
+                        {service.title}
+                    </h5>
+                    <p>
+                        {service.summary}
+                    </p>
+
+                    <Link to="/whyus">
+                        Върни се назад
+                    </Link>
+
+                </div>
+
             </div>
         </div>
 
