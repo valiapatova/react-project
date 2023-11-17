@@ -20,9 +20,12 @@ const Login = () => {
                     <div className="form-group">
                         <span className ={styles.btn}>
                         <input type="submit"  className={styles.btnGreen} />
-                        </span>
+                        
                         {/* <a class="btn btn-success">Вход</a> */}
-                        <a className="btn btn-secondary">Регистрация</a>
+                        <button className={styles.btnGrey}>
+                            <a>Регистрация</a>
+                        </button>
+                        </span>
                     </div>
                 </form>
 
