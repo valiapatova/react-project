@@ -18,7 +18,9 @@ const Login = () => {
                         {/* <span asp-validation-for="Password" class="text-danger"></span> */}
                     </div>
                     <div className="form-group">
-                        <input type="submit"  className={styles.btnSuccess} />
+                        <span className ={styles.btn}>
+                        <input type="submit"  className={styles.btnGreen} />
+                        </span>
                         {/* <a class="btn btn-success">Вход</a> */}
                         <a className="btn btn-secondary">Регистрация</a>
                     </div>
