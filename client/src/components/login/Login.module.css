@@ -26,8 +26,17 @@ a {
 
 .btnGreen {
   color: #fff;
-  background-color: #127b1d;
+  background-color: #1d9a29;
   border-color: #18ac73;
+  border-radius: 0.25rem;
+  margin-right: 25px;
+  padding-block: 5px;
+}
+
+.btnOringe {
+  color: #fff;
+  background-color: #e76828;
+  border-color: #ac8a18;
   border-radius: 0.25rem;
   margin-right: 25px;
   padding-block: 5px;
