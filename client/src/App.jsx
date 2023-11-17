@@ -14,6 +14,8 @@ import OurClients from './components/OurClients';
 import InfoSection from './components/InfoSection';
 import Footer from './components/Footer';
 import NotFound from './components/NotFound.jsx';
+//import HeaderSlider from './components/HeaderSlider.jsx';
+import Login from './components/login/Login.jsx'
 
 // import PageAbout from './components/page/PageAbout';
 // import PageTeam from './components/page/PageTeam.jsx';
@@ -25,16 +27,20 @@ import NotFound from './components/NotFound.jsx';
 
 
 
+
 function App() {
   return (
     <>
-    
+   
+     <Login/>
+     
       < div className="sub_page">
+        {/* <Login/> */}
      
         <NavigationMenuDark />
         
         <Routes>
-          <Route path="/" element={<HeaderHome/>}/>
+          <Route path="/" element={<HeaderHome />} />
           <Route path="/about" element={<About/>}/>
           <Route path="/services" element={<OurServices/>}/>
           <Route path="/whyus" element={<WhyUs/>}/>
