@@ -45,51 +45,52 @@ const Register = () => {
                 <div className="form-group">
                     <label htmlFor="password">Парола</label>
                     <input type="password"
-                        name="Password"
-                        id="Password"
-                        className="form-control" 
+                        name="password"
+                        id="password"
+                        className="form-control"
                         value={formValues.password}
                         onChange={changeHandler}
-                        />
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="confirmPassword">Потвърди паролата</label>
                     <input type="password"
-                     name="confirmPassword" 
-                     id="confirmPassword"
-                      className="form-control" 
-                      value={formValues.confirmPassword}
-                      onChange={changeHandler}
-                     />
+                        name="confirmPassword"
+                        id="confirmPassword"
+                        className="form-control"
+                        value={formValues.confirmPassword}
+                        onChange={changeHandler}
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="firstName">Име</label>
-                    <input type="text" 
-                    name="firstName" 
-                    id="firstName"
-                     className="form-control" 
-                     value={formValues.firstName}
-                     onChange={changeHandler}
-                     />
+                    <input type="text"
+                        name="firstName"
+                        id="firstName"
+                        className="form-control"
+                        value={formValues.firstName}
+                        onChange={changeHandler}
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="lastName">Фамилия</label>
                     <input type="text"
-                     name="lastName"
-                      id="lastName"
-                       className="form-control"
-                       value={formValues.lastName}
-                       onChange={changeHandler} />
+                        name="lastName"
+                        id="lastName"
+                        className="form-control"
+                        value={formValues.lastName}
+                        onChange={changeHandler}
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
                     <input type="email"
-                     name="email" 
-                     id="email"
-                      className="form-control" 
-                      value={formValues.email}
-                      onChange={changeHandler}
-                      />
+                        name="email"
+                        id="email"
+                        className="form-control"
+                        value={formValues.email}
+                        onChange={changeHandler}
+                    />
                 </div>
 
 
