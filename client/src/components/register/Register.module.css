@@ -1,0 +1,42 @@
+/* Мой css*/
+.regContainer{
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  
+  .btnGreen {
+    color: #fff;
+    background-color: #1d9a29;
+    border-color: #18ac73;
+    border-radius: 0.25rem;
+    margin-right: 25px;
+    padding-block: 5px;
+  }
+  
+  .btnOringe {
+    color: #fff;
+    background-color: #e76828;
+    border-color: #ac8a18;
+    border-radius: 0.25rem;
+    margin-right: 25px;
+    padding-block: 5px;
+  }
+  
+  
+  .btnGrey {
+    color: #fff;
+    background-color: #7d7f7d;
+    border-color: #343634;
+    border-radius: 0.25rem;
+    margin-right: 25px;
+    padding-block: 5px;
+  }
+
+  .btnBlue {
+    color: #fff;
+    background-color: #2707c4;
+    border-color: #20129b;
+    border-radius: 0.25rem;
+    margin-right: 25px;
+    padding-block: 5px;
+  }

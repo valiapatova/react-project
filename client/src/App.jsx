@@ -16,6 +16,7 @@ import Footer from './components/Footer';
 import NotFound from './components/NotFound.jsx';
 //import HeaderSlider from './components/HeaderSlider.jsx';
 import Login from './components/login/Login.jsx'
+import Register from './components/register/Register.jsx';
 
 // import PageAbout from './components/page/PageAbout';
 // import PageTeam from './components/page/PageTeam.jsx';
@@ -46,7 +47,9 @@ function App() {
 
           <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/> 
+
           <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
 
           <Route path="*" element={<NotFound/>}/>     
               

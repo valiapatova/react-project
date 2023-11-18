@@ -1,20 +1,22 @@
 import { useState } from 'react';
+import {Link} from 'react-router-dom';
 import styles from './Login.module.css';
+
 
 
 const Login = () => {
     const [usernameValue, setUsernameValue] = useState('');
     const [passwordValue, setPasswordValue] = useState('');
 
-    const usernameChangeHandler = (e) => {
-        console.log('targ' + e.target.value);
+    const usernameChangeHandler = (e) => {             
         setUsernameValue(e.target.value);
+
         console.log(usernameValue);
     };
 
     const passwordChangeHandler = (e) => {
-        console.log('targ' + e.target.value);
         setPasswordValue(e.target.value);
+
         console.log(passwordValue);
     };
 
@@ -77,7 +79,7 @@ const Login = () => {
                             </button>                        
 
                             <button className={styles.btnOringe}>
-                                <a>Регистрация</a>
+                                <Link to="/register">Регистрация</Link>
                             </button>
                             <button type="button"
                                 className={styles.btnGrey}
