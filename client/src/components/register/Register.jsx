@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './Register.module.css';
 
-const initialFormValues = {
+const initialFormValuesState = {
     username: "",
     password: "",
     confirmPassword: "",
@@ -11,36 +11,89 @@ const initialFormValues = {
 };
 const Register = () => {
 
-    const [formValues, setFormValues] = useState(initialFormValues);
+    const [formValues, setFormValues] = useState(initialFormValuesState);
+    const [errors, setErrors] = useState({});
+
 
     const changeHandler = (e) => {
+
+        let value = '';
+        switch (e.target.type) {
+            case 'number':
+                value = Number(e.target.value);
+                break;
+            case 'checkbox':
+                value = e.target.checked;
+                break;
+            default:
+                value = e.target.value;
+                break;
+        };
+
         setFormValues(state => ({
             ...state,
-            [e.target.name]: e.target.value,
+            [e.target.name]: value    //e.target.value,
         }));
+
         console.log(formValues)
+    };
+
+    const resetFormHandler = () => {
+        setFormValues(initialFormValuesState)
+        setErrors({});
+        console.log(formValues);
+        console.log(errors);
+    };
+
+    const submitFormHandler = (e) => {
+        e.preventDefault();
+        console.log(formValues);
+        console.log(errors);
+
+        resetFormHandler();
     }
 
+    const usernameValidator = () => {
+        if (formValues.username.length > 20) {
+
+            setErrors(state => ({
+                ...state,
+                username: "Потребителското име е твърде дълго"
+            }));
+        } else {
+            if (errors.username) {
+                setErrors(state => ({ ...state, username: '' }));
+            }
+        };
+    };
 
 
 
     return (
 
-
         <div className="container mt-2 mb-2">
 
-            <h2>Вход</h2>
+            <h2>Регистрация</h2>
 
-            <form>
+            <form onSubmit={submitFormHandler}>
+
                 <div className="form-group">
                     <label htmlFor="username">Потребителско име</label>
+                   
                     <input type="text"
                         name="username"
                         id="username"
-                        className="form-control"
-                        value={formValues.name}
+                        //className="form-control"
+                        value={formValues.username}
                         onChange={changeHandler}
+                        onBlur={usernameValidator}
+                        className={errors.username ? styles.inputError:"form-control"}
                     />
+                  
+
+                    {errors.username && (
+                        <p className={styles.errorMessage}>{errors.username}</p>
+                    )}
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Парола</label>
@@ -95,11 +148,18 @@ const Register = () => {
 
 
                 <div className="form-group">
-                    <input type="submit" className={styles.btnGreen} />
+                    <button
+                        type="submit"
+                        className={styles.btnGreen}
+                        disabled={Object.values(errors).some(x=>x)}
+                    >
+                        Регистрация
+                    </button>
 
-                    <button type="button"
+                    <button
+                        type="button"
                         className={styles.btnGrey}
-                    // onClick={resetHandler}
+                        onClick={resetFormHandler}
                     >
                         Изчисти
                     </button>
