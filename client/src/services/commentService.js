@@ -4,8 +4,6 @@ const baseUrl = 'http://localhost:3030/jsonstore/comments';
 
 export const getAll = async (postId) => {
     try {
-
-
         const query = new URLSearchParams({
             where: `postId="${postId}"`
         });
@@ -33,7 +31,7 @@ export const create = async (postId, username, text) => {
         return newComment;
 
     } catch (error) {
-        throw new Error(`Create comment for postId ${postId} failed from username ${username}`);
+        throw new Error(`Create comment for postId ${postId} from username ${username} failed `);
 
     }
 };
