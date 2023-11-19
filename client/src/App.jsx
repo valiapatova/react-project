@@ -18,12 +18,8 @@ import NotFound from './components/NotFound.jsx';
 import Login from './components/login/Login.jsx'
 import Register from './components/register/Register.jsx';
 
-// import PageAbout from './components/page/PageAbout';
-// import PageTeam from './components/page/PageTeam.jsx';
-// import PageOurService from './components/page/PageOurService.jsx';
-// import PageWhyUs from './components/page/PageWhyUs.jsx';
-// import PageHome from './components/page/PageHome';
-// import HeaderMenuDark from './components/HeaderMenuDark.jsx';
+
+
 
 
 
@@ -44,6 +40,11 @@ function App() {
           <Route path="/whyus" element={<WhyUs/>}/>
           
           <Route path="/whyus/:id" element={<WhyUsDetails/>}/> 
+
+          <Route path="/posts" element={<PostList />} />
+           {/* <Route path="/posts/create" element={<PostCreate />} /> */}
+
+          <Route path="/posts/:postId" element={<PostDetails /> } /> 
 
           <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/> 
