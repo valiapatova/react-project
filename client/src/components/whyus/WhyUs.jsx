@@ -9,6 +9,7 @@ export default function WhyUs() {
                     <h2>
                         Защо да изберете <span>Рагон 14</span>
                     </h2>
+
                 </div>
 
                 <WhyUsList />

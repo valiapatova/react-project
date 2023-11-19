@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import styles from './WhyUsDetails.module.css';
 
 
-//const baseUrl='http://localhost:3030/jsonstore/whyus/'
+const baseUrl='http://localhost:3030/jsonstore/whyus';
+//const baseUrl='http://localhost:3030/jsonstore/services';
 
 export default function WhyUsDetails() {
     const { id } = useParams();
@@ -19,7 +20,7 @@ export default function WhyUsDetails() {
     console.log(location.pathname);
 
     useEffect(() => {
-        fetch(`http://localhost:3030/jsonstore/whyus/${id}`)
+        fetch(`${baseUrl}/${id}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Not Found')

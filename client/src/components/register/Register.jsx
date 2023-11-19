@@ -53,7 +53,7 @@ const Register = () => {
         resetFormHandler();
     }
 
-    const usernameValidator = () => {
+    const errorsValidator = () => {
         if (formValues.username.length > 20) {
 
             setErrors(state => ({
@@ -86,7 +86,7 @@ const Register = () => {
                         //className="form-control"
                         value={formValues.username}
                         onChange={changeHandler}
-                        onBlur={usernameValidator}
+                        onBlur={errorsValidator}
                         className={errors.username ? styles.inputError:"form-control"}
                     />
                   
