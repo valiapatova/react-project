@@ -29,7 +29,7 @@ export default function HeaderMenuLight () {
                                 <Link to="/about" className="nav-link" > За нас</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/services" className="nav-link" >Услуги</Link>
+                                <Link to="/services" className="nav-link" >Top услуги</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/whyus" className="nav-link" >Каталог услуги</Link>

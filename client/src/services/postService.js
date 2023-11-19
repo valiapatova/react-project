@@ -11,7 +11,7 @@ export const getAll = async () => {
         return Object.values(result);
 
     } catch (error) {
-        throw new Error('get all posts');
+        throw new Error('Get all posts faild');
     }
 };
 
@@ -23,12 +23,11 @@ export const getOne = async (postId) => {
         return result;
 
     } catch (error) {
-        throw new Error('get post by id failed');
+        throw new Error(`Get post with id ${postId} failed`);
     }
 };
 
 // return result of request for Created object on the server
-
 export const create = async (postData) => {
     try {
         const result = await request.post(baseUrl, postData)
