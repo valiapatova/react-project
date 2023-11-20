@@ -45,7 +45,7 @@
 
 .details_button {
     background-color: #2A265F;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 10px rgba(62, 58, 58, 0.882);
     color: #fff;
     font-size: 20px;
     position: absolute;
@@ -55,4 +55,8 @@
     padding: 10px;
     margin-top: auto;
     margin-left: 20px;
+}
+.details_button:hover {
+    background-color: #265f47; 
+    color: #fff;
 }

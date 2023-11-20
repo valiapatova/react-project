@@ -6,7 +6,7 @@
     margin: 90px auto;
     overflow: hidden;
     border-radius: 10px;
-    transition: all 0.4s;
+    transition: all 0.4s;    
 }
 
 .post_details>h1 {
@@ -220,7 +220,8 @@
     box-shadow: 0px 0px 32px 0px #32485e, -14px -14px 20px #191c21;
 }
 
-input[type="text"] {
+
+.inputText {
     background: #ecf0f3;
     padding: 30px;
     padding-left: 20px;
@@ -230,7 +231,6 @@ input[type="text"] {
     border-radius: 50px;
     box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
 }
-
 
 
 textarea {

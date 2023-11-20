@@ -33,9 +33,9 @@ export default function PostDetails() {
     }
 
     return (
-        <section id="post-details" className={styles.post_details}>
+            <section id="post-details" className={styles.post_details}>
         
-            <h1>Детайли за медицинска карта</h1>
+            <h2><b>Детайли за медицинска карта</b></h2>
             <div className={styles.infoSection}>
                 <div className={styles.post_header}>
                     <img className={styles.post_img} src={post.imageUrl} alt={post.title} />
@@ -71,11 +71,12 @@ export default function PostDetails() {
             <article className={styles.create_comment}>
                 <label>Добави диагноза :</label>
                 <form className={styles.form} onSubmit={addCommentHandler}>
-                    <input type="text" name="username" placeholder="username" />
+                    <input type="text" name="username" placeholder="username"  className={styles.inputText} />
                     <textarea name="comment" placeholder="Диагноза......"></textarea>
                     <input className={styles.btn_submit} type="submit" value="Добави" />
                 </form>
             </article>
         </section>
+        
     );
 }
