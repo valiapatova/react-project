@@ -1,4 +1,5 @@
-#game-details {
+
+.post_details {
     position: relative;
     display: block;
     width: 980px;
@@ -8,7 +9,7 @@
     transition: all 0.4s;
 }
 
-#game-details>h1 {
+.post_details>h1 {
     color: #fff;
     font-family: "Agency FB";
     font-size: 55px;
@@ -18,7 +19,7 @@
     text-align: center;
 }
 
-.info-section {
+.infoSection {
     position: relative;
     width: 100%;
     height: 100%;
@@ -28,20 +29,20 @@
     background-color: whitesmoke;
 }
 
-.game-header {
+.post_header {
     position: relative;
     padding: 25px;
     height: 40%;
 }
 
-.game_header>h1 {
+.post_header>h1 {
     color: black;
     margin-top: 5px;
     font-size: 36px;
     font-weight: 400;
 }
 
-.game_header>h4 {
+.post_header>h4 {
     color: #555;
     font-size: 23px;
     font-weight: 400;
@@ -64,7 +65,7 @@
     margin-left: 10px;
 }
 
-.game-img {
+.post_img {
     position: relative;
     float: left;
     margin-left: 15px;
@@ -74,13 +75,13 @@
     box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.5);
 }
 
-.info-section>.text {
+.infoSection>.text {
     margin-top: 30px;
     padding: 60px;
     height: 50%;
 }
 
-.game-summary {
+.post_summary {
     margin-top: 15px;
     padding: 60px;
     height: 50%;
@@ -123,4 +124,87 @@
     background-color: #6f5d9c;
     color: white;
 }
+
+.create_comment>.form>textarea {
+    resize: none;
+    width: 100px;
+    height: 100px;
+    margin-top: 22px;
+    margin-bottom: 28px;
+    padding: 5px;
+}
+
+.details_comments {
+    display: table-cell;
+}
+
+.create_comment {
+    margin-top: 60px;
+    position: relative;
+    text-align: center;
+    width: 700px;
+    height: auto;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #6f5d9c;
+    box-shadow: 0px 0px 32px 0px #32485e, -14px -14px 20px #191c21;
+}
+
+.create_comment>label {
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.infoSection>.details_comments li {
+    width: 400px;
+    display: inline-block;
+    position: static;
+    margin: 20px auto 25px auto;
+    box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 16px;
+    margin-left: 60px;
+    background: #6f5d9c;
+    color: white;
+}
+
+.comment p {
+    padding: 16px;
+}
+
+
+.create_comment>.button:hover {
+    background-color: #41425c;
+    color: white;
+    cursor: pointer;
+}
+
+.no_articles {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+    font-family: "Agency FB";
+}
+.btn.submit {
+    margin-top: 30px;
+    background: #778e9c;
+    height: 60px;
+    border-radius: 20px;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+.btn.submit:hover {
+    color: white;
+    background-color: #8fa9b9;
+}
+
 

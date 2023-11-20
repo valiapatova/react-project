@@ -18,10 +18,8 @@ import NotFound from './components/NotFound.jsx';
 import Login from './components/login/Login.jsx'
 import Register from './components/register/Register.jsx';
 
-
-
-
-
+import PostList from './components/post-list/PostList.jsx'
+import PostDetails from './components/post-details/PostDetails.jsx'
 
 
 
@@ -42,6 +40,7 @@ function App() {
           <Route path="/whyus/:id" element={<WhyUsDetails/>}/> 
 
           <Route path="/posts" element={<PostList />} />
+
            {/* <Route path="/posts/create" element={<PostCreate />} /> */}
 
           <Route path="/posts/:postId" element={<PostDetails /> } /> 

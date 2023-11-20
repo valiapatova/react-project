@@ -35,6 +35,9 @@ export default function HeaderMenuLight () {
                                 <Link to="/whyus" className="nav-link" >Каталог услуги</Link>
                             </li>
                             <li className="nav-item">
+                                <Link to="/posts" className="nav-link" >Медицински карти</Link>
+                            </li>
+                            <li className="nav-item">
                                 {/* <a className="nav-link" href="team.html">Team</a> */}
                                 <Link to="/team" className="nav-link" >Екип</Link>
                             </li>
