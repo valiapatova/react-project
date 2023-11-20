@@ -1,20 +1,20 @@
  //import './App.css'
 
 import { Routes, Route } from 'react-router-dom';
-import NavigationMenuDark from './components/NavigationMenuDark.jsx';
+import NavigationMenuDark from './components/navigationMenu/NavigationMenuDark.jsx';
 
-import HeaderHome from './components/HeaderHome';
+import HeaderHome from './components/home/HeaderHome.jsx';
 import OurServices from './components/OurServices';
 import About from './components/About';
-import WhyUs from './components/whyus/WhyUs.jsx';
-import WhyUsDetails from './components/whyus/WhyUsDetails.jsx';
+import WhyUs from './components/catalogWhyUs/WhyUs.jsx';
+import WhyUsDetails from './components/catalogWhyUs/WhyUsDetails.jsx';
 import Team from './components/Team';
-// import WhatClientSay1 from './components/WhatClientSay1';
+
 import OurClients from './components/OurClients';
-import InfoSection from './components/InfoSection';
-import Footer from './components/Footer';
-import NotFound from './components/NotFound.jsx';
-//import HeaderSlider from './components/HeaderSlider.jsx';
+import InfoSection from './components/footer/InfoSection.jsx';
+import Footer from './components/footer/Footer.jsx';
+import NotFound from './components/notFound/NotFound.jsx';
+
 import Login from './components/login/Login.jsx'
 import Register from './components/register/Register.jsx';
 
