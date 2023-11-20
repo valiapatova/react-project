@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import * as postService from '../../services/postService.js';
-import PostListItem from './post-list-item/PostListItem';
+import PostListItem from './post-list-item/PostListItem.jsx';
 import styles from './PostList.module.css';
 
 export default function PostList() {

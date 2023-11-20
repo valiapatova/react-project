@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import * as postService from '../../services/postService.js';
-import * as commentService from '../../services/postService.js';
+import * as commentService from '../../services/commentService.js';
 import styles from './PostDetails.module.css';
 
 export default function PostDetails() {
@@ -73,7 +73,7 @@ export default function PostDetails() {
                 <form className={styles.form} onSubmit={addCommentHandler}>
                     <input type="text" name="username" placeholder="username" />
                     <textarea name="comment" placeholder="Comment......"></textarea>
-                    <input className={styles.btn.submit} type="submit" value="Добави коментар" />
+                    <input className={styles.btn_submit} type="submit" value="Добави коментар" />
                 </form>
             </article>
         </section>
