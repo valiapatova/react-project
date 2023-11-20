@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom';
 
 import * as postService from '../../services/postService.js';
 
+import styles from './PostCreateEdit.module.css';
+
 export default function PostCreate() {
     const navigate = useNavigate();
     
@@ -12,8 +14,8 @@ export default function PostCreate() {
 
         try {
             await postService.create(postData);
-
             navigate('/posts');
+
         } catch (err) {
             // Error notification
             console.log(err);
@@ -21,27 +23,30 @@ export default function PostCreate() {
     }
 
     return (
-        <section id="create-page" className="auth">
+        <div className={styles.create_page}>
+        <section id="create-page" className={styles.auth}>
             <form id="create" onSubmit={createPostSubmitHandler}>
-                <div className="container">
-                    <h1>Create Game</h1>
-                    <label htmlFor="leg-title">Име и фамилия :</label>
-                    <input type="text" id="title" name="title" placeholder="Въведи имената..." />
+                <div className={styles.containerCreate}>
+                    <h1>Създай</h1>
+                    <label htmlFor="title">Име:</label>
+                    <input className={styles.inputText } type="text" id="title" name="title" placeholder="трите имена..." />
 
-                    <label htmlFor="category">Фирма, в която е служител лицето:</label>
-                    <input type="text" id="category" name="category" placeholder="Въведи името на фирмата..." />
+                    <label htmlFor="category">Фирма:</label>
+                    <input className={styles.inputText } type="text" id="category" name="category" placeholder="фирма,работодател..." />
 
-                    <label htmlFor="levels">Възраст:</label>
+                    <label htmlFor="maxLevel">Възраст:</label>
                     <input type="number" id="maxLevel" name="maxLevel" min="1" placeholder="1" />
 
-                    <label htmlFor="post-img">Image:</label>
-                    <input type="text" id="imageUrl" name="imageUrl" placeholder="Upload a photo..." />
+                    <label htmlFor="imageUrl">Снимка:</label>
+                    <input className={styles.inputText } type="text" id="imageUrl" name="imageUrl" placeholder="качи снимка..." />
 
-                    <label htmlFor="summary">Summary:</label>
+                    <label htmlFor="summary">Резюме:</label>
                     <textarea name="summary" id="summary"></textarea>
-                    <input className="btn submit" type="submit" value="Create Game" />
+
+                    <input className={styles.btn_submit} type="submit" value="Създай карта" />
                 </div>
             </form>
         </section>
+        </div>
     );
 }
