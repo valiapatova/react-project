@@ -231,6 +231,8 @@ input[type="text"] {
     box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
 }
 
+
+
 textarea {
     width: 100%;
     min-width: 20vw;
@@ -245,4 +247,5 @@ textarea {
     color: black;
     box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
 }
+
 

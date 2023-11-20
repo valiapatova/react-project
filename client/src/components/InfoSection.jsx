@@ -1,20 +1,21 @@
- import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
- const InfoSection = function(){
+const InfoSection = function () {
     return (
         <section className="info_section layout_padding2">
             <div className="container">
                 <div className="row">
+
                     <div className="col-md-6 col-lg-3 info_col">
                         <div className="info_contact">
                             <h6>
-                               ж.к "Света Троица" бл.145 вх.Б
+                                ж.к "Света Троица" бл.145 вх.Б
                             </h6>
                             <div className="contact_link_box">
                                 <a href="">
                                     <i className="fa fa-map-marker" aria-hidden="true"></i>
                                     <span>
-                                       София
+                                        София
                                     </span>
                                 </a>
                                 <a href="">
@@ -46,6 +47,9 @@
                             </a>
                         </div>
                     </div>
+
+
+
                     <div className="col-md-6 col-lg-3 info_col">
                         <div className="info_detail">
                             <h4>
@@ -80,20 +84,29 @@
                                 <Link to="/clients" className="" >
                                     Клиенти
                                 </Link>
+
                             </div>
                         </div>
                     </div>
+
+
+
+
+
                     <div className="col-md-6 col-lg-3 info_col ">
-                        <h4>
-                            Връзка с нас:
-                        </h4>
-                        <form action="#">
+                    <div className="img-box">
+                            <img src="images/slider-img.jpg" alt="" />
+                        </div>
+                        {/* <form action="#">
                             <input type="text" placeholder="Enter email" />
                             <button type="submit">
                                 Изпрати съобщение
                             </button>
-                        </form>
+                        </form> */}
                     </div>
+
+
+
                 </div>
             </div>
         </section>

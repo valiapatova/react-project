@@ -12,8 +12,8 @@ export default function PostListItem({
         <div className={styles.allPosts}>
             <div className={styles.allPosts_info}>
                 <img src={imageUrl} />
-                <h6>{category}</h6>
                 <h2>{title}</h2>
+                <h6>{category}</h6>
                 <Link to={`/posts/${_id}`} className={styles.details_button}>Детайли</Link>
             </div>
         </div>

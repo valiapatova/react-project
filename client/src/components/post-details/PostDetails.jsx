@@ -47,7 +47,7 @@ export default function PostDetails() {
                 <p className={styles.text}>{post.summary}</p>
 
                 <div className={styles.details_comments}>
-                    <h2>Коментар - добави диагноза:</h2>
+                    <h3>Диагнози:</h3>
                     <ul>
                         {comments.map(({ _id, username, text }) => (
                             <li key={_id} className={styles.comment}>
@@ -69,11 +69,11 @@ export default function PostDetails() {
             </div>
 
             <article className={styles.create_comment}>
-                <label>Добави диагноза - коментар:</label>
+                <label>Добави диагноза :</label>
                 <form className={styles.form} onSubmit={addCommentHandler}>
                     <input type="text" name="username" placeholder="username" />
-                    <textarea name="comment" placeholder="Comment......"></textarea>
-                    <input className={styles.btn_submit} type="submit" value="Добави коментар" />
+                    <textarea name="comment" placeholder="Диагноза......"></textarea>
+                    <input className={styles.btn_submit} type="submit" value="Добави" />
                 </form>
             </article>
         </section>
