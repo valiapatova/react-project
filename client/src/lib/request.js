@@ -13,23 +13,24 @@ const buildOptions = (data) => {
     return options;
 };
 
+
 // async function - request /fetch/ data to server and return response object in result. 
 // have parameters method,url,data
 
-const request = async (method, url, data) => { 
-   
-        const response = await fetch(url, {
-            ...buildOptions(data),
-            method,
-        });
+const request = async (method, url, data) => {
 
-        // ??
-        if (!response.ok) {
-            throw new Error('Not Found')
-        }
+    const response = await fetch(url, {
+        ...buildOptions(data),
+        method,
+    });
 
-        const result = await response.json();
-        return result;
+    // ??
+    if (!response.ok) {
+        throw new Error('Not Found')
+    }
+
+    const result = await response.json();
+    return result;
 
 };
 

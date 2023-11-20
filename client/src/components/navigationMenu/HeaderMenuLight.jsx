@@ -1,8 +1,8 @@
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export default function HeaderMenuLight () {
+export default function HeaderMenuLight() {
     return (
-        
+
         <header className="header_section">
             <div className="container-fluid">
                 <nav className="navbar navbar-expand-lg custom_nav-container ">
@@ -22,7 +22,7 @@ export default function HeaderMenuLight () {
                             <li className="nav-item active">
                                 {/* <a className="nav-link" href="index.html">Home <span className="sr-only">(current)</span></a> */}
                                 <Link to="/" className="nav-link" >Начало <span className="sr-only">(current)</span></Link>
-                            
+
                             </li>
                             <li className="nav-item">
                                 {/* <a className="nav-link" href="about.html"> About</a> */}
@@ -37,22 +37,45 @@ export default function HeaderMenuLight () {
                             <li className="nav-item">
                                 <Link to="/posts" className="nav-link" >Медицински карти</Link>
                             </li>
-                            <li className="nav-item">
-                                {/* <a className="nav-link" href="team.html">Team</a> */}
+
+                            <div id="user" >
+
+                                <li className="nav-item">
+                                    <Link to="/posts/create" className="nav-link">Създай карта</Link>
+
+                                </li>
+
+                                {/* <li>
+                                    <Link to="/logout" className="nav-link">Logout</Link>
+                                </li> */}
+
+                            </div>
+
+                            <div id="guest">
+
+                                <li className="nav-item">
+                                    <Link to="/login" className="nav-link" > <i className="fa fa-user" aria-hidden="true"></i> Вход</Link>
+                                </li>
+
+                                {/* <li className="nav-item">
+                                    <Link to="/register" className="nav-link" > <i className="fa fa-user" aria-hidden="true"></i>Регистрация</Link>
+                                </li> */}
+
+                            </div>
+
+                            {/* <li className="nav-item">                                
                                 <Link to="/team" className="nav-link" >Екип</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/clients" className="nav-link" >Клиенти</Link>
-                            </li>
-                            <li className="nav-item">
-                                {/* <a className="nav-link" href="#"> <i className="fa fa-user" aria-hidden="true"></i> Login</a> */}
-                                <Link to="/login" className="nav-link" > <i className="fa fa-user" aria-hidden="true"></i> Вход</Link>
-                            </li>
-                            <form className="form-inline">
+                            </li> */}
+
+                            {/* <form className="form-inline">
                                 <button className="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                                     <i className="fa fa-search" aria-hidden="true"></i>
                                 </button>
-                            </form>
+                            </form> */}
+
                         </ul>
                     </div>
                 </nav>

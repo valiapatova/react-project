@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import * as postService from '../../services/postService.js';
 import * as commentService from '../../services/commentService.js';
+
 import styles from './PostDetails.module.css';
 
 export default function PostDetails() {
@@ -33,8 +34,8 @@ export default function PostDetails() {
     }
 
     return (
-            <section id="post-details" className={styles.post_details}>
-        
+        <section id="post-details" className={styles.post_details}>
+
             <h2><b>Детайли за медицинска карта</b></h2>
             <div className={styles.infoSection}>
                 <div className={styles.post_header}>
@@ -71,12 +72,12 @@ export default function PostDetails() {
             <article className={styles.create_comment}>
                 <label>Добави диагноза :</label>
                 <form className={styles.form} onSubmit={addCommentHandler}>
-                    <input type="text" name="username" placeholder="username"  className={styles.inputText} />
+                    <input type="text" name="username" placeholder="username" className={styles.inputText} />
                     <textarea name="comment" placeholder="Диагноза......"></textarea>
                     <input className={styles.btn_submit} type="submit" value="Добави" />
                 </form>
             </article>
         </section>
-        
+
     );
 }

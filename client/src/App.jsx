@@ -8,9 +8,7 @@ import OurServices from './components/ourServices/OurServices.jsx';
 import About from './components/about/About.jsx';
 import WhyUs from './components/catalogWhyUs/WhyUs.jsx';
 import WhyUsDetails from './components/catalogWhyUs/WhyUsDetails.jsx';
-import Team from './components/Team';
 
-import OurClients from './components/OurClients';
 import InfoSection from './components/footer/InfoSection.jsx';
 import Footer from './components/footer/Footer.jsx';
 import NotFound from './components/notFound/NotFound.jsx';
@@ -20,6 +18,11 @@ import Register from './components/register/Register.jsx';
 
 import PostList from './components/post-list/PostList.jsx'
 import PostDetails from './components/post-details/PostDetails.jsx'
+
+import PostCreate from './components/post-create/PostCreate.jsx'
+
+// import Team from './components/Team';
+// import OurClients from './components/OurClients';
 
 
 
@@ -41,12 +44,12 @@ function App() {
 
           <Route path="/posts" element={<PostList />} />
 
-           {/* <Route path="/posts/create" element={<PostCreate />} /> */}
+          <Route path="/posts/create" element={<PostCreate/>} />
 
           <Route path="/posts/:postId" element={<PostDetails /> } /> 
 
-          <Route path="/team" element={<Team/>}/>
-          <Route path="/clients" element={<OurClients/>}/> 
+          {/* <Route path="/team" element={<Team/>}/>
+          <Route path="/clients" element={<OurClients/>}/>  */}
 
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
