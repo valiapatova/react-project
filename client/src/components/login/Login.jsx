@@ -11,12 +11,18 @@ const LoginFormKeys = {
 };
 
 const Login = ({
-    loginSubmitHandler}
+    loginSubmitHandler,
+}) => {
 
-) => {
     const { values, onChange, onSubmit,resetHandler} = useForm(loginSubmitHandler, {
+
+    //const { values, onChange, onSubmit} = useForm(loginSubmitHandler, {
+
         [LoginFormKeys.Email] : '',
         [LoginFormKeys.Password] : '',
+
+        // email : '',
+        // password:'',
     });
    
 
@@ -29,8 +35,9 @@ const Login = ({
 
                 <h2>Вход</h2>
 
-                <form>
-                    <div className="form-group" onSubmit={onSubmit}>
+                <form onSubmit={onSubmit}>
+
+                    <div className="form-group" >                   
                         <label htmlFor="email">Email</label>
                         <input
                             type="email"
@@ -64,7 +71,7 @@ const Login = ({
                             <input
                                 type="submit"
                                 className={styles.btnGreen}
-                                value='Вход'                               
+                                value='Вход'                             
                             />
                         
                             <button className={styles.btnOringe}>

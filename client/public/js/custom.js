@@ -6,7 +6,7 @@
 //    // document.getElementById("displayYear").innerHTML=currentYear;
 // }
 
-getYear();
+// getYear();
 
 
 // client section owl carousel

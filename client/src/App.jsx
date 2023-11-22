@@ -1,4 +1,5 @@
  //import './App.css'
+ import { useState } from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 import NavigationMenuDark from './components/navigationMenu/NavigationMenuDark.jsx';
@@ -27,8 +28,12 @@ import PostCreate from './components/post-create/PostCreate.jsx'
 
 
 function App() {
+
+  const[auth,setAuth] = useState({});
+
+  //const values={peter:"peter@abv.bg",password:"123456"};
   
-  const loginSubmitHandler=(values)=>{
+  const loginSubmitHandler = (values) => {
     console.log(values)
   }
   return (
