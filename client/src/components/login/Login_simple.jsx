@@ -1,25 +1,36 @@
-import useForm from '../../hooks/useForm.js';
-
+import { useState } from 'react';
 import {Link} from 'react-router-dom';
-
 import styles from './Login.module.css';
 
 
-const LoginFormKeys = {
-    Email:'email',
-    Password:'password',
-};
 
-const Login = ({
-    loginSubmitHandler}
+const Login = () => {
+    const [usernameValue, setUsernameValue] = useState('');
+    const [passwordValue, setPasswordValue] = useState('');
 
-) => {
-    const { values, onChange, onSubmit,resetHandler} = useForm(loginSubmitHandler, {
-        [LoginFormKeys.Email] : '',
-        [LoginFormKeys.Password] : '',
-    });
-   
+    const usernameChangeHandler = (e) => {             
+        setUsernameValue(e.target.value);
 
+        console.log(usernameValue);
+    };
+
+    const passwordChangeHandler = (e) => {
+        setPasswordValue(e.target.value);
+
+        console.log(passwordValue);
+    };
+
+    const submitHandler=()=>{
+        console.log(usernameValue);
+        console.log(passwordValue);
+        resetHandler();
+    };
+
+    const resetHandler=()=>{
+        setUsernameValue('');
+        setPasswordValue('');
+
+    };
 
 
     return (
@@ -30,16 +41,15 @@ const Login = ({
                 <h2>Вход</h2>
 
                 <form>
-                    <div className="form-group" onSubmit={onSubmit}>
-                        <label htmlFor="email">Email</label>
+                    <div className="form-group">
+                        <label htmlFor="username">Потребител</label>
                         <input
-                            type="email"
-                            id="email"
-                            name={LoginFormKeys.Email}                            
+                            type="text"
+                            name="username"
+                            id="username"
                             className="form-control"
-                            placeholder="sokka@abv.bg"
-                            value={values[LoginFormKeys.Email]}
-                            onChange= {onChange}
+                            value={usernameValue}
+                            onChange={usernameChangeHandler}
                             onBlur={() => console.log('onBlur')}
 
                         />
@@ -49,11 +59,11 @@ const Login = ({
                         <label htmlFor="password">Парола</label>
                         <input
                             type="password"
+                            name="password"
                             id="password"
-                            name={LoginFormKeys.Password}                            
                             className="form-control"
-                            value={values[LoginFormKeys.Password]}
-                            onChange={onChange}
+                            value={passwordValue}
+                            onChange={passwordChangeHandler}
 
                         />
 
@@ -61,12 +71,13 @@ const Login = ({
                     <div className="form-group">
                         <span className={styles.btn}>
                             {/* <input type="submit" className={styles.btnGreen} /> */}
-                            <input
-                                type="submit"
+                            <button type="button"
                                 className={styles.btnGreen}
-                                value='Вход'                               
-                            />
-                        
+                                onClick={submitHandler}
+                            >
+                                Вход
+                            </button>                        
+
                             <button className={styles.btnOringe}>
                                 <Link to="/register">Регистрация</Link>
                             </button>

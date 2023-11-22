@@ -27,6 +27,10 @@ import PostCreate from './components/post-create/PostCreate.jsx'
 
 
 function App() {
+  
+  const loginSubmitHandler=(values)=>{
+    console.log(values)
+  }
   return (
     <>
            
@@ -51,7 +55,8 @@ function App() {
           {/* <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/>  */}
 
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/login" element={<Login loginSubmitHandler={loginSubmitHandler}/>}/>
+
           <Route path="/register" element={<Register/>}/>
 
           <Route path="*" element={<NotFound/>}/>     

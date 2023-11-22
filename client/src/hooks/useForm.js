@@ -16,11 +16,16 @@ export default function useForm(submitHandler,initialValues){
         submitHandler(values);
     };  
 
+    const resetHandler=()=>{
+       setValues(initialValues);    
+    };
 
-    return{
+
+    return {
         values,
         onChange,
         onSubmit,
-    };
+        resetHandler,
+    }
 
 };
