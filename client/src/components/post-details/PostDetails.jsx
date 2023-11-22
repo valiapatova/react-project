@@ -34,50 +34,54 @@ export default function PostDetails() {
     }
 
     return (
-        <section id="post-details" className={styles.post_details}>
+        // <div className="hero_area">
 
-            <h2><b>Детайли за медицинска карта</b></h2>
-            <div className={styles.infoSection}>
-                <div className={styles.post_header}>
-                    <img className={styles.post_img} src={post.imageUrl} alt={post.title} />
-                    <h1>{post.title}</h1>
-                    <span className={styles.levels}>Години: {post.maxLevel}</span>
-                    <p className={styles.type}>{post.category}</p>
-                </div>
+            <section id="post-details" className={styles.post_details}>
 
-                <p className={styles.text}>{post.summary}</p>
+                <h2><b>Детайли за медицинска карта</b></h2>
+                <div className={styles.infoSection}>
+                    <div className={styles.post_header}>
+                        <img className={styles.post_img} src={post.imageUrl} alt={post.title} />
+                        <h1>{post.title}</h1>
+                        <span className={styles.levels}>Години: {post.maxLevel}</span>
+                        <p className={styles.type}>{post.category}</p>
+                    </div>
 
-                <div className={styles.details_comments}>
-                    <h3>Диагнози:</h3>
-                    <ul>
-                        {comments.map(({ _id, username, text }) => (
-                            <li key={_id} className={styles.comment}>
-                                <p>{username}: {text}</p>
-                            </li>
-                        ))}
-                    </ul>
+                    <p className={styles.text}>{post.summary}</p>
 
-                    {comments.length === 0 && (
-                        <p className={styles.no_articles}>Няма въведени диагнози - коментари</p>
-                    )}
-                </div>
+                    <div className={styles.details_comments}>
+                        <h3>Диагнози:</h3>
+                        <ul>
+                            {comments.map(({ _id, username, text }) => (
+                                <li key={_id} className={styles.comment}>
+                                    <p>{username}: {text}</p>
+                                </li>
+                            ))}
+                        </ul>
 
-                {/* <!-- Edit/Delete buttons ( Only for creator of this game )  -->
+                        {comments.length === 0 && (
+                            <p className={styles.no_articles}>Няма въведени диагнози - коментари</p>
+                        )}
+                    </div>
+
+                    {/* <!-- Edit/Delete buttons ( Only for creator of this game )  -->
                 <div className="buttons">
                     <a href="#" className="button">Edit</a>
                     <a href="#" className="button">Delete</a>
                 </div> */}
-            </div>
+                </div>
 
-            <article className={styles.create_comment}>
-                <label>Добави диагноза :</label>
-                <form className={styles.form} onSubmit={addCommentHandler}>
-                    <input type="text" name="username" placeholder="username" className={styles.inputText} />
-                    <textarea name="comment" placeholder="Диагноза......"></textarea>
-                    <input className={styles.btn_submit} type="submit" value="Добави" />
-                </form>
-            </article>
-        </section>
+                <article className={styles.create_comment}>
+                    <label>Добави диагноза :</label>
+                    <form className={styles.form} onSubmit={addCommentHandler}>
+                        <input type="text" name="username" placeholder="username" className={styles.inputText} />
+                        <textarea name="comment" placeholder="Диагноза......"></textarea>
+                        <input className={styles.btn_submit} type="submit" value="Добави" />
+                    </form>
+                </article>
+            </section>
+
+        // </div>
 
     );
 }

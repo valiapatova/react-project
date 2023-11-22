@@ -27,7 +27,7 @@ export default function PostCreate() {
         <section id="create-page" className={styles.auth}>
             <form id="create" onSubmit={createPostSubmitHandler}>
                 <div className={styles.containerCreate}>
-                    <h1>Създай</h1>
+                    <h2>Създай</h2>
                     <label htmlFor="title">Име:</label>
                     <input className={styles.inputText } type="text" id="title" name="title" placeholder="трите имена..." />
 

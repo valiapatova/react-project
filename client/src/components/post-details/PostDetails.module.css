@@ -1,4 +1,23 @@
 
+#post-details {
+    position: relative;
+    display: block;
+    width: 980px;
+    margin: 90px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+
+#post-details>h1 {
+    color: #fff;
+    font-family: "Agency FB";
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}
 .post_details {
     position: relative;
     display: block;
@@ -40,6 +59,7 @@
     margin-top: 5px;
     font-size: 36px;
     font-weight: 400;
+    font-family: "Agency FB";
 }
 
 .post_header>h4 {
@@ -56,12 +76,13 @@
     border-radius: 5px;
     background-color: #b4b6ee;
     border: 1px solid rgba(218, 181, 181, 0.829);
+    font-size: 23px;
 }
 
 .type {
     display: inline-block;
     color: #959595;
-    font-size: 19px;
+    font-size: 23px;
     margin-left: 10px;
 }
 
@@ -90,6 +111,8 @@
 .text {
     font-size: 25px;
     color: #545454;
+    font-family: Arial, sans-serif; 
+    
 }
 
 .movie_social {
@@ -125,6 +148,7 @@
     color: white;
 }
 
+
 .create_comment>.form>textarea {
     resize: none;
     width: 100px;
@@ -132,10 +156,12 @@
     margin-top: 22px;
     margin-bottom: 28px;
     padding: 5px;
-}
+    }
 
 .details_comments {
-    display: table-cell;
+    display: table-cell;  
+    text-align: center;
+
 }
 
 .create_comment {
@@ -157,6 +183,11 @@
     text-align: center;
     font-weight: 700;
     line-height: normal;
+}
+
+.create_comment>textarea {
+    text-align: center;
+
 }
 
 .infoSection>.details_comments li {
@@ -183,10 +214,10 @@
 }
 
 .no_articles {
-    color: white;
+    color: red;
     text-align: center;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 25px;
     font-family: "Agency FB";
 }
 .btn_submit {
@@ -217,7 +248,7 @@
     box-sizing: border-box;
     text-align: center;
     background: #3e4443;
-    box-shadow: 0px 0px 32px 0px #32485e, -14px -14px 20px #191c21;
+    box-shadow: 0px 0px 32px 0px #32485e, -14px -14px 20px #191c21;   
 }
 
 
@@ -247,5 +278,4 @@ textarea {
     color: black;
     box-shadow: inset 6px 6px 6px #c0c2c5, inset -6px -6px 6px white;
 }
-
 
