@@ -2,6 +2,8 @@
  import { useState } from 'react';
 
 import { Routes, Route } from 'react-router-dom';
+import AuthContext from './contexts/authContex.js';
+
 import NavigationMenuDark from './components/navigationMenu/NavigationMenuDark.jsx';
 
 import HeaderHome from './components/home/HeaderHome.jsx';
@@ -37,7 +39,7 @@ function App() {
     console.log(values)
   }
   return (
-    <>
+    <AuthContext.Provider value={{loginSubmitHandler}}>
            
       < div className="sub_page">
            
@@ -60,7 +62,7 @@ function App() {
           {/* <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/>  */}
 
-          <Route path="/login" element={<Login loginSubmitHandler={loginSubmitHandler}/>}/>
+          <Route path="/login" element={<Login/>}/>
 
           <Route path="/register" element={<Register/>}/>
 
@@ -76,7 +78,7 @@ function App() {
       
       </div>
 
-    </>
+    </AuthContext.Provider>
   )
 
 }

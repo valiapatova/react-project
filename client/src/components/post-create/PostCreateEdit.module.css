@@ -92,13 +92,13 @@ textarea {
 
 .containerCreate {
     text-align: center;;
-    margin: 8em auto;
+    margin: 4em auto;
     
 }
 
 .auth {
     width: 300px;
-    margin: 8em auto;
+    margin: 1em auto;
 }
 
 .label {
@@ -126,10 +126,6 @@ textarea {
     margin-bottom: 70px;
 
 }
-
-
-
-
 
     .heroBg_box {
       background-image: url('/images/create_img.jpg'); /* Replace this with the path to your image */
