@@ -33,14 +33,14 @@
     font-size: 20px;
     font-weight: 750;  
     color: #161618;
-    font-family: "Agency FB";
+    /* font-family: "Agency FB"; */
 }
 
 .allPosts_info>h2 {
     font-size: 25px;
     font-weight: 750;   
     color: #0f0fbde6;
-    font-family: "Agency FB";
+    /* font-family: "Agency FB"; */
 }
 
 .details_button {

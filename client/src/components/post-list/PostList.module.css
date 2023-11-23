@@ -78,9 +78,9 @@
 
 
 .no_articles {
-    color: white;
+    color: black;
     text-align: center;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 25px;
     font-family: "Agency FB";
 }
