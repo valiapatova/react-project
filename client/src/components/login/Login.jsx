@@ -14,7 +14,7 @@ const LoginFormKeys = {
 };
 
 const Login = () => {
-    
+
     const { loginSubmitHandler } = useContext(AuthContext);
 
     const { values, onChange, onSubmit, resetHandler } = useForm(loginSubmitHandler, {
@@ -24,8 +24,6 @@ const Login = () => {
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
 
-        // email : '',
-        // password:'',
     });
 
 
@@ -35,7 +33,6 @@ const Login = () => {
 
         <div className={styles.logContainer}>
             <div className="container mt-2 mb-2">
-
                 <h2>Вход</h2>
 
                 <form onSubmit={onSubmit}>

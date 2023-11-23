@@ -36,7 +36,7 @@ function App() {
   //const values={peter:"peter@abv.bg",password:"123456"};
   
   const loginSubmitHandler = (values) => {
-    console.log(values)
+    console.log(values) // values, taked from Login input form.
   }
   return (
     <AuthContext.Provider value={{loginSubmitHandler}}>
