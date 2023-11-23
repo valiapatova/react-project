@@ -5,11 +5,12 @@ const buildOptions = (data) => {
 
     if (data) {
         // need of post,put,patch methods
-        options.body = JSON.stringify(data);
+        options.body = JSON.stringify(data),
         options.headers = {
             'content-type': 'application/json'
         };
     }
+    console.log(options)
     return options;
 };
 
@@ -25,9 +26,9 @@ const request = async (method, url, data) => {
     });
 
     // ??
-    if (!response.ok) {
-        throw new Error('Not Found')
-    }
+    // if (!response.ok) {
+    //     throw new Error('Not Found')
+    // }
 
     const result = await response.json();
     return result;

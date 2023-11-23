@@ -1,17 +1,18 @@
  //import './App.css'
  import { useState } from 'react';
-
 import { Routes, Route } from 'react-router-dom';
+
+import * as authService from './services/authService.js'; 
 import AuthContext from './contexts/authContex.js';
 
-import NavigationMenuDark from './components/navigationMenu/NavigationMenuDark.jsx';
 
+
+import NavigationMenuDark from './components/navigationMenu/NavigationMenuDark.jsx';
 import HeaderHome from './components/home/HeaderHome.jsx';
 import OurServices from './components/ourServices/OurServices.jsx';
 import About from './components/about/About.jsx';
 import WhyUs from './components/catalogWhyUs/WhyUs.jsx';
 import WhyUsDetails from './components/catalogWhyUs/WhyUsDetails.jsx';
-
 import InfoSection from './components/footer/InfoSection.jsx';
 import Footer from './components/footer/Footer.jsx';
 import NotFound from './components/notFound/NotFound.jsx';
@@ -35,8 +36,13 @@ function App() {
 
   //const values={peter:"peter@abv.bg",password:"123456"};
   
-  const loginSubmitHandler = (values) => {
+  const loginSubmitHandler = async(values) => {
+   
     console.log(values) // values, taked from Login input form.
+
+    const result = await authService.login(values.email,values.password);
+
+    console.log(result) // object from JSON returned by server
   }
   return (
     <AuthContext.Provider value={{loginSubmitHandler}}>
