@@ -4,8 +4,6 @@
   padding: 0;
 } */
 
-.divInline {
-  display: 'flex';
-  display: 'inline-block';
-  margin-right: '10px';
+.liInline {  
+  display: 'inline-block'; 
 }
