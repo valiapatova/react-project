@@ -6,7 +6,7 @@ import * as authService from './services/authService.js';
 import AuthContext from './contexts/authContex.js';
 import Path from './paths.js';
 
-import NavigationMenuDark from './components/navigationMenu/NavigationMenuDark.jsx';
+import NavigationMenu from './components/navigationMenu/NavigationMenu.jsx';
 import HeaderHome from './components/home/HeaderHome.jsx';
 import OurServices from './components/ourServices/OurServices.jsx';
 import About from './components/about/About.jsx';
@@ -18,6 +18,7 @@ import NotFound from './components/notFound/NotFound.jsx';
 
 import Login from './components/login/Login.jsx'
 import Register from './components/register/Register.jsx';
+import Logout from './components/logout/Logout.jsx';
 
 import PostList from './components/post-list/PostList.jsx'
 import PostDetails from './components/post-details/PostDetails.jsx'
@@ -56,17 +57,27 @@ function App() {
     setAuth(result);
 
     navigate(Path.Home)
+  };
+
+  const values = {
+
+    loginSubmitHandler,
+    username : auth.username, 
+    // password не е нужно да предаваме 
+    email:auth.email,
+    isAuthenticated: !!auth.username,
+
   }
 
   return (
-    <AuthContext.Provider value={{ loginSubmitHandler }}>
+    <AuthContext.Provider value={values}>
 
       < div className="sub_page">
 
-        <NavigationMenuDark />
+        <NavigationMenu/>
 
         <Routes>
-          <Route path="/" element={<HeaderHome />} />
+          <Route path={Path.Home} element={<HeaderHome />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<OurServices />} />
           <Route path="/whyus" element={<WhyUs />} />
@@ -85,6 +96,8 @@ function App() {
           <Route path="/login" element={<Login />} />
 
           <Route path="/register" element={<Register />} />
+
+          <Route path="/logout" element ={<Logout/>}/>
 
           <Route path="*" element={<NotFound />} />
 

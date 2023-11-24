@@ -1,6 +1,18 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import AuthContext from '../../../contexts/authContex';
+
+import styles from './HeaderMenuLight.module.css'
 
 export default function HeaderMenuLight() {
+
+    const {
+        isAuthenticated,
+        username,
+    } = useContext(AuthContext);
+
+
+
     return (
 
         <header className="header_section">
@@ -38,30 +50,38 @@ export default function HeaderMenuLight() {
                                 <Link to="/posts" className="nav-link" >Медицински карти</Link>
                             </li>
 
-                            <div id="user" >
+                            {isAuthenticated && (
 
-                                <li className="nav-item">
-                                    <Link to="/posts/create" className="nav-link">Създай карта</Link>
+                                <div id="user">
 
-                                </li>
+                                    <li className="nav-item">
+                                        <Link to="/posts/create" className="nav-link">Създай карта</Link>
 
-                                {/* <li>
-                                    <Link to="/logout" className="nav-link">Logout</Link>
-                                </li> */}
+                                    </li>
+                                    <li>
+                                        <Link to="/logout" className="nav-link">Logout</Link>
+                                        <span>{username}</span>
+                                    </li>
+                                </div>
 
-                            </div>
 
-                            <div id="guest">
+                            )}
 
-                                <li className="nav-item">
-                                    <Link to="/login" className="nav-link" > <i className="fa fa-user" aria-hidden="true"></i> Вход</Link>
-                                </li>
 
-                                {/* <li className="nav-item">
-                                    <Link to="/register" className="nav-link" > <i className="fa fa-user" aria-hidden="true"></i>Регистрация</Link>
-                                </li> */}
+                            {!isAuthenticated && (
 
-                            </div>
+                                <div id="guest" className={styles.divInline}>
+                                    <li className="nav-item">
+                                        <Link to="/login" className="nav-link" > <i className="fa fa-user" aria-hidden="true"></i> Вход</Link>
+                                    </li>
+
+                                    <li className="nav-item">
+                                        <Link to="/register" className="nav-link" > <i className="fa fa-user" aria-hidden="true"></i>Регистрация</Link>
+                                    </li>
+
+                                </div>
+
+                            )}
 
                             {/* <li className="nav-item">                                
                                 <Link to="/team" className="nav-link" >Екип</Link>
@@ -79,8 +99,8 @@ export default function HeaderMenuLight() {
                         </ul>
                     </div>
                 </nav>
-            </div>
-        </header>
+            </div >
+        </header >
 
 
     );

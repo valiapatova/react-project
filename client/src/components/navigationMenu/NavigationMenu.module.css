@@ -1,0 +1,11 @@
+/* .divInline {
+  display: 'flex';
+  list-style: 'none';
+  padding: 0;
+} */
+
+.divInline {
+  display: 'flex';
+  display: 'inline-block';
+  margin-right: '10px';
+}
