@@ -1,10 +1,11 @@
-//import './App.css'
-import { useState } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+ //import './App.css'
+ import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import * as authService from './services/authService.js';
+import * as authService from './services/authService.js'; 
 import AuthContext from './contexts/authContex.js';
-import Path from './paths.js';
+
+
 
 import NavigationMenuDark from './components/navigationMenu/NavigationMenuDark.jsx';
 import HeaderHome from './components/home/HeaderHome.jsx';
@@ -31,71 +32,58 @@ import PostCreate from './components/post-create/PostCreate.jsx'
 
 function App() {
 
-  const navigate = useNavigate();
+  const[auth,setAuth] = useState({});
 
-  const [auth, setAuth] = useState({});
+  
 
-  const loginSubmitHandler = async (values) => {
+  //values   --- {Peter:"peter@abv.bg",password:"123456"};
+  
+  const loginSubmitHandler = async(values) => {
+   
+    console.log(values) // values, taked from Login input form.
 
-    console.log(values);    // values, taked from Login input form.
-    //values   --- {Peter:"peter@abv.bg",password:"123456"}
-
-    const result = await authService.login(values.email, values.password);
+    const result = await authService.login(values.email,values.password);
 
     console.log(result) // object from JSON returned by server
-    // result --- returned from server
-    // {
-    //   email: 'peter@abv.bg',
-    //    username: 'Peter',
-    //    _id: '35c62d76-8152-4626-8712-eeb96381bea8',
-    //    accessToken: '2b3b3801aee5cd8fee64aed417048fe9d22398a3c5cd2e974f449b3e6883f58e'
-    //   }
-    //or
-    //	{code: 403, message: "Login or password don't match"}
-
-    setAuth(result);
-
-    navigate(Path.Home)
   }
-
   return (
-    <AuthContext.Provider value={{ loginSubmitHandler }}>
-
+    <AuthContext.Provider value={{loginSubmitHandler}}>
+           
       < div className="sub_page">
-
+           
         <NavigationMenuDark />
-
+        
         <Routes>
           <Route path="/" element={<HeaderHome />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<OurServices />} />
-          <Route path="/whyus" element={<WhyUs />} />
-
-          <Route path="/whyus/:id" element={<WhyUsDetails />} />
+          <Route path="/about" element={<About/>}/>
+          <Route path="/services" element={<OurServices/>}/>
+          <Route path="/whyus" element={<WhyUs/>}/>
+          
+          <Route path="/whyus/:id" element={<WhyUsDetails/>}/> 
 
           <Route path="/posts" element={<PostList />} />
 
-          <Route path="/posts/create" element={<PostCreate />} />
+          <Route path="/posts/create" element={<PostCreate/>} />
 
-          <Route path="/posts/:postId" element={<PostDetails />} />
+          <Route path="/posts/:postId" element={<PostDetails /> } /> 
 
           {/* <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/>  */}
 
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login/>}/>
 
-          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={<Register/>}/>
 
-          <Route path="*" element={<NotFound />} />
-
+          <Route path="*" element={<NotFound/>}/>     
+              
 
         </Routes>
 
-
+       
         <InfoSection />
         <Footer />
 
-
+      
       </div>
 
     </AuthContext.Provider>
