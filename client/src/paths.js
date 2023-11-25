@@ -4,6 +4,8 @@ const Path = {
     Login: "/login",
     Register: "/register",
     Logout : "/logout",
+    Posts :"/posts",
+    PostCreate : "/posts/create",
 
 };
 

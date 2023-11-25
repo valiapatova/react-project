@@ -1,6 +1,17 @@
+
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+
+import AuthContext from '../../contexts/authContex.js';
+import Path from '../../paths.js';
 
 const InfoSection = function () {
+    const {
+        isAuthenticated,
+        username,
+
+    } = useContext(AuthContext);
+
     return (
         <section className="info_section layout_padding2">
             <div className="container">
@@ -78,23 +89,27 @@ const InfoSection = function () {
                                 <Link to="/whyus" className="" >
                                     Защо ние
                                 </Link>
-                                <Link to="/team" className="" >
+                                {/* <Link to="/team" className="" >
                                     Екип
                                 </Link>
                                 <Link to="/clients" className="" >
                                     Клиенти
-                                </Link>
+                                </Link> */}
+
+                                {isAuthenticated &&
+                                    <Link to={Path.PostCreate} className="" >
+                                        Създай карта
+                                    </Link>
+                                }
+
 
                             </div>
                         </div>
                     </div>
 
 
-
-
-
                     <div className="col-md-6 col-lg-3 info_col ">
-                    <div className="img-box">
+                        <div className="img-box">
                             <img src="images/slider-img.jpg" alt="" />
                         </div>
                         {/* <form action="#">

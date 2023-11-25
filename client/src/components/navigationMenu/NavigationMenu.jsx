@@ -30,7 +30,7 @@ export default function NavigationMenu() {
                         <Link to="/about" className="navbar-brand" >
                             <span>
                                 Рагон 14 ООД
-                                {isAuthenticated && <span style={{marginLeft: '20px', color: 'red'} }> Здравей {username} ! </span>}
+                                {isAuthenticated && <span style={{ marginLeft: '20px', color: 'red' }}> Здравей {username} ! </span>}
                             </span>
                         </Link>
 
@@ -61,14 +61,13 @@ export default function NavigationMenu() {
                                 {isAuthenticated && (
                                     <div id="user" >
 
-                                        <li className="nav-item" style={{ display: 'inline-block'}} >
+                                        <li className="nav-item" style={{ display: 'inline-block' }} >
                                             <Link to="/posts/create" className="nav-link" >Създай карта</Link>
 
                                         </li>
-                                        <li className="nav-item" style={{ display: 'inline-block'}}>
+                                        <li className="nav-item" style={{ display: 'inline-block' }}>
                                             <Link to="/logout" className="nav-link">
                                                 Изход
-                                                {/* <span style={{ marginLeft: '20px', color: 'red' }}> Здравей {username} ! </span> */}
                                             </Link>
                                         </li>
 
@@ -79,12 +78,12 @@ export default function NavigationMenu() {
                                 {!isAuthenticated && (
 
                                     <div id="guest">
-                                        <li className="nav-item" style={{ display: 'inline-block'}}>
-                                            <Link to="/login" className="nav-link" > <i className="fa fa-user" aria-hidden="true" style={{color:"green"}}></i> Вход</Link>
+                                        <li className="nav-item" style={{ display: 'inline-block' }}>
+                                            <Link to="/login" className="nav-link" > <i className="fa fa-user" aria-hidden="true" style={{ color: "green" }}></i> Вход</Link>
                                         </li>
 
-                                        <li className="nav-item" style={{ display: 'inline-block'}}>
-                                            <Link to="/register" className="nav-link" > <i className="fa fa-user" aria-hidden="true" style={{color:"#e76828"}}></i>Регистрация</Link>
+                                        <li className="nav-item" style={{ display: 'inline-block' }}>
+                                            <Link to="/register" className="nav-link" > <i className="fa fa-user" aria-hidden="true" style={{ color: "#e76828" }}></i>Регистрация</Link>
                                         </li>
 
                                     </div>

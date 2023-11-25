@@ -7,13 +7,13 @@ import AuthContext from './contexts/authContex.js';
 import Path from './paths.js';
 
 import NavigationMenu from './components/navigationMenu/NavigationMenu.jsx';
-import HeaderHome from './components/home/HeaderHome.jsx';
+import Home from './components/home/Home.jsx';
 import OurServices from './components/ourServices/OurServices.jsx';
 import About from './components/about/About.jsx';
 import WhyUs from './components/catalogWhyUs/WhyUs.jsx';
 import WhyUsDetails from './components/catalogWhyUs/WhyUsDetails.jsx';
-import InfoSection from './components/footer/InfoSection.jsx';
-import Footer from './components/footer/Footer.jsx';
+import InfoSection from './components/infoSection/InfoSection.jsx';
+import Footer from './components/infoSection/Footer.jsx';
 import NotFound from './components/notFound/NotFound.jsx';
 
 import Login from './components/login/Login.jsx'
@@ -77,16 +77,16 @@ function App() {
         <NavigationMenu/>
 
         <Routes>
-          <Route path={Path.Home} element={<HeaderHome />} />
+          <Route path={Path.Home} element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<OurServices />} />
           <Route path="/whyus" element={<WhyUs />} />
 
           <Route path="/whyus/:id" element={<WhyUsDetails />} />
 
-          <Route path="/posts" element={<PostList />} />
+          <Route path={Path.Posts} element={<PostList />} />
 
-          <Route path="/posts/create" element={<PostCreate />} />
+          <Route path={Path.PostCreate} element={<PostCreate />} />
 
           <Route path="/posts/:postId" element={<PostDetails />} />
 
