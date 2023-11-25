@@ -60,23 +60,34 @@ function App() {
     navigate(Path.Home)
   };
 
-  const[errorMesage,SetErrorMessage] = useState({});
+  const [errorMesage, SetErrorMessage] = useState({});
 
-  const registerSubmitHandler = async(values) =>{
+  const registerSubmitHandler = async (values) => {
     console.log(values); // values, taked from Register input form. 
     //values  ---    {email: 'valentina.patova@abv.bg', password: '123', confirmPassword: '123'}    
-    
-    if(values.password !== values.confirmPassword) {
+
+    if (values.password !== values.confirmPassword) {
 
       console.log('Паролата за потвърждение не съвпада с въведената парола!');
 
-      SetErrorMessage(state=>({...state, text:'Паролата за потвърждение не съвпада с въведената парола!'}));
+      SetErrorMessage(state => ({ ...state, text: 'Паролата за потвърждение не съвпада с въведената парола!' }));
 
       navigate(Path.Error);
     }
 
-    
+    const result = await authService.register(values.email, values.password);
 
+    //   {
+    //     "email": "valentina.patova@abv.bg",
+    //     "password": "123",
+    //     "_createdOn": 1700942559952,
+    //     "_id": "60725e28-07d6-44a9-93e3-a29382f2af1e",
+    //     "accessToken": "1a9a4a00bf8c5580e416df84e41e46e331fb337f683069afb7348d31d40e415d"
+    // }
+
+    setAuth(result);
+
+    navigate(Path.Home);
 
   };
 
@@ -84,8 +95,8 @@ function App() {
 
     loginSubmitHandler,
     registerSubmitHandler,
-    username : auth.username,      
-    email:auth.email,
+    username: auth.username,
+    email: auth.email,
     isAuthenticated: !!auth.username,
 
   }
@@ -95,7 +106,7 @@ function App() {
 
       < div className="sub_page">
 
-        <NavigationMenu/>
+        <NavigationMenu />
 
         <Routes>
           <Route path={Path.Home} element={<Home />} />
@@ -109,7 +120,7 @@ function App() {
 
           <Route path="/posts/:postId" element={<PostDetails />} />
 
-          <Route path={Path.PostCreate} element={<PostCreate />} />          
+          <Route path={Path.PostCreate} element={<PostCreate />} />
 
           {/* <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/>  */}
@@ -118,11 +129,11 @@ function App() {
 
           <Route path={Path.Register} element={<Register />} />
 
-          <Route path={Path.Logout} element ={<Logout/>}/>
+          <Route path={Path.Logout} element={<Logout />} />
 
           <Route path={Path.NotFound} element={<NotFound />} />
 
-         <Route path={Path.Error} element={<Error message={errorMesage} />} />        </Routes>
+          <Route path={Path.Error} element={<Error message={errorMesage} />} />        </Routes>
 
 
         <InfoSection />
