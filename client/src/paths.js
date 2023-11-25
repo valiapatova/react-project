@@ -6,6 +6,8 @@ const Path = {
     Logout : "/logout",
     Posts :"/posts",
     PostCreate : "/posts/create",
+    NotFound : "*",
+    Error:"/error",
 
 };
 

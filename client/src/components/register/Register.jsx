@@ -59,7 +59,7 @@ const Register = () => {
                     [RegisterFormKeys.Email]: ''
                 }));
             }
-        };
+        };    
     }, [values]);
 
 

@@ -24,6 +24,7 @@ import PostList from './components/post-list/PostList.jsx'
 import PostDetails from './components/post-details/PostDetails.jsx'
 
 import PostCreate from './components/post-create/PostCreate.jsx'
+import Error from './components/error/Error.jsx';
 
 // import Team from './components/Team';
 // import OurClients from './components/OurClients';
@@ -59,8 +60,26 @@ function App() {
     navigate(Path.Home)
   };
 
+  const[errorMesage,SetErrorMessage] = useState({});
+
   const registerSubmitHandler = async(values) =>{
-    console.log(values);
+    console.log(values); // values, taked from Register input form. 
+    //values  ---    {email: 'valentina.patova@abv.bg', password: '123', confirmPassword: '123'}
+
+    
+    
+    if(values.password !== values.confirmPassword) {
+
+      console.log('Паролата за потвърждение не съвпада с въведената парола!');
+
+      SetErrorMessage(state=>({...state, text:'Паролата за потвърждение не съвпада с въведената парола!'}));
+
+      navigate(Path.Error);
+
+
+
+    }
+
 
   };
 
@@ -106,8 +125,9 @@ function App() {
 
           <Route path={Path.Logout} element ={<Logout/>}/>
 
-          <Route path="*" element={<NotFound />} />
+          <Route path={Path.NotFound} element={<NotFound />} />
 
+         <Route path={Path.Error} element={<Error message={errorMesage} />} />
 
         </Routes>
 
