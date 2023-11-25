@@ -77,6 +77,8 @@ function App() {
 
     const result = await authService.register(values.email, values.username, values.password);
 
+    console.log(result)
+
     //   {
     //     "email": "valentina@abv.bg",
     //     "username": "valentina",
@@ -96,9 +98,9 @@ function App() {
 
     loginSubmitHandler,
     registerSubmitHandler,
-    username: auth.username,
+    username: auth.username || auth.email,
     email: auth.email,
-    isAuthenticated: !!auth.username,
+    isAuthenticated: !!auth.email,
 
   }
 
