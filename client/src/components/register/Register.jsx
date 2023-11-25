@@ -100,6 +100,7 @@ const Register = () => {
                             className={errors[RegisterFormKeys.Email] ? styles.inputError : "form-control"}
                             value={values[RegisterFormKeys.Email]}
                             onChange={onChange}
+                            required
                         />
                         {errors[RegisterFormKeys.Email] && (
                             <p className={styles.errorMessage}>{errors[RegisterFormKeys.Email]}</p>
@@ -131,9 +132,10 @@ const Register = () => {
                             className="form-control"
                             value={values[RegisterFormKeys.Password]}
                             onChange={onChange}
+                            required
                         />
                     </div>
-                    
+
                     <div className="form-group">
                         <label htmlFor="confirmPassword">Потвърди паролата</label>
                         <input type="password"
@@ -142,6 +144,7 @@ const Register = () => {
                             className="form-control"
                             value={values[RegisterFormKeys.ConfirmPassword]}
                             onChange={onChange}
+                            required
                         />
                     </div>
 

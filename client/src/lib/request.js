@@ -25,12 +25,20 @@ const request = async (method, url, data) => {
         method,
     });
 
-    // ??
-    // if (!response.ok) {
-    //     throw new Error('Not Found')
-    // }
+
+    // 204- None content
+
+    if (response.status === 204) {
+        return {};
+    };
 
     const result = await response.json();
+
+   
+    if (!response.ok) {
+        throw result;
+    }
+
     return result;
 
 };
