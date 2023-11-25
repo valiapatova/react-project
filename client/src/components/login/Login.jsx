@@ -16,7 +16,7 @@ const Login = () => {
 
     const { loginSubmitHandler } = useContext(AuthContext);
 
-    const { values, onChange, onSubmit, resetHandler } = useForm(loginSubmitHandler, {
+    const { values, onChange, onSubmit, onReset } = useForm(loginSubmitHandler, {
 
         //const { values, onChange, onSubmit} = useForm(loginSubmitHandler, {
 
@@ -78,7 +78,7 @@ const Login = () => {
                             </button>
                             <button type="button"
                                 className={styles.btnGrey}
-                                onClick={resetHandler}
+                                onClick={onReset}
                             >
                                 Изчисти
                             </button>

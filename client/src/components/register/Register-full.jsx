@@ -54,7 +54,7 @@ const Register = () => {
     }
 
     const errorsValidator = () => {
-        if (formValues.username.length > 20) {
+        if (formValues.username.length > 35) {
 
             setErrors(state => ({
                 ...state,

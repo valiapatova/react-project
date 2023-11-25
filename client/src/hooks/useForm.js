@@ -5,10 +5,26 @@ export default function useForm(submitHandler,initialValues){
     const[values,setValues] = useState(initialValues);
 
     const onChange = (e)=>{
-        setValues( state=> ({
-            ...state,
-            [e.target.name] : e.target.value
-        }));
+       
+            let value = '';
+            switch (e.target.type) {
+                case 'number':
+                    value = Number(e.target.value);
+                    break;
+                case 'checkbox':
+                    value = e.target.checked;
+                    break;
+                default:
+                    value = e.target.value;
+                    break;
+            };
+    
+            setValues(state => ({
+                ...state,
+                [e.target.name]: value    //e.target.value,
+            }));
+    
+            console.log(values)
     };
 
     const onSubmit=(e)=>{
@@ -17,7 +33,7 @@ export default function useForm(submitHandler,initialValues){
         submitHandler(values);
     };  
 
-    const resetHandler=()=>{
+    const onReset=()=>{
        setValues(initialValues);    
     };
 
@@ -26,7 +42,7 @@ export default function useForm(submitHandler,initialValues){
         values,
         onChange,
         onSubmit,
-        resetHandler,
+        onReset,
     }
 
 };

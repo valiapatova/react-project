@@ -30,7 +30,7 @@ export default function NavigationMenu() {
                         <Link to="/about" className="navbar-brand" >
                             <span>
                                 Рагон 14 ООД
-                                {isAuthenticated && <span style={{ marginLeft: '20px', color: 'red' }}> Здравей {username} ! </span>}
+                                {/* {isAuthenticated && <span style={{ marginLeft: '20px', color: 'red' }}> Здравей {username} ! </span>} */}
                             </span>
                         </Link>
 
@@ -68,6 +68,7 @@ export default function NavigationMenu() {
                                         <li className="nav-item" style={{ display: 'inline-block' }}>
                                             <Link to="/logout" className="nav-link">
                                                 Изход
+                                                <span style={{ marginLeft: '20px', color: 'red' }}> Здравей {username} ! </span>
                                             </Link>
                                         </li>
 

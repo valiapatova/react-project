@@ -59,11 +59,16 @@ function App() {
     navigate(Path.Home)
   };
 
+  const registerSubmitHandler = async(values) =>{
+    console.log(values);
+
+  };
+
   const values = {
 
     loginSubmitHandler,
-    username : auth.username, 
-    // password не е нужно да предаваме 
+    registerSubmitHandler,
+    username : auth.username,      
     email:auth.email,
     isAuthenticated: !!auth.username,
 
@@ -86,18 +91,20 @@ function App() {
 
           <Route path={Path.Posts} element={<PostList />} />
 
+          <Route path="/posts/:postId" element={<PostDetails />} />
+
           <Route path={Path.PostCreate} element={<PostCreate />} />
 
-          <Route path="/posts/:postId" element={<PostDetails />} />
+          
 
           {/* <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/>  */}
 
-          <Route path="/login" element={<Login />} />
+          <Route path={Path.Login} element={<Login />} />
 
-          <Route path="/register" element={<Register />} />
+          <Route path={Path.Register} element={<Register />} />
 
-          <Route path="/logout" element ={<Logout/>}/>
+          <Route path={Path.Logout} element ={<Logout/>}/>
 
           <Route path="*" element={<NotFound />} />
 

@@ -52,7 +52,7 @@
 } */
 
 .inputError:focus {
-  color: #495057;
+  color: red;
   background-color: #fff;
   border-color: #80bdff;
   outline: 0;

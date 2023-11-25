@@ -1,72 +1,66 @@
-import { useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
+
 import styles from './Register.module.css';
 
-const initialFormValuesState = {
-    username: "",
-    password: "",
-    confirmPassword: "",
-    firstName: "",
-    lastName: "",
-    email: ""
-};
+import AuthContext from '../../contexts/authContex';
+import useForm from '../../hooks/useForm';
+
+// const initialFormValuesState = {
+//     username: "",
+//     password: "",
+//     confirmPassword: "",
+//     email: ""
+// };
+
+const RegisterFormKeys = {
+
+    // Username: "username",
+    Email: "email",
+    Password: "password",
+    ConfirmPassword: "confirmPassword",
+}
+
+
 const Register = () => {
 
-    const [formValues, setFormValues] = useState(initialFormValuesState);
-    const [errors, setErrors] = useState({});
+    const { registerSubmitHandler } = useContext(AuthContext);
+
+    const { values, onChange, onSubmit, onReset } = useForm(registerSubmitHandler, {
+        [RegisterFormKeys.Email]: '',
+        [RegisterFormKeys.Password]: '',
+        [RegisterFormKeys.ConfirmPassword]: '',
+
+    })
+
+    const [errors, setErrors] = useState({
+
+        // [RegisterFormKeys.Email]: '',
+        // [RegisterFormKeys.Password]: '',
+        // [RegisterFormKeys.ConfirmPassword]: '',
+    });
 
 
-    const changeHandler = (e) => {
+    useEffect(() => {
 
-        let value = '';
-        switch (e.target.type) {
-            case 'number':
-                value = Number(e.target.value);
-                break;
-            case 'checkbox':
-                value = e.target.checked;
-                break;
-            default:
-                value = e.target.value;
-                break;
-        };
+        console.log('Errors ' + values.email);
 
-        setFormValues(state => ({
-            ...state,
-            [e.target.name]: value    //e.target.value,
-        }));
-
-        console.log(formValues)
-    };
-
-    const resetFormHandler = () => {
-        setFormValues(initialFormValuesState)
-        setErrors({});
-        console.log(formValues);
-        console.log(errors);
-    };
-
-    const submitFormHandler = (e) => {
-        e.preventDefault();
-        console.log(formValues);
-        console.log(errors);
-
-        resetFormHandler();
-    }
-
-    const errorsValidator = () => {
-        if (formValues.username.length > 20) {
+        if (values[RegisterFormKeys.Email].length > 30) {
 
             setErrors(state => ({
                 ...state,
-                username: "Потребителското име е твърде дълго"
+                [RegisterFormKeys.Email]: "Имейла е твърде дълъг !"
             }));
+
         } else {
-            if (errors.username) {
-                setErrors(state => ({ ...state, username: '' }));
+            if (errors[RegisterFormKeys.Email]) {
+
+                setErrors(state => ({
+                    ...state,
+                    [RegisterFormKeys.Email]: ''
+                }));
             }
         };
-    };
-
+    }, [values]);
 
 
     return (
@@ -75,54 +69,69 @@ const Register = () => {
 
             <h2>Регистрация</h2>
 
-            <form onSubmit={submitFormHandler}>
+            <form onSubmit={onSubmit}>
 
-                <div className="form-group">
+                {/* <div className="form-group">
                     <label htmlFor="username">Потребителско име</label>
-                   
+
                     <input type="text"
                         name="username"
                         id="username"
                         //className="form-control"
-                        value={formValues.username}
-                        onChange={changeHandler}
-                        onBlur={errorsValidator}
-                        className={errors.username ? styles.inputError:"form-control"}
+                        value={values.username}
+                        onChange={onChange}                        
+                        className={errors.username ? styles.inputError : "form-control"}
                     />
-                  
 
                     {errors.username && (
                         <p className={styles.errorMessage}>{errors.username}</p>
                     )}
+                </div> */}
+
+                <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input type="email"
+                        name={RegisterFormKeys.Email}
+                        id="email"
+                        className={errors[RegisterFormKeys.Email] ? styles.inputError : "form-control"}
+                        value={values[RegisterFormKeys.Email]}
+                        onChange={onChange}                        
+                    />
+                    {errors[RegisterFormKeys.Email] && (
+                        <p className={styles.errorMessage}>{errors[RegisterFormKeys.Email]}</p>
+                    )}
+
                 </div>
+
                 <div className="form-group">
                     <label htmlFor="password">Парола</label>
                     <input type="password"
-                        name="password"
+                        name={RegisterFormKeys.Password}
                         id="password"
                         className="form-control"
-                        value={formValues.password}
-                        onChange={changeHandler}
+                        value={values[RegisterFormKeys.Password]}
+                        onChange={onChange}
                     />
                 </div>
                 <div className="form-group">
                     <label htmlFor="confirmPassword">Потвърди паролата</label>
                     <input type="password"
-                        name="confirmPassword"
+                        name={RegisterFormKeys.ConfirmPassword}
                         id="confirmPassword"
                         className="form-control"
-                        value={formValues.confirmPassword}
-                        onChange={changeHandler}
+                        value={values[RegisterFormKeys.ConfirmPassword]}
+                        onChange={onChange}
                     />
                 </div>
-                <div className="form-group">
+
+                {/* <div className="form-group">
                     <label htmlFor="firstName">Име</label>
                     <input type="text"
                         name="firstName"
                         id="firstName"
                         className="form-control"
-                        value={formValues.firstName}
-                        onChange={changeHandler}
+                        value={values.firstName}
+                        onChange={onChange}
                     />
                 </div>
                 <div className="form-group">
@@ -131,27 +140,18 @@ const Register = () => {
                         name="lastName"
                         id="lastName"
                         className="form-control"
-                        value={formValues.lastName}
-                        onChange={changeHandler}
+                        value={values.lastName}
+                        onChange={onChange}
                     />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email"
-                        name="email"
-                        id="email"
-                        className="form-control"
-                        value={formValues.email}
-                        onChange={changeHandler}
-                    />
-                </div>
+                </div> */}
+
 
 
                 <div className="form-group">
                     <button
                         type="submit"
                         className={styles.btnGreen}
-                        disabled={Object.values(errors).some(x=>x)}
+                        disabled={Object.values(errors).some(x => x)}
                     >
                         Регистрация
                     </button>
@@ -159,11 +159,12 @@ const Register = () => {
                     <button
                         type="button"
                         className={styles.btnGrey}
-                        onClick={resetFormHandler}
+                        onClick={onReset}
                     >
                         Изчисти
                     </button>
-                    {/* <a className={styles.btnOringe}>Вход</a> */}
+
+                    {/* <a className={styles.btnOringe}>Вход</a>  */}
 
                 </div>
 
