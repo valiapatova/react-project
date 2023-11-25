@@ -16,6 +16,7 @@ const RegisterFormKeys = {
 
     // Username: "username",
     Email: "email",
+    Username: "username",
     Password: "password",
     ConfirmPassword: "confirmPassword",
 }
@@ -27,17 +28,13 @@ const Register = () => {
 
     const { values, onChange, onSubmit, onReset } = useForm(registerSubmitHandler, {
         [RegisterFormKeys.Email]: '',
+        [RegisterFormKeys.Username]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.ConfirmPassword]: '',
 
     })
 
-    const [errors, setErrors] = useState({
-
-        // [RegisterFormKeys.Email]: '',
-        // [RegisterFormKeys.Password]: '',
-        // [RegisterFormKeys.ConfirmPassword]: '',
-    });
+    const [errors, setErrors] = useState({});
 
 
     useEffect(() => {
@@ -60,6 +57,29 @@ const Register = () => {
                 }));
             }
         };
+
+        console.log('Errors ' + values.username);
+
+        if (values[RegisterFormKeys.Username].length > 30) {
+
+            setErrors(state => ({
+                ...state,
+                [RegisterFormKeys.Email]: "Потребителското име е твърде дълъг !"
+            }));
+
+        } else {
+            if (errors[RegisterFormKeys.Username]) {
+
+                setErrors(state => ({
+                    ...state,
+                    [RegisterFormKeys.Username]: ''
+                }));
+            }
+        };
+
+
+
+
     }, [values]);
 
 
@@ -71,23 +91,6 @@ const Register = () => {
                 <h2>Регистрация</h2>
 
                 <form onSubmit={onSubmit}>
-
-                    {/* <div className="form-group">
-                    <label htmlFor="username">Потребителско име</label>
-
-                    <input type="text"
-                        name="username"
-                        id="username"
-                        //className="form-control"
-                        value={values.username}
-                        onChange={onChange}                        
-                        className={errors.username ? styles.inputError : "form-control"}
-                    />
-
-                    {errors.username && (
-                        <p className={styles.errorMessage}>{errors.username}</p>
-                    )}
-                </div> */}
 
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -101,7 +104,23 @@ const Register = () => {
                         {errors[RegisterFormKeys.Email] && (
                             <p className={styles.errorMessage}>{errors[RegisterFormKeys.Email]}</p>
                         )}
+                    </div>
 
+                    <div className="form-group">
+                        <label htmlFor="username">Потребителско име</label>
+
+                        <input type="text"
+                            name="username"
+                            id="username"
+                            //className="form-control"
+                            value={values.username}
+                            onChange={onChange}
+                            className={errors.username ? styles.inputError : "form-control"}
+                        />
+
+                        {errors.username && (
+                            <p className={styles.errorMessage}>{errors.username}</p>
+                        )}                        
                     </div>
 
                     <div className="form-group">
@@ -114,6 +133,7 @@ const Register = () => {
                             onChange={onChange}
                         />
                     </div>
+                    
                     <div className="form-group">
                         <label htmlFor="confirmPassword">Потвърди паролата</label>
                         <input type="password"

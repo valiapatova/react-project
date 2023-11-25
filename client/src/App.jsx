@@ -75,14 +75,15 @@ function App() {
       navigate(Path.Error);
     }
 
-    const result = await authService.register(values.email, values.password);
+    const result = await authService.register(values.email, values.username, values.password);
 
     //   {
-    //     "email": "valentina.patova@abv.bg",
+    //     "email": "valentina@abv.bg",
+    //     "username": "valentina",
     //     "password": "123",
-    //     "_createdOn": 1700942559952,
-    //     "_id": "60725e28-07d6-44a9-93e3-a29382f2af1e",
-    //     "accessToken": "1a9a4a00bf8c5580e416df84e41e46e331fb337f683069afb7348d31d40e415d"
+    //     "_createdOn": 1700945747247,
+    //     "_id": "216542ec-9339-41d8-9686-9046609484a9",
+    //     "accessToken": "8a2496b7da54a1734349cd4408d82f7bb26856ba8635762fd7ef760a248760fd"
     // }
 
     setAuth(result);
