@@ -59,19 +59,20 @@ const Register = () => {
                     [RegisterFormKeys.Email]: ''
                 }));
             }
-        };    
+        };
     }, [values]);
 
 
     return (
+        <div className={styles.regContainer}>
 
-        <div className="container mt-2 mb-2">
+            <div className="container mt-2 mb-2" >
 
-            <h2>Регистрация</h2>
+                <h2>Регистрация</h2>
 
-            <form onSubmit={onSubmit}>
+                <form onSubmit={onSubmit}>
 
-                {/* <div className="form-group">
+                    {/* <div className="form-group">
                     <label htmlFor="username">Потребителско име</label>
 
                     <input type="text"
@@ -88,43 +89,43 @@ const Register = () => {
                     )}
                 </div> */}
 
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email"
-                        name={RegisterFormKeys.Email}
-                        id="email"
-                        className={errors[RegisterFormKeys.Email] ? styles.inputError : "form-control"}
-                        value={values[RegisterFormKeys.Email]}
-                        onChange={onChange}                        
-                    />
-                    {errors[RegisterFormKeys.Email] && (
-                        <p className={styles.errorMessage}>{errors[RegisterFormKeys.Email]}</p>
-                    )}
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input type="email"
+                            name={RegisterFormKeys.Email}
+                            id="email"
+                            className={errors[RegisterFormKeys.Email] ? styles.inputError : "form-control"}
+                            value={values[RegisterFormKeys.Email]}
+                            onChange={onChange}
+                        />
+                        {errors[RegisterFormKeys.Email] && (
+                            <p className={styles.errorMessage}>{errors[RegisterFormKeys.Email]}</p>
+                        )}
 
-                </div>
+                    </div>
 
-                <div className="form-group">
-                    <label htmlFor="password">Парола</label>
-                    <input type="password"
-                        name={RegisterFormKeys.Password}
-                        id="password"
-                        className="form-control"
-                        value={values[RegisterFormKeys.Password]}
-                        onChange={onChange}
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="confirmPassword">Потвърди паролата</label>
-                    <input type="password"
-                        name={RegisterFormKeys.ConfirmPassword}
-                        id="confirmPassword"
-                        className="form-control"
-                        value={values[RegisterFormKeys.ConfirmPassword]}
-                        onChange={onChange}
-                    />
-                </div>
+                    <div className="form-group">
+                        <label htmlFor="password">Парола</label>
+                        <input type="password"
+                            name={RegisterFormKeys.Password}
+                            id="password"
+                            className="form-control"
+                            value={values[RegisterFormKeys.Password]}
+                            onChange={onChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="confirmPassword">Потвърди паролата</label>
+                        <input type="password"
+                            name={RegisterFormKeys.ConfirmPassword}
+                            id="confirmPassword"
+                            className="form-control"
+                            value={values[RegisterFormKeys.ConfirmPassword]}
+                            onChange={onChange}
+                        />
+                    </div>
 
-                {/* <div className="form-group">
+                    {/* <div className="form-group">
                     <label htmlFor="firstName">Име</label>
                     <input type="text"
                         name="firstName"
@@ -147,29 +148,30 @@ const Register = () => {
 
 
 
-                <div className="form-group">
-                    <button
-                        type="submit"
-                        className={styles.btnGreen}
-                        disabled={Object.values(errors).some(x => x)}
-                    >
-                        Регистрация
-                    </button>
+                    <div className="form-group">
+                        <button
+                            type="submit"
+                            className={styles.btnGreen}
+                            disabled={Object.values(errors).some(x => x)}
+                        >
+                            Регистрация
+                        </button>
 
-                    <button
-                        type="button"
-                        className={styles.btnGrey}
-                        onClick={onReset}
-                    >
-                        Изчисти
-                    </button>
+                        <button
+                            type="button"
+                            className={styles.btnGrey}
+                            onClick={onReset}
+                        >
+                            Изчисти
+                        </button>
 
-                    {/* <a className={styles.btnOringe}>Вход</a>  */}
+                        {/* <a className={styles.btnOringe}>Вход</a>  */}
 
-                </div>
+                    </div>
 
-            </form>
+                </form>
 
+            </div>
         </div>
 
 

@@ -73,11 +73,11 @@ const Login = () => {
                                 value='Вход'
                             />
 
-                            <button className={styles.btnOringe}>
-                                <Link to="/register">Регистрация</Link>
+                            <button className={styles.btnOringe} >
+                                <Link to="/register" style={{color:'white'}}>Регистрация</Link>
                             </button>
                             <button type="button"
-                                className={styles.btnGrey}
+                                className={styles.btnGrey}                                
                                 onClick={onReset}
                             >
                                 Изчисти
