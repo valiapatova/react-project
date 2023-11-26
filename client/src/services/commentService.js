@@ -9,9 +9,11 @@ export const getAll = async (postId) => {
             where: `postId="${postId}"`
         });
 
-        const result = await request.get(`${baseUrl}`);
+        const result = await request.get(`${baseUrl}?${query}`);
 
-        return result.filter(comment => comment.postId === postId);
+        return result;
+
+        //return result.filter(comment => comment.postId === postId);
         //return Object.values(result).filter(comment => comment.postId === postId);
 
     } catch (error) {
