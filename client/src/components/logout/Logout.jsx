@@ -1,6 +1,26 @@
-export default function Logout(){
+import { useContext, useEffect } from "react";
+import {useNavigate} from 'react-router-dom';
 
-    return(
-        <h1>Logout ....</h1>
-    );
+import * as  authService from '../../services/authService.js';
+import Path from "../../paths";
+import AuthContext from "../../contexts/authContex.js";
+
+export default function Logout(){
+    const navigate=useNavigate();
+    const{logoutHandler} = useContext(AuthContext);
+
+
+
+    useEffect(()=>{
+        authService.logout()
+            .then(()=>{
+                logoutHandler();
+                navigate(Path.Home);
+            })
+            .catch(()=>navigate(Path.Home));
+
+    },[]);    
+    
+    return null;
+
 };

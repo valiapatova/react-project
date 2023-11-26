@@ -21,4 +21,4 @@ export const register = (email, username, password) =>
     });
 
 
-export const logout = () => request.get(`${baseUrl}${Logout}`);
+export const logout = () => request.get(`${baseUrl}${Path.Logout}`);

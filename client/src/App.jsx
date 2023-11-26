@@ -35,7 +35,11 @@ function App() {
 
   const navigate = useNavigate();
 
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState(()=>{
+    localStorage.removeItem('accessToken');
+
+    return{};
+  });
 
   const loginSubmitHandler = async (values) => {
 
@@ -56,6 +60,8 @@ function App() {
     //	{code: 403, message: "Login or password don't match"}
 
     setAuth(result);
+
+    localStorage.setItem('accessToken',result.accessToken);
 
     navigate(Path.Home)
   };
@@ -89,15 +95,23 @@ function App() {
     // }
 
     setAuth(result);
+    localStorage.setItem('accessToken',result.accessToken);
 
     navigate(Path.Home);
 
   };
 
+  const logoutHandler = ()=> {
+    setAuth({});  
+    localStorage.removeItem('accessToken');
+
+  }
+
   const values = {
 
     loginSubmitHandler,
     registerSubmitHandler,
+    logoutHandler,
     username: auth.username || auth.email,
     email: auth.email,
     isAuthenticated: !!auth.accessToken,
@@ -136,8 +150,9 @@ function App() {
 
           <Route path={Path.NotFound} element={<NotFound />} />
 
-          <Route path={Path.Error} element={<Error message={errorMesage} />} />        </Routes>
+          <Route path={Path.Error} element={<Error message={errorMesage} />} />
 
+        </Routes>
 
         <InfoSection />
         <Footer />
