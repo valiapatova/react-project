@@ -104,6 +104,8 @@ function App() {
   const logoutHandler = ()=> {
     setAuth({});  
     localStorage.removeItem('accessToken');
+    
+    navigate(Path.Home);
 
   }
 
