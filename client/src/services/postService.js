@@ -1,6 +1,8 @@
 import * as request from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/jsonstore/posts';
+const baseUrl = 'http://localhost:3030/data/posts';
+
+//const baseUrl = 'http://localhost:3030/jsonstore/posts';
 
 // return result of request as Array , all posts
 export const getAll = async () => {
@@ -8,7 +10,8 @@ export const getAll = async () => {
     try {
         const result = await request.get(baseUrl);
 
-        return Object.values(result);
+        return result;
+        //return Object.values(result);
 
     } catch (error) {
         throw new Error('Get all posts faild');

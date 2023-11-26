@@ -1,6 +1,7 @@
 import * as request from '../lib/request';
 
-const baseUrl = 'http://localhost:3030/jsonstore/comments';
+const baseUrl = 'http://localhost:3030/data/comments';
+//const baseUrl = 'http://localhost:3030/jsonstore/comments';
 
 export const getAll = async (postId) => {
     try {
@@ -10,8 +11,8 @@ export const getAll = async (postId) => {
 
         const result = await request.get(`${baseUrl}`);
 
-        // TODO: temp solution until migration to collections service 
-        return Object.values(result).filter(comment => comment.postId === postId);
+        return result.filter(comment => comment.postId === postId);
+        //return Object.values(result).filter(comment => comment.postId === postId);
 
     } catch (error) {
         throw new Error(`Get all comments for postId ${postId} failed`);
