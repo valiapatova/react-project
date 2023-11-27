@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import * as postService from '../../services/postService.js';
 
-import styles from './PostCreateEdit.module.css';
+import styles from './PostCreate.module.css';
 
 export default function PostCreate() {
     const navigate = useNavigate();
