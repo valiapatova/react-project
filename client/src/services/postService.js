@@ -11,7 +11,7 @@ export const getAll = async () => {
         const result = await request.get(baseUrl);
 
         return result;
-        //return Object.values(result);
+       // return Object.values(result);
 
     } catch (error) {
         throw new Error('Get all posts faild');

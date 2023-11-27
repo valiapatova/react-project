@@ -19,7 +19,8 @@ const buildOptions = (data) => {
         };
     }
 
-    console.log(options)
+    console.log('Options:');
+    console.log(options);  
     return options;
 };
 

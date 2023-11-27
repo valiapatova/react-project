@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 
+import AuthContext from '../../contexts/authContex';
 import * as postService from '../../services/postService.js';
 import * as commentService from '../../services/commentService.js';
 
 import styles from './PostDetails.module.css';
 
 export default function PostDetails() {
+    const { email } = useContext(AuthContext);
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
     const { postId } = useParams();
@@ -25,12 +27,11 @@ export default function PostDetails() {
         const formData = new FormData(e.currentTarget);
 
         const newComment = await commentService.create(
-            postId,
-            formData.get('username'),
+            postId,            
             formData.get('comment')
         );
 
-        setComments(state => [...state, newComment]);
+        setComments(state => [...state, { ...newComment, owner: { email } }]);
     }
 
     return (
@@ -52,9 +53,9 @@ export default function PostDetails() {
                     <div className={styles.details_comments}>
                         <h3>Диагнози:</h3>
                         <ul>
-                            {comments.map(({ _id, username, text }) => (
+                        {comments.map(({ _id, text, owner: { email } }) => (
                                 <li key={_id} className={styles.comment}>
-                                    <p>{username}: {text}</p>
+                                    <p>{email}: {text}</p>
                                 </li>
                             ))}
                         </ul>
@@ -73,8 +74,7 @@ export default function PostDetails() {
 
                 <article className={styles.create_comment}>
                     <label>Добави диагноза :</label>
-                    <form className={styles.form} onSubmit={addCommentHandler}>
-                        <input type="text" name="username" placeholder="username" className={styles.inputText} />
+                    <form className={styles.form} onSubmit={addCommentHandler}>                       
                         <textarea name="comment" placeholder="Диагноза......"></textarea>
                         <input className={styles.btn_submit} type="submit" value="Добави" />
                     </form>
