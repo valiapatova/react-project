@@ -27,7 +27,7 @@ export default function PostDetails() {
         const formData = new FormData(e.currentTarget);
 
         const newComment = await commentService.create(
-            postId,            
+            postId,
             formData.get('comment')
         );
 
@@ -37,49 +37,50 @@ export default function PostDetails() {
     return (
         // <div className="hero_area">
 
-            <section id="post-details" className={styles.post_details}>
+        <section id="post-details" className={styles.post_details}>
 
-                <h2><b>Детайли за медицинска карта</b></h2>
-                <div className={styles.infoSection}>
-                    <div className={styles.post_header}>
-                        <img className={styles.post_img} src={post.imageUrl} alt={post.title} />
-                        <h1>{post.title}</h1>
-                        <span className={styles.levels}>Години: {post.maxLevel}</span>
-                        <p className={styles.type}>{post.category}</p>
-                    </div>
-
-                    <p className={styles.text}>{post.summary}</p>
-
-                    <div className={styles.details_comments}>
-                        <h3>Диагнози:</h3>
-                        <ul>
-                        {comments.map(({ _id, text, owner: { email } }) => (
-                                <li key={_id} className={styles.comment}>
-                                    <p>{email}: {text}</p>
-                                </li>
-                            ))}
-                        </ul>
-
-                        {comments.length === 0 && (
-                            <p className={styles.no_articles}>Няма въведени диагнози - коментари</p>
-                        )}
-                    </div>
-
-                    {/* <!-- Edit/Delete buttons ( Only for creator of this game )  -->
-                <div className="buttons">
-                    <a href="#" className="button">Edit</a>
-                    <a href="#" className="button">Delete</a>
-                </div> */}
+            <h2><b>Детайли за медицинска карта</b></h2>
+            <div className={styles.infoSection}>
+                <div className={styles.post_header}>
+                    <img className={styles.post_img} src={post.imageUrl} alt={post.title} />
+                    <h1>{post.title}</h1>
+                    <span className={styles.levels}>Години: {post.maxLevel}</span>
+                    <p className={styles.type}>{post.category}</p>
                 </div>
 
-                <article className={styles.create_comment}>
-                    <label>Добави диагноза :</label>
-                    <form className={styles.form} onSubmit={addCommentHandler}>                       
-                        <textarea name="comment" placeholder="Диагноза......"></textarea>
-                        <input className={styles.btn_submit} type="submit" value="Добави" />
-                    </form>
-                </article>
-            </section>
+                <p className={styles.text}>{post.summary}</p>
+
+                <div className={styles.details_comments}>
+                    <h3>Диагнози:</h3>
+                    <ul>
+                        {comments.map(({ _id, text, owner: { email } }) => (
+                            <li key={_id} className={styles.comment}>
+                                <p>{email}: {text}</p>
+                            </li>
+                        ))}
+                    </ul>
+
+                    {comments.length === 0 && (
+                        <p className={styles.no_articles}>Няма въведени диагнози - коментари</p>
+                    )}
+                </div>
+
+                {/* Edit/Delete buttons ( Only for creator of this game )   */}
+
+                <div className={styles.buttons}>
+                    <a href="#" className={styles.button}>Edit</a>
+                    <a href="#" className={styles.button}>Delete</a>
+                </div>
+            </div>
+
+            <article className={styles.create_comment}>
+                <label>Добави диагноза :</label>
+                <form className={styles.form} onSubmit={addCommentHandler}>
+                    <textarea name="comment" placeholder="Диагноза......"></textarea>
+                    <input className={styles.btn_submit} type="submit" value="Добави" />
+                </form>
+            </article>
+        </section>
 
         // </div>
 
