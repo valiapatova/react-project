@@ -1,14 +1,16 @@
 import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import AuthContext from '../../contexts/authContex';
 import * as postService from '../../services/postService.js';
 import * as commentService from '../../services/commentService.js';
 
 import styles from './PostDetails.module.css';
+import Path from "../../paths.js";
 
 export default function PostDetails() {
-    const { email } = useContext(AuthContext);
+    const { email, userId } = useContext(AuthContext);
+
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
     const { postId } = useParams();
@@ -33,6 +35,7 @@ export default function PostDetails() {
 
         setComments(state => [...state, { ...newComment, owner: { email } }]);
     }
+
 
     return (
         // <div className="hero_area">
@@ -65,13 +68,22 @@ export default function PostDetails() {
                     )}
                 </div>
 
+
                 {/* Edit/Delete buttons ( Only for creator of this game )   */}
 
-                <div className={styles.buttons}>
-                    <a href="#" className={styles.button}>Edit</a>
-                    <a href="#" className={styles.button}>Delete</a>
-                </div>
+                {userId === post._ownerId && (
+
+                    <div className={styles.buttons}>
+
+                        <Link to={Path.PostEdit} className={styles.button}>Редактирай</Link>
+
+                        <Link to={Path.PostDelete} className={styles.button}>Изтрий</Link>
+                    </div>
+
+                )}
+
             </div>
+
 
             <article className={styles.create_comment}>
                 <label>Добави диагноза :</label>

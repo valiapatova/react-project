@@ -288,7 +288,7 @@ textarea {
 
 .button {
     height: 15%;
-    background-color: #5d7f9c;
+    background-color: #229e3f;    
     padding: 14px;
     margin-top: auto;
     font-size: 21px;
@@ -298,7 +298,7 @@ textarea {
 }
 
 .button:hover {
-    background-color: #229e3f;
+    background-color:  #5d7f9c;
     color: white;
 }
 

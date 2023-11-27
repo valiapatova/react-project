@@ -24,6 +24,9 @@ import PostList from './components/post-list/PostList.jsx'
 import PostDetails from './components/post-details/PostDetails.jsx'
 
 import PostCreate from './components/post-create/PostCreate.jsx'
+import PostEdit from './components/post-edit/PostEdit.jsx';
+import PostDelete from './components/post-delete/PostDelete.jsx';
+
 import Error from './components/error/Error.jsx';
 
 // import Team from './components/Team';
@@ -35,10 +38,10 @@ function App() {
 
   const navigate = useNavigate();
 
-  const [auth, setAuth] = useState(()=>{
+  const [auth, setAuth] = useState(() => {
     localStorage.removeItem('accessToken');
 
-    return{};
+    return {};
   });
 
   const loginSubmitHandler = async (values) => {
@@ -61,7 +64,7 @@ function App() {
 
     setAuth(result);
 
-    localStorage.setItem('accessToken',result.accessToken);
+    localStorage.setItem('accessToken', result.accessToken);
 
     navigate(Path.Home)
   };
@@ -95,16 +98,16 @@ function App() {
     // }
 
     setAuth(result);
-    localStorage.setItem('accessToken',result.accessToken);
+    localStorage.setItem('accessToken', result.accessToken);
 
     navigate(Path.Home);
 
   };
 
-  const logoutHandler = ()=> {
-    setAuth({});  
+  const logoutHandler = () => {
+    setAuth({});
     localStorage.removeItem('accessToken');
-    
+
     navigate(Path.Home);
 
   }
@@ -116,6 +119,7 @@ function App() {
     logoutHandler,
     username: auth.username || auth.email,
     email: auth.email,
+    userId: auth._id,
     isAuthenticated: !!auth.accessToken,
 
   }
@@ -139,7 +143,9 @@ function App() {
 
           <Route path="/posts/:postId" element={<PostDetails />} />
 
-          <Route path={Path.PostCreate} element={<PostCreate />} />
+          <Route path={Path.PostCreate} element={<PostCreate />}/>
+          <Route path={Path.PostEdit} element={< PostEdit />} />
+          <Route path={Path.PostDelete} element={<PostDelete />} />
 
           {/* <Route path="/team" element={<Team/>}/>
           <Route path="/clients" element={<OurClients/>}/>  */}
