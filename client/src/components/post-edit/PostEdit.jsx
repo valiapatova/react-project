@@ -17,6 +17,7 @@ export default function PostEdit() {
         title: '',
         category: '',
         maxLevel: '',
+        imageUrl: '',
         summary: '',
     });
 
@@ -63,11 +64,11 @@ export default function PostEdit() {
         }
     }
 
-    const onChange = (e) =>{
+    const onChange = (e) => {
 
-        setPost(state=>({
+        setPost(state => ({
             ...state,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
         }));
 
     };
@@ -88,25 +89,25 @@ export default function PostEdit() {
                                 <h2>Редактирай карта</h2>
                                 <label className={styles.label} htmlFor="title">Име:</label>
                                 <input
-                                     className={styles.inputText}
-                                      type="text" 
-                                      id="title"
-                                      name="title"
-                                       placeholder="трите имена..."
-                                       value={post.title}
-                                       onChange={onChange}
-                                       />
-
-                                <label className={styles.label} htmlFor="category">Фирма:</label>
-                                <input 
                                     className={styles.inputText}
                                     type="text"
-                                    id="category" 
+                                    id="title"
+                                    name="title"
+                                    placeholder="трите имена..."
+                                    value = {post.title}
+                                    onChange = {onChange}
+                                />
+
+                                <label className={styles.label} htmlFor="category">Фирма:</label>
+                                <input
+                                    className={styles.inputText}
+                                    type="text"
+                                    id="category"
                                     name="category"
-                                     placeholder="фирма..." 
-                                     value={post.category}
-                                     onChange={onChange}
-                                     />
+                                    placeholder="фирма..."
+                                    value={post.category}
+                                    onChange={onChange}
+                                />
 
                                 <label className={styles.label} htmlFor="maxLevel">Възраст:</label>
                                 <input
@@ -118,41 +119,37 @@ export default function PostEdit() {
                                     className={styles.inputText}
                                     value={post.maxLevel}
                                     onChange={onChange}
-                                    />
+                                />
 
                                 <label className={styles.label} htmlFor="imageUrl">Снимка:</label>
                                 <input
-                                     className={styles.inputText}
-                                     type="text" id="imageUrl"
-                                     name="imageUrl"
-                                     placeholder="качи снимка..."
-                                     value={post.imageUrl}
-                                     />
+                                    className={styles.inputText}
+                                    type="text" id="imageUrl"
+                                    name="imageUrl"
+                                    placeholder="качи снимка..."
+                                    value={post.imageUrl}
+                                    onChange={onChange}
+                                />
 
                                 <label className={styles.label} htmlFor="summary">Резюме:</label>
                                 <textarea
-                                     name="summary"
-                                     id="summary"
-                                     value={post.summary}
-                                     onChange={onChange}
-                                     >
+                                    name="summary"
+                                    id="summary"
+                                    value={post.summary}
+                                    onChange={onChange}
+                                >
 
-                                   </textarea>
+                                </textarea>
 
-                                <input className={styles.btn_submit} type="submit" value ="Изпрати" />
+                                <input className={styles.btn_submit} type="submit" value="Изпрати" />
                                 {/* value="Редактирай карта" */}
                             </div>
                         </form>
                     </section>
                 </div>
 
-
-
             </div>
         </div>
-
-
-
 
     );
 }
