@@ -77,9 +77,6 @@ const Register = () => {
             }
         };
 
-
-
-
     }, [values]);
 
 
@@ -112,11 +109,10 @@ const Register = () => {
 
                         <input type="text"
                             name="username"
-                            id="username"
-                            //className="form-control"
+                            id="username"   
+                            className={errors.username ? styles.inputError : "form-control"}                         
                             value={values.username}
-                            onChange={onChange}
-                            className={errors.username ? styles.inputError : "form-control"}
+                            onChange={onChange}                            
                         />
 
                         {errors.username && (

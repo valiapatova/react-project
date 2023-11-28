@@ -10,7 +10,7 @@ const WhyUsList = () => {
     useEffect(() => {
         const abortController = new AbortController();
 
-        fetch(`${baseUrl}/whyus`,{signal:abortController.signal})
+        fetch(`${baseUrl}/services`,{signal:abortController.signal})
             .then(res => res.json())
             .then(data => {
                 setServices(Object.values(data));

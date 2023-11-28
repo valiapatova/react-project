@@ -44,6 +44,8 @@ function App() {
     return {};
   });
 
+  const [errorMessage, SetErrorMessage] = useState('');
+
   const loginSubmitHandler = async (values) => {
 
     console.log(values);    // values, taked from Login input form.
@@ -69,7 +71,7 @@ function App() {
     navigate(Path.Home)
   };
 
-  const [errorMesage, SetErrorMessage] = useState({});
+  
 
   const registerSubmitHandler = async (values) => {
     console.log(values); // values, taked from Register input form. 
@@ -79,7 +81,7 @@ function App() {
 
       console.log('Паролата за потвърждение не съвпада с въведената парола!');
 
-      SetErrorMessage(state => ({ ...state, text: 'Паролата за потвърждение не съвпада с въведената парола!' }));
+      SetErrorMessage('Паролата за потвърждение не съвпада с въведената парола!' );
 
       navigate(Path.Error);
     }
@@ -133,18 +135,18 @@ function App() {
 
         <Routes>
           <Route path={Path.Home} element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<OurServices />} />
-          <Route path="/whyus" element={<WhyUs />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/services' element={<OurServices />} />
+          <Route path={Path.WhyUs} element={<WhyUs />} />
 
           <Route path="/whyus/:id" element={<WhyUsDetails />} />
 
-          <Route path={Path.Posts} element={<PostList />} />
+          <Route path={Path.Posts} element={<PostList/>} />
 
-          <Route path="/posts/:postId" element={<PostDetails />} />
+          <Route path={Path.PostDetails} element={<PostDetails/>} />
 
-          <Route path={Path.PostCreate} element={<PostCreate />}/>
-          <Route path={Path.PostEdit} element={< PostEdit />} />
+          <Route path={Path.PostCreate} element={<PostCreate/>}/>
+          <Route path={Path.PostEdit} element={<PostEdit/>} />
           <Route path={Path.PostDelete} element={<PostDelete />} />
 
           {/* <Route path="/team" element={<Team/>}/>
@@ -158,7 +160,7 @@ function App() {
 
           <Route path={Path.NotFound} element={<NotFound />} />
 
-          <Route path={Path.Error} element={<Error message={errorMesage} />} />
+          <Route path={Path.Error} element={<Error message={errorMessage} />} />
 
         </Routes>
 

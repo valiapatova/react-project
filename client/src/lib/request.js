@@ -20,7 +20,8 @@ const buildOptions = (data) => {
     }
 
     console.log('Options:');
-    console.log(options);  
+    console.log(options); 
+     
     return options;
 };
 

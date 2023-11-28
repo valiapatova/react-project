@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from './WhyUsDetails.module.css';
 
 
-const baseUrl='http://localhost:3030/jsonstore/whyus';
+const baseUrl='http://localhost:3030/jsonstore/services';
 //const baseUrl='http://localhost:3030/jsonstore/services';
 
 export default function WhyUsDetails() {

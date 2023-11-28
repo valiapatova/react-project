@@ -11,7 +11,7 @@ export const getAll = async () => {
         const result = await request.get(baseUrl);
 
         return result;
-       // return Object.values(result);
+        // return Object.values(result);
 
     } catch (error) {
         throw new Error('Get all posts faild');
@@ -30,13 +30,48 @@ export const getOne = async (postId) => {
     }
 };
 
+export const getTopThree = async () => {
+    const query = new URLSearchParams({
+        // sortBy:`_createdOn desc`,
+        offset: 0,
+        pageSize: 3,
+    });
+
+    try {
+
+        const result = await request.get(`${baseUrl}?${query}`);
+
+        return result;
+
+    } catch (error) {
+        throw new Error('Get Top posts failed');
+    };
+};
+
+
+
 // return result of request for Created object on the server
 export const create = async (postData) => {
     try {
         const result = await request.post(baseUrl, postData)
+
         return result;
 
     } catch (error) {
         throw new Error('Create post failed');
     }
 };
+
+export const edit = async (postId, postData) => {
+    try {
+        const result = await request.put(`${baseUrl}/${postId}`,postData);
+
+        return result;
+
+    } catch (error) {
+        throw new Error('Edit post failed');
+    }
+
+};
+
+export const remove = async (postId) => request.remove(`${baseUrl}/${postId}`);

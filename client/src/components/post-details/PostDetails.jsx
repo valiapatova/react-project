@@ -7,13 +7,14 @@ import * as commentService from '../../services/commentService.js';
 
 import styles from './PostDetails.module.css';
 import Path from "../../paths.js";
+import { pathToUrl } from "../../utils/pathUtils.js";
 
 export default function PostDetails() {
     const { email, userId } = useContext(AuthContext);
 
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
-    const { postId } = useParams();
+    const {postId} = useParams();
 
     useEffect(() => {
         postService.getOne(postId)
@@ -75,9 +76,10 @@ export default function PostDetails() {
 
                     <div className={styles.buttons}>
 
-                        <Link to={Path.PostEdit} className={styles.button}>Редактирай</Link>
+                        <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай</Link>
+                       
 
-                        <Link to={Path.PostDelete} className={styles.button}>Изтрий</Link>
+                        <Link to={pathToUrl(Path.PostDelete, { postId })} className={styles.button}>Изтрий</Link>
                     </div>
 
                 )}

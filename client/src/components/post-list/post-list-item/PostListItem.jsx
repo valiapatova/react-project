@@ -14,7 +14,7 @@ export default function PostListItem({
                 <img src={imageUrl} />
                 <h2>{title}</h2>
                 <h6>{category}</h6>
-                <Link to={`/posts/${_id}`} className={styles.details_button}>Детайли</Link>
+                <Link to={`/posts/${_id}`} className={styles.details_button}>Детайли</Link>                
             </div>
         </div>
     );
