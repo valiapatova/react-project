@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,Navigate, useNavigate} from "react-router-dom";
 
 import AuthContext from '../../contexts/authContex';
 import * as postService from '../../services/postService.js';
@@ -10,15 +10,17 @@ import Path from "../../paths.js";
 import { pathToUrl } from "../../utils/pathUtils.js";
 
 export default function PostDetails() {
+
     const { email, userId } = useContext(AuthContext);
 
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
-    const {postId} = useParams();
+    const { postId } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         postService.getOne(postId)
-            .then(setPost);
+            .then(setPost)
 
         commentService.getAll(postId)
             .then(setComments);
@@ -34,8 +36,21 @@ export default function PostDetails() {
             formData.get('comment')
         );
 
-        setComments(state => [...state, { ...newComment, owner: { email } }]);
+        setComments(state => [...state,
+                             { ...newComment, owner: { email } }]
+        );
     }
+
+    const deleteButtonClickHandler = async ()=>{
+       const hasConfirmed =  confirm(`Сигурни ли сте, че искате да изтриете карта за ${post.title} ?`);
+
+       if (hasConfirmed){
+       
+        await postService.remove(postId);      
+    
+        navigate(Path.Posts);
+       }
+    };
 
 
     return (
@@ -77,9 +92,9 @@ export default function PostDetails() {
                     <div className={styles.buttons}>
 
                         <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай</Link>
-                       
 
-                        <Link to={pathToUrl(Path.PostDelete, { postId })} className={styles.button}>Изтрий</Link>
+                        {/* <Link to={pathToUrl(Path.PostDelete, { postId })} className={styles.button}>Изтрий</Link> */}
+                        <button className={styles.button} onClick={deleteButtonClickHandler}>Изтрий</button>
                     </div>
 
                 )}
@@ -89,10 +104,14 @@ export default function PostDetails() {
 
             <article className={styles.create_comment}>
                 <label>Добави диагноза :</label>
+
                 <form className={styles.form} onSubmit={addCommentHandler}>
+
                     <textarea name="comment" placeholder="Диагноза......"></textarea>
+
                     <input className={styles.btn_submit} type="submit" value="Добави" />
                 </form>
+
             </article>
         </section>
 

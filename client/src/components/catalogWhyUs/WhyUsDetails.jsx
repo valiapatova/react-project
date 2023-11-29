@@ -17,7 +17,7 @@ export default function WhyUsDetails() {
 
     console.log(id);
 
-    console.log(location.pathname);
+    console.log(`useLocation: ${location.pathname}`);
 
     useEffect(() => {
         fetch(`${baseUrl}/${id}`)
