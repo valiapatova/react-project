@@ -1339,65 +1339,52 @@
     	}
     };
     var seedData = {
-    	recipes: {
-    		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
+    	posts: {
+    		"4215d709-bf77-475f-8bb4-e6443d9cd3bf": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Easy Lasagna",
-    			img: "assets/lasagna.jpg",
-    			ingredients: [
-    				"1 tbsp Ingredient 1",
-    				"2 cups Ingredient 2",
-    				"500 g  Ingredient 3",
-    				"25 g Ingredient 4"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551279012
+    			title: "Иво Илиев Христов",
+				category: "Вемо ООД",
+				maxLevel: "29",
+                imageUrl: "https://res.cloudinary.com/doifgnlmu/image/upload/v1699963837/nedicalSimbol2_tttmlq.png",
+                summary: "Открити заболявания - IE11 - Хипертония, придружаващо заболяване E11.0 - Захарен диабет",
+    			_createdOn: 1701270598461
     		},
-    		"8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
+			"e13fb238-ee12-4b50-90be-833752cf1e55": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			name: "Grilled Duck Fillet",
-    			img: "assets/roast.jpg",
-    			ingredients: [
-    				"500 g  Ingredient 1",
-    				"3 tbsp Ingredient 2",
-    				"2 cups Ingredient 3"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551344360
+    			title: "Петър Христов",
+				category: "Вемо ООД",
+				maxLevel: "47",
+                imageUrl: "https://res.cloudinary.com/doifgnlmu/image/upload/v1699975263/clients-well_v4vba3.jpg",
+                summary: "E11.0 - Захарен диабет",
+    			_createdOn: 1701271332335
     		},
-    		"985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
-    			_ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-    			name: "Roast Trout",
-    			img: "assets/fish.jpg",
-    			ingredients: [
-    				"4 cups Ingredient 1",
-    				"1 tbsp Ingredient 2",
-    				"1 tbsp Ingredient 3",
-    				"750 g  Ingredient 4",
-    				"25 g Ingredient 5"
-    			],
-    			steps: [
-    				"Prepare ingredients",
-    				"Mix ingredients",
-    				"Cook until done"
-    			],
-    			_createdOn: 1613551388703
-    		}
+			"20fa933e-88bd-4097-a714-8431153a9f77": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			title: "Галя Тодорова Михайлова",
+				category: "Вемо ООД",
+				maxLevel: "57",
+                imageUrl: "https://res.cloudinary.com/doifgnlmu/image/upload/v1699963834/medical-simbol1_brf7rx.png",
+                summary: "I11 - Хипетония, К76.0 - Заболяване на черния дроб",
+    			_createdOn: 1701271396423
+    		},
+			
+			"261c1acd-9fb8-4022-8df7-7e64634b9f5d": {
+    			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+    			title: "Валя Иванова",
+				category: "Сателит ЕООД",
+				maxLevel: "34",
+                imageUrl: "https://res.cloudinary.com/doifgnlmu/image/upload/v1699963836/medicalSimvol3_toxfgb.jpg",
+                summary: "Клинично здрава",
+    			_createdOn: 1701271471202
+			}	
+    		
     	},
     	comments: {
     		"0a272c58-b7ea-4e09-a000-7ec988248f66": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-    			content: "Great recipe!",
-    			recipeId: "8f414b4f-ab39-4d36-bedb-2ad69da9c830",
-    			_createdOn: 1614260681375,
+    			text: "I11 - хипертония",
+    			postId: "4215d709-bf77-475f-8bb4-e6443d9cd3bf",
+    			_createdOn: 1701270598461,
     			_id: "0a272c58-b7ea-4e09-a000-7ec988248f66"
     		}
     	},
