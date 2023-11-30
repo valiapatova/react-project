@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import WhyUsItem from './WhyUsItem.jsx';
 
-const baseUrl = 'http://localhost:3030/jsonstore';  //server api
+const baseUrl = 'http://localhost:3030/data';  //server api
+//const baseUrl = 'http://localhost:3030/jsonstore';  
 
 const WhyUsList = () => {
 
@@ -13,7 +14,8 @@ const WhyUsList = () => {
         fetch(`${baseUrl}/services`,{signal:abortController.signal})
             .then(res => res.json())
             .then(data => {
-                setServices(Object.values(data));
+                setServices(data);
+                //setServices(Object.values(data));
             });
 
             return () =>
