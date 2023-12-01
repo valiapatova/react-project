@@ -95,15 +95,18 @@ const InfoSection = function () {
                                 <Link to="/clients" className="" >
                                     Клиенти
                                 </Link> */}
-                                <Link to={Path.Posts} className="" >
-                                    Медицински карти
-                                </Link>
 
-                                {isAuthenticated &&
-                                    <Link to={Path.PostCreate} className="" >
-                                        Създай карта
-                                    </Link>
-                                }
+
+                                {isAuthenticated && (
+                                    <>
+                                        <Link to={Path.Posts} className="" >
+                                            Медицински карти
+                                        </Link>
+                                        <Link to={Path.PostCreate} className="" >
+                                            Създай карта
+                                        </Link>
+                                    </>
+                                )}
 
 
                             </div>

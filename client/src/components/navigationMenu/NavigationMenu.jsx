@@ -54,12 +54,12 @@ export default function NavigationMenu() {
                                 <li className="nav-item">
                                     <Link to="/whyus" className="nav-link" >Каталог услуги</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link to="/posts" className="nav-link" >Медицински карти</Link>
-                                </li>
 
                                 {isAuthenticated && (
                                     <div id="user" >
+                                        <li className="nav-item" style={{ display: 'inline-block' }}>
+                                            <Link to="/posts" className="nav-link" >Медицински карти</Link>
+                                        </li>
 
                                         <li className="nav-item" style={{ display: 'inline-block' }} >
                                             <Link to="/posts/create" className="nav-link" >Създай карта</Link>

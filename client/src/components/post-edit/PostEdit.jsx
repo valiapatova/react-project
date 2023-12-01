@@ -141,7 +141,7 @@ export default function PostEdit() {
 
                                 </textarea>
 
-                                <input className={styles.btn_submit} type="submit" value="Изпрати" />
+                                <input className={styles.btn_submit} type="submit" value="Изпрати редакцията" />
                                 {/* value="Редактирай карта" */}
                             </div>
                         </form>
