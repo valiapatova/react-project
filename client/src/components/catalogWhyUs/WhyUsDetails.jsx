@@ -54,7 +54,7 @@ export default function WhyUsDetails() {
                     </p>
 
                     <Link to="/whyus">
-                        Върни се назад
+                        Върни се каталог услуги
                     </Link>
 
                 </div>

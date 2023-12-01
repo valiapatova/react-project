@@ -32,8 +32,9 @@ export const getOne = async (serviceId) => {
 
 export const getTopThree = async () => {
     const query = new URLSearchParams({
-       // where : `category="Документи"`,
-        //sortBy:`_createdOn%20desc`,
+        //where : `category="Документи"`,        
+        //sortBy:`_createdOn`,
+        //sortBy:`_createdOn desc`,       
 
         offset: 0,
         pageSize: 3,

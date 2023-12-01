@@ -1,5 +1,7 @@
 import {Link} from 'react-router-dom';
 
+import Path from '../../paths';
+
 export default function About() {
     return (
         <section className="about_section layout_padding">
@@ -29,8 +31,8 @@ export default function About() {
                             <p>
                             Нашите услуги обхващат пълния обем от задължителни дейности съгласно ЗЗБУТ и Наредба № 14 на МЗ
                             </p>
-                            <Link to="/whyus">
-                                Нашите клиенти
+                            <Link to={Path.TopServices}>
+                                Нашите топ услуги
                             </Link>
                         </div>
                     </div>

@@ -11,6 +11,7 @@ const Path = {
     PostDelete: '/posts/:postId/delete',
     WhyUs:'/whyus',
     WhyUsDetails:'/whyus/:id',
+    TopServices:'/services',
     NotFound: '*',
     Error: '/error',
 

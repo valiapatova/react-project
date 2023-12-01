@@ -136,15 +136,14 @@ function App() {
         <Routes>
           <Route path={Path.Home} element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/services' element={<OurTopServices />} />
-          <Route path={Path.WhyUs} element={<WhyUs />} />
+          
+          <Route path={Path.TopServices}element={<OurTopServices />} />
 
+          <Route path={Path.WhyUs} element={<WhyUs />} />
           <Route path={Path.WhyUsDetails} element={<WhyUsDetails />} />
 
           <Route path={Path.Posts} element={<PostList/>} />
-
           <Route path={Path.PostDetails} element={<PostDetails/>} />
-
           <Route path={Path.PostCreate} element={<PostCreate/>}/>
           <Route path={Path.PostEdit} element={<PostEdit/>} />
           <Route path={Path.PostDelete} element={<PostDelete />} />

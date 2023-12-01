@@ -20,7 +20,7 @@ export default function WhyUs() {
 
                 <div className="btn-box">
                     <Link to={Path.Home}>
-                        Върни се назад
+                        Върни към начало
                     </Link>
                 </div>
             </div>
