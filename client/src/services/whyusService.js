@@ -32,17 +32,20 @@ export const getOne = async (serviceId) => {
 
 export const getTopThree = async () => {
     const query = new URLSearchParams({
-        //where : `category="Документи"`,        
+        where : `category="Документи"`, 
+        //where : `category="Медицински"`,        
         //sortBy:`_createdOn`,
         //sortBy:`_createdOn desc`,       
 
         offset: 0,
-        pageSize: 3,
-    });
+        pageSize: 4,
+    }); 
+
+    //const query1=encodeURIComponent(`offset=0&pageSize=2`);       
 
     try {
 
-        const result = await request.get(`${baseUrl}?${query}`);
+        const result = await request.get(`${baseUrl}?${query}&sortBy=_createdOn%20desc`);
 
         return result;
 
