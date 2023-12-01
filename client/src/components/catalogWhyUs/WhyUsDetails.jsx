@@ -49,6 +49,9 @@ export default function WhyUsDetails() {
                     <p>
                         {service.summary}
                     </p>
+                    <p>
+                        {service.summary2}
+                    </p>
 
                     <Link to="/whyus">
                         Върни се назад

@@ -14,7 +14,6 @@ export default function TopService({
 
 
         <div className="col-md-4 ">
-
             <div className="box ">
                 <div className="img-box">
                     <img src={imageUrl} alt="" />
@@ -26,15 +25,14 @@ export default function TopService({
                     <p>
                         {summary}
                     </p>
-                    <Link to={pathToUrl(Path.WhyUsDetails, { id: _id })} >
-                        Прочети повече
-                    </Link>
+                    <div className="btn-box" >
+                        <Link to={pathToUrl(Path.WhyUsDetails, { id: _id })} style={{color:"white"}} >
+                            Детайли
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
-
-
-
 
     );
 }
