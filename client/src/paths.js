@@ -10,6 +10,7 @@ const Path = {
     PostEdit: '/posts/:postId/edit',    
     PostDelete: '/posts/:postId/delete',
     WhyUs:'/whyus',
+    WhyUsDetails:'/whyus/:id',
     NotFound: '*',
     Error: '/error',
 

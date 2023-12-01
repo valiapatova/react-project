@@ -8,7 +8,7 @@ import Path from './paths.js';
 
 import NavigationMenu from './components/navigationMenu/NavigationMenu.jsx';
 import Home from './components/home/Home.jsx';
-import OurServices from './components/ourServices/OurServices.jsx';
+import OurTopServices from './components/ourServices/OurTopServices.jsx';
 import About from './components/about/About.jsx';
 import WhyUs from './components/catalogWhyUs/WhyUs.jsx';
 import WhyUsDetails from './components/catalogWhyUs/WhyUsDetails.jsx';
@@ -136,10 +136,10 @@ function App() {
         <Routes>
           <Route path={Path.Home} element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/services' element={<OurServices />} />
+          <Route path='/services' element={<OurTopServices />} />
           <Route path={Path.WhyUs} element={<WhyUs />} />
 
-          <Route path="/whyus/:id" element={<WhyUsDetails />} />
+          <Route path={Path.WhyUsDetails} element={<WhyUsDetails />} />
 
           <Route path={Path.Posts} element={<PostList/>} />
 
