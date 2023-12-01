@@ -80,7 +80,7 @@ export default function PostDetails() {
                     </ul>
 
                     {comments.length === 0 && (
-                        <p className={styles.no_articles}>Няма въведени диагнози - коментари</p>
+                        <p className={styles.no_articles}>Няма въведени диагнози</p>
                     )}
                 </div>
 

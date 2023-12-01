@@ -1,5 +1,5 @@
 //import './App.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import * as authService from './services/authService.js';
@@ -44,7 +44,7 @@ function App() {
     return {};
   });
 
-  const [errorMessage, SetErrorMessage] = useState('');
+  const [errorMessage, SetErrorMessage] = useState({});
 
   const loginSubmitHandler = async (values) => {
 
@@ -71,7 +71,7 @@ function App() {
     navigate(Path.Home)
   };
 
-  
+
 
   const registerSubmitHandler = async (values) => {
     console.log(values); // values, taked from Register input form. 
@@ -81,14 +81,18 @@ function App() {
 
       console.log('Паролата за потвърждение не съвпада с въведената парола!');
 
-      SetErrorMessage('Паролата за потвърждение не съвпада с въведената парола!' );
+      SetErrorMessage(state=>({...state, text:'Паролата за потвърждение не съвпада с въведената парола!'}));
 
       navigate(Path.Error);
-    }
+
+      
+  
+    } else {   
+  
 
     const result = await authService.register(values.email, values.username, values.password);
 
-    console.log(result)
+    console.log(result);
 
     //   {
     //     "email": "valentina@abv.bg",
@@ -103,6 +107,8 @@ function App() {
     localStorage.setItem('accessToken', result.accessToken);
 
     navigate(Path.Home);
+
+    }
 
   };
 
@@ -136,16 +142,16 @@ function App() {
         <Routes>
           <Route path={Path.Home} element={<Home />} />
           <Route path='/about' element={<About />} />
-          
-          <Route path={Path.TopServices}element={<OurTopServices />} />
+
+          <Route path={Path.TopServices} element={<OurTopServices />} />
 
           <Route path={Path.WhyUs} element={<WhyUs />} />
           <Route path={Path.WhyUsDetails} element={<WhyUsDetails />} />
 
-          <Route path={Path.Posts} element={<PostList/>} />
-          <Route path={Path.PostDetails} element={<PostDetails/>} />
-          <Route path={Path.PostCreate} element={<PostCreate/>}/>
-          <Route path={Path.PostEdit} element={<PostEdit/>} />
+          <Route path={Path.Posts} element={<PostList />} />
+          <Route path={Path.PostDetails} element={<PostDetails />} />
+          <Route path={Path.PostCreate} element={<PostCreate />} />
+          <Route path={Path.PostEdit} element={<PostEdit />} />
           <Route path={Path.PostDelete} element={<PostDelete />} />
 
           {/* <Route path="/team" element={<Team/>}/>

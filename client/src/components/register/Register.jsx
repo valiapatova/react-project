@@ -64,7 +64,7 @@ const Register = () => {
 
             setErrors(state => ({
                 ...state,
-                [RegisterFormKeys.Email]: "Потребителското име е твърде дълъг !"
+                [RegisterFormKeys.Username]: "Потребителското име е твърде дълъго !"
             }));
 
         } else {
@@ -108,15 +108,14 @@ const Register = () => {
                         <label htmlFor="username">Потребителско име</label>
 
                         <input type="text"
-                            name="username"
+                            name={RegisterFormKeys.Username}
                             id="username"   
                             className={errors.username ? styles.inputError : "form-control"}                         
-                            value={values.username}
+                            value={values[RegisterFormKeys.Username]}
                             onChange={onChange}                            
                         />
-
-                        {errors.username && (
-                            <p className={styles.errorMessage}>{errors.username}</p>
+                        {errors[RegisterFormKeys.Username] && (
+                            <p className={styles.errorMessage}>{errors[RegisterFormKeys.Username]}</p>
                         )}                        
                     </div>
 

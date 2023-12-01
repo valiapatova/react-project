@@ -21,7 +21,7 @@ export default function PostEdit() {
         summary: '',
     });
 
-    const [errorMessage, setErrorMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState({});
 
     useEffect(() => {
         postService.getOne(postId)
@@ -32,11 +32,13 @@ export default function PostEdit() {
 
                 console.log(err);
 
-                setErrorMessage(`Грешка при извличане на картата от сървъра ! - ${postId}`);
+                setErrorMessage(state=>({...state,text:`Грешка при извличане на картата от сървъра ! - ${postId}`}));
 
                 return (
                     <Error message={errorMessage} />
                 );
+
+                
             });
 
 
@@ -56,7 +58,7 @@ export default function PostEdit() {
             // Error notification
             console.log(err);
 
-            setErrorMessage(`Грешка при редактиране на картата от сървъра ! -  ${postId}`);
+            setErrorMessage(state=>({...state,text:`Грешка при редактиране на картата от сървъра ! -  ${postId}`}));           
 
             return (
                 <Error message={errorMessage} />
