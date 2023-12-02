@@ -7,25 +7,27 @@
 
 Star this REACT project follow this steps:
 
-1.Clone repository in own folder
+1. Clone repository in own folder
 ```
 git clone https://github.com/valiapatova/react-project.git
 ```
 
-2. Open the project folder react-project in Visual Studio Code.
+2. Open the project folder react-project in Visual Studio Code or in PowerShell or CMD.
 
 3. Start the RESTfull Api server 
 
-Open folder react-project/server in **Integrated Terminal** and  run command from folder **react-project/server** in Powershell 
+Open folder react-project/server in **Integrated Terminal** and  run command from folder **react-project/server** in Powershell or CMD. 
 ```
-server.js
+node server.js
 ```
+
 4. Install **npm packages** (you must have installed **node.js**):
 
-Open folder **react-project/client** in **Integrated Terminal** and  run from Powershell  
+Open folder **react-project/client** in **Integrated Terminal** and  run from Powershell or CMD.
 ```
 npm install
 ```
+
 5. Run react-project from **client** folder with command
 ```
 npm run dev
@@ -43,9 +45,11 @@ Run from Web Browser
 http://localhost:5173/
 ```
 
-**REACT-PROJECT** uses **RESTfull Api** - **SoftUni Practice Server** to fech requests.
 
-# SoftUni Practice Server
+
+# REACT-PROJECT uses **RESTfull Api** - **SoftUni Practice Server** to fech requests.
+
+## SoftUni Practice Server
 
 For more information: https://github.com/softuni-practice-server/softuni-practice-server
 
@@ -60,13 +64,11 @@ This is **REST service**, created for educational purposes. To execute it, open 
 
 Note that changes to the data **will not be persisted**! All operations happen in memory and will be wiped when the service is restarted.
 
-# Collections
+## Collections
 
-# Detailed information on the usage of the Collections REST service.
+**Detailed information on the usage of the Collections REST service.**
 
 https://github.com/softuni-practice-server/softuni-practice-server/blob/master/COLLECTIONS.md
-
-# Collections
 
 This service uses authentication - reading resources is public, but creating, updating and deleting can only be performed by authorized users. Additionally, only the original creator of a resource can edit or delete it (barring any special CLP or ACL rules for the record).
 
@@ -79,7 +81,7 @@ X-Authorization: {accessTokenFromAuthService}
 [Request body]
 ```
 
-# CRUD Operations
+## CRUD Operations
 
 **Read**
 An end point is revealed at /data, which grants access to information, stored on the service. GET requests to the service will return the following responses:
@@ -110,14 +112,17 @@ The Base URL for the API is: `http://localhost:3030/data`
 
 The documentation below assumes you are pre-pending the Base URL to the endpoints in order to make requests.
 
-For **REACT-PROJECT** have been created  3 collections - **posts, services, and comments** and data has been **seeded** into the server. 
 
-# Endpoints: posts
+## For **REACT-PROJECT** have been created  3 collections - **posts, services, and comments** and data has been **seeded** into the server. 
+
+## Endpoints: posts
+
+http://localhost:3030/data/posts/ 
 
 - `/posts` -- get cards list/ create card;
 - `/posts/{postId}` -- get card/update card/ delete card by provided id;;
 
-## Get card list
+### Get card list
 
 Send a `GET` request to `/posts`. The service will respond with an array of card objects.
 
@@ -144,7 +149,7 @@ For Example:
 ]
 ```
 
-# Endpoints: services
+## Endpoints: services
 
 http://localhost:3030/data/services/ 
 
@@ -167,7 +172,7 @@ http://localhost:3030/data/services/
 ]
 ```
 
-# Endpoints: comments
+## Endpoints: comments
 
 http://localhost:3030/data/comments/ 
 
@@ -179,8 +184,10 @@ http://localhost:3030/data/comments/
 
 http://localhost:3030/data/comments?postId=3564027f-adcd-4425-b2c0-1253d2386c0c
 
+
 **Response** from server:
 
+```
 [
     {
         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
@@ -190,3 +197,4 @@ http://localhost:3030/data/comments?postId=3564027f-adcd-4425-b2c0-1253d2386c0c
         "_id": "0a272c58-b7ea-4e09-a000-7ec988248f66"
     }
 ]
+```
