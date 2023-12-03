@@ -1,34 +1,36 @@
 # REACT-PROJECT
 
 ## Description
+`React-project` designs and implements a `web` application (`Single Page Application`) using `React` libriry for `JavaScript`
 
-
-## SetUp and Run project
+## `SetUp` and `Run` project
 
 Star this REACT project follow this steps:
 
-1. Clone repository in own folder
+1. `Clone` repository in own folder
 ```
 git clone https://github.com/valiapatova/react-project.git
 ```
 
-2. Open the project folder react-project in Visual Studio Code or in PowerShell or CMD.
+2. `Open` the project folder `react-project` in Visual Studio Code or in PowerShell or CMD.
 
-3. Start the RESTfull Api server 
 
-Open folder react-project/server in **Integrated Terminal** and  run command from folder **react-project/server** in Powershell or CMD. 
+3. `Start` the RESTfull `Api server`
+
+
+Open folder `react-project/server` in **Integrated Terminal**  or in Powershell or CMD and  run command.
 ```
 node server.js
 ```
 
-4. Install **npm packages** (you must have installed **node.js**):
+4. Install `npm packages` (you must have installed `node.js`):
 
-Open folder **react-project/client** in **Integrated Terminal** and  run from Powershell or CMD.
+`Open` folder `react-project/client` in **Integrated Terminal** or in Powershell or CMD and  run command.
 ```
 npm install
 ```
 
-5. Run react-project from **client** folder with command
+5. `Run` react-project from folder `react-project/client` with command
 ```
 npm run dev
 ```
