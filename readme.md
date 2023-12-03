@@ -113,9 +113,9 @@ The Base URL for the API is: `http://localhost:3030/data`
 The documentation below assumes you are pre-pending the Base URL to the endpoints in order to make requests.
 
 
-## For **REACT-PROJECT** have been created  3 collections - **posts, services, and comments** and data has been **seeded** into the server. 
+## ***In*** `REACT-PROJECT` ***have been created  3 collections*** - `posts, services, comments` ***and data has been **seeded** into the server.***
 
-## Endpoints: posts
+### Endpoints: `posts`
 
 http://localhost:3030/data/posts/ 
 
@@ -131,7 +131,7 @@ Send a `GET` request to `/posts`. The service will respond with an array of card
 Code: 200 OK
 
 Content:
-For Example:
+Example:
 
 ```
 [
@@ -149,7 +149,7 @@ For Example:
 ]
 ```
 
-## Endpoints: services
+### Endpoints: `services`
 
 http://localhost:3030/data/services/ 
 
@@ -172,7 +172,7 @@ http://localhost:3030/data/services/
 ]
 ```
 
-## Endpoints: comments
+### Endpoints: `comments`
 
 http://localhost:3030/data/comments/ 
 
@@ -180,7 +180,7 @@ http://localhost:3030/data/comments/
 
 - `/comments?postId={postId} -- get all comments for provided by query parameter **postid**;
 
-**For example**:
+**Example**:
 
 http://localhost:3030/data/comments?postId=3564027f-adcd-4425-b2c0-1253d2386c0c
 
