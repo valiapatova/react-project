@@ -1,6 +1,6 @@
 # `REACT-PROJECT`
 
-## Description
+# Description
 
 `React-project` designs and implements a `web` application (`Single Page Application`) using for UI `React` libriry for `JavaScript` and for back-end  `RESTfull Api`* - *SoftUni Practice Server* to feching response of requests.
 
@@ -11,7 +11,7 @@ The `Web application` is a `site` for a company that deals with `Occupational me
 * Public Part (Accessible without authentication)
 * Private Part (Available for Registered Users)
 
-## UI have specific views:
+## `UI` have specific views:
 
 * Catalogs – list of all records - for the publicly visible services offered by the company, for medical records /cards/ viewed by a registered user.
 
@@ -25,7 +25,7 @@ The `Web application` is a `site` for a company that deals with `Occupational me
 
 * A Guest have access to basic website information (catalog, details), but not to the functional activities
 
-## `React-project` web application  - `techniques`:
+## `React-project` web application  `Techniques`:
 
 * Use React.js for the client-side.
 * Communicate to a remote service (via REST)
@@ -35,7 +35,28 @@ The `Web application` is a `site` for a company that deals with `Occupational me
 * Applys error handling and data validation to avoid crashes when invalid data is entered
 
 
-## `SetUp` and `Run` project
+## React-project App `Structure`:
+
+* The project is created with `Vite`
+
+  https://vitejs.dev/guide/
+  
+* `package.json` - project configuration
+   - module name, dependencies, build actions
+
+* `index.html`
+   - app main HTML file
+
+* `main.jsx`
+    - app main JS file (startup script)
+
+* `App.jsx`
+    - React component "App"
+
+* libriry `Bootstrap 4.3.1` and custom css in React components `.module.css`
+
+
+# `SetUp` and `Run` project
 
 Star this REACT project follow this steps:
 
@@ -79,7 +100,8 @@ Run from Web Browser
 http://localhost:5173/
 ```
 
-### `REACT-PROJECT` uses *RESTfull Api - `SoftUni Practice Server`* to feching response of requests.
+
+## `React-project` uses RESTfull Api - `SoftUni Practice Server` to feching response of requests.
 
 ### SoftUni Practice Server
 
@@ -230,3 +252,13 @@ http://localhost:3030/data/comments?postId=3564027f-adcd-4425-b2c0-1253d2386c0c
     }
 ]
 ```
+
+References:
+
+https://vitejs.dev/guide/
+
+https://react.dev/
+
+https://legacy.reactjs.org/
+
+https://softuni.bg/trainings/4238/reactjs-october-2023
