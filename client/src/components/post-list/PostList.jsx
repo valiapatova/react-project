@@ -12,16 +12,18 @@ export default function PostList() {
     }, []);
 
     return (
-        <section id="catalog-page" className={styles.catalog_page}>
-            <h1>Всички медицински карти</h1>
+        <div className={styles.heroBg_box}>
+            <section id="catalog-page" className={styles.catalog_page}>
+                <h1>Всички медицински карти</h1>
 
-            {posts.map(post => (
-                <PostListItem key={post._id} {...post} />
-            ))}
+                {posts.map(post => (
+                    <PostListItem key={post._id} {...post} />
+                ))}
 
-            {posts.length === 0 && (
-                <h3 className={styles.no_articles}>Няма въведени все още медицински карти</h3>
-            )}
-        </section>
+                {posts.length === 0 && (
+                    <h3 className={styles.no_articles}>Няма въведени все още медицински карти</h3>
+                )}
+            </section>
+        </div>
     );
 }

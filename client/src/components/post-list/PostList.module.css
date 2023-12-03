@@ -1,12 +1,13 @@
 
 .catalog_page {
     background-color: transparent;
+    /* background-color: rgb(134, 233, 251); */
     box-shadow: 0px 0px 40px 0px;
     overflow: hidden;
     border-radius: 10px;
     padding: 20px;
     height: auto;
-    width: 900px;
+    width: 900px;    
 }
 
 .catalog_page>h1 {
@@ -29,13 +30,13 @@
     overflow: hidden;
     width: 600px auto;
     min-height: 210px;
-    height: auto;
+    height: auto;  
 }
 
 .allPosts_info {
     padding: 30px;
-    position: relative;
-    width: 100%;
+    position: relative;    
+    width: 100%;    
 }
 
 .allPosts_info>img {
@@ -83,4 +84,10 @@
     font-weight: 700;
     font-size: 25px;
     font-family: "Agency FB";
+}
+
+.heroBg_box {      
+    background-image: url('/images/create_img.jpg');       
+    background-size: cover; 
+    background-position: center;    
 }
