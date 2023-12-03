@@ -1,7 +1,40 @@
 # REACT-PROJECT
 
 ## Description
-`React-project` designs and implements a `web` application (`Single Page Application`) using `React` libriry for `JavaScript`
+`React-project` designs and implements a `web` application (`Single Page Application`) using for UI `React` libriry for `JavaScript`.
+
+`React-project` uses for back-end *`RESTfull Api`* - *SoftUni Practice Server* to feching response of requests.
+
+The `Web application` is a `site` for a company that deals with `Occupational medicine`.
+
+## The application have:
+
+* Public Part (Accessible without authentication)
+* Private Part (Available for Registered Users)
+
+## UI have specific views:
+
+* Catalogs – list of all records - for the publicly visible services offered by the company, for medical records /cards/ viewed by a registered user.
+
+* Details – information about a specific record
+
+* Collection - `posts` have all CRUD operations  to create, read, update and delete medical cards. 
+
+* Logged-in users `create` entries in the `posts` collection and make `relationship` to the `comments` collection - intended for entering diagnoses to a specific medical card by postId. 
+
+* Logged in (author) –  able to `Edit / Delete` their records.
+
+* A Guest have access to basic website information (catalog, details), but not to the functional activities
+
+## `React-project` web application  - `techniques`:
+
+* Use React.js for the client-side.
+* Communicate to a remote service (via REST)
+* Implement authentication
+* Implement client-side routing
+* Use of programming concepts, specific to the React library: functional components, bound forms, synthetic events, Component Styling, React Hooks, Context API and etc.
+* Applys error handling and data validation to avoid crashes when invalid data is entered
+
 
 ## `SetUp` and `Run` project
 
@@ -47,9 +80,7 @@ Run from Web Browser
 http://localhost:5173/
 ```
 
-
-
-# REACT-PROJECT uses **RESTfull Api** - **SoftUni Practice Server** to fech requests.
+## `REACT-PROJECT` uses **RESTfull Api** - **SoftUni Practice Server** to feching response of requests.
 
 ## SoftUni Practice Server
 
