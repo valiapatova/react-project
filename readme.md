@@ -1,9 +1,8 @@
-# REACT-PROJECT
+# `REACT-PROJECT`
 
 ## Description
-`React-project` designs and implements a `web` application (`Single Page Application`) using for UI `React` libriry for `JavaScript`.
 
-`React-project` uses for back-end *`RESTfull Api`* - *SoftUni Practice Server* to feching response of requests.
+`React-project` designs and implements a `web` application (`Single Page Application`) using for UI `React` libriry for `JavaScript` and for back-end  `RESTfull Api`* - *SoftUni Practice Server* to feching response of requests.
 
 The `Web application` is a `site` for a company that deals with `Occupational medicine`.
 
@@ -80,9 +79,9 @@ Run from Web Browser
 http://localhost:5173/
 ```
 
-## `REACT-PROJECT` uses **RESTfull Api** - **SoftUni Practice Server** to feching response of requests.
+### `REACT-PROJECT` uses *RESTfull Api - `SoftUni Practice Server`* to feching response of requests.
 
-## SoftUni Practice Server
+### SoftUni Practice Server
 
 For more information: https://github.com/softuni-practice-server/softuni-practice-server
 
