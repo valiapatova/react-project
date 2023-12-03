@@ -19,7 +19,7 @@
     
     position: relative;
     width: 800px;
-    height: 800;
+    height: auto;
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;

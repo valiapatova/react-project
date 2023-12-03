@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { Link, useParams,Navigate, useNavigate} from "react-router-dom";
+import { Link, useParams, Navigate, useNavigate } from "react-router-dom";
 
 import AuthContext from '../../contexts/authContex';
 import * as postService from '../../services/postService.js';
@@ -37,83 +37,83 @@ export default function PostDetails() {
         );
 
         setComments(state => [...state,
-                             { ...newComment, owner: { email } }]
+        { ...newComment, owner: { email } }]
         );
     }
 
-    const deleteButtonClickHandler = async ()=>{
-       const hasConfirmed =  confirm(`Сигурни ли сте, че искате да изтриете карта за ${post.title} ?`);
+    const deleteButtonClickHandler = async () => {
+        const hasConfirmed = confirm(`Сигурни ли сте, че искате да изтриете карта за ${post.title} ?`);
 
-       if (hasConfirmed){
-       
-        await postService.remove(postId);      
-    
-        navigate(Path.Posts);
-       }
+        if (hasConfirmed) {
+
+            await postService.remove(postId);
+
+            navigate(Path.Posts);
+        }
     };
 
 
     return (
-        // <div className="hero_area">
+        <div className={styles.heroBgDetails_box}>
 
-        <section id="post-details" className={styles.post_details}>
+            <section id="post-details" className={styles.post_details}>
 
-            <h2><b>Детайли за медицинска карта</b></h2>
-            <div className={styles.infoSection}>
-                <div className={styles.post_header}>
-                    <img className={styles.post_img} src={post.imageUrl} alt={post.title} />
-                    <h1>{post.title}</h1>
-                    <span className={styles.levels}>Години: {post.maxLevel}</span>
-                    <p className={styles.type}>{post.category}</p>
-                </div>
-
-                <p className={styles.text}>{post.summary}</p>
-
-                <div className={styles.details_comments}>
-                    <h3>Диагнози:</h3>
-                    <ul>
-                        {comments.map(({ _id, text, owner: { email } }) => (
-                            <li key={_id} className={styles.comment}>
-                                <p>{email}: {text}</p>
-                            </li>
-                        ))}
-                    </ul>
-
-                    {comments.length === 0 && (
-                        <p className={styles.no_articles}>Няма въведени диагнози</p>
-                    )}
-                </div>
-
-
-                {/* Edit/Delete buttons ( Only for creator of this game )   */}
-
-                {userId === post._ownerId && (
-
-                    <div className={styles.buttons}>
-
-                        <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай</Link>
-
-                        {/* <Link to={pathToUrl(Path.PostDelete, { postId })} className={styles.button}>Изтрий</Link> */}
-                        <button className={styles.buttonDelete} onClick={deleteButtonClickHandler}>Изтрий</button>
+                <h2><b>Детайли за медицинска карта</b></h2>
+                <div className={styles.infoSection}>
+                    <div className={styles.post_header}>
+                        <img className={styles.post_img} src={post.imageUrl} alt={post.title} />
+                        <h1>{post.title}</h1>
+                        <span className={styles.levels}>Години: {post.maxLevel}</span>
+                        <p className={styles.type}>{post.category}</p>
                     </div>
 
-                )}
+                    <p className={styles.text}>{post.summary}</p>
 
-            </div>
+                    <div className={styles.details_comments}>
+                        <h3>Диагнози:</h3>
+                        <ul>
+                            {comments.map(({ _id, text, owner: { email } }) => (
+                                <li key={_id} className={styles.comment}>
+                                    <p>{email}{text}</p>
+                                </li>
+                            ))}
+                        </ul>
+
+                        {comments.length === 0 && (
+                            <p className={styles.no_articles}>Няма въведени диагнози</p>
+                        )}
+                    </div>
 
 
-            <article className={styles.create_comment}>
-                <label>Добави диагноза :</label>
+                    {/* Edit/Delete buttons ( Only for creator of this game )   */}
 
-                <form className={styles.form} onSubmit={addCommentHandler}>
+                    {userId === post._ownerId && (
 
-                    <textarea name="comment" placeholder="Диагноза......"></textarea>
+                        <div className={styles.buttons}>
 
-                    <input className={styles.btn_submit} type="submit" value="Добави" />
-                </form>
+                            <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай</Link>
 
-            </article>
-        </section>
+                            {/* <Link to={pathToUrl(Path.PostDelete, { postId })} className={styles.button}>Изтрий</Link> */}
+                            <button className={styles.buttonDelete} onClick={deleteButtonClickHandler}>Изтрий</button>
+                        </div>
+
+                    )}
+
+                </div>
+
+
+                <article className={styles.create_comment}>
+                    <label>Добави диагноза :</label>
+
+                    <form className={styles.form} onSubmit={addCommentHandler}>
+
+                        <textarea name="comment" placeholder="Диагноза......"></textarea>
+
+                        <input className={styles.btn_submit} type="submit" value="Добави" />
+                    </form>
+
+                </article>
+            </section>
 
         // </div>
 
