@@ -94,7 +94,7 @@ export default function PostDetails() {
                         <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай</Link>
 
                         {/* <Link to={pathToUrl(Path.PostDelete, { postId })} className={styles.button}>Изтрий</Link> */}
-                        <button className={styles.buttonDelete} onClick={deleteButtonClickHandler}>Изтрий</button>
+                        <button className={styles.button} onClick={deleteButtonClickHandler}>Изтрий</button>
                     </div>
 
                 )}

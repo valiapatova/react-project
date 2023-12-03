@@ -83,7 +83,7 @@ export default function PostEdit() {
 
             <div className={styles.create_page}>
 
-                <div className={styles.heroBg_box}>
+                {/* <div className={styles.heroBg_box}> */}
 
                     <section id="create-page" className={styles.auth}>
                         <form id="create" onSubmit={editPostSubmitHandler}>
@@ -148,7 +148,7 @@ export default function PostEdit() {
                             </div>
                         </form>
                     </section>
-                </div>
+                {/* </div> */}
 
             </div>
         </div>

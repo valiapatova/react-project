@@ -93,6 +93,7 @@ textarea {
 .containerCreate {
     text-align: center;;
     margin: 4em auto;
+    height:800px;
     
 }
 
@@ -114,7 +115,7 @@ textarea {
 .create_page > h2,
 .edit_page > h2 {
     font-family: "Agency FB";
-    font-size:35px; 
+    font-size:25px; 
     margin-top: 10;
 
 }
@@ -123,19 +124,30 @@ textarea {
 .containerCreate > h2{    
     font-family: "Agency FB";
     font-size:35px; 
-    margin-bottom: 70px;
+    margin-bottom: 25px;
+    margin-bottom: 25px;
 
 }
 
-    .heroBg_box {
-      background-image: url('/images/create_img.jpg'); /* Replace this with the path to your image */
-      /* background-size: cover;   */
+    .heroBg_box {      
+      background-image: url('/images/create_img.jpg');       
+      background-size: cover; 
       background-position: center; 
       /* height: 300px; */
       display: flex;     
       /* align-items: center;
       justify-content: center; */
     }
+    .heroBg_box2 {
+        background-image: url('/images/colorful-pastel.webp'); 
+        /* background-image: url('/images/create_img.jpg');        */
+        background-size: cover; 
+        background-position: center; 
+        /* height: 300px; */
+        display: flex;     
+        /* align-items: center;
+        justify-content: center; */
+      }
 
 
 

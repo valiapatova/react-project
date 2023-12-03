@@ -1,7 +1,7 @@
 
 #post-details {
     position: relative;
-    display: block;
+    display: block; 
     width: 980px;
     margin: 90px auto;
     overflow: hidden;
@@ -19,9 +19,12 @@
     text-align: center;
 }
 .post_details {
-    position: relative;
+    background-image: url('/images/create_img.jpg');  
+     
+    position: relative;    
     display: block;
-    width: 980px;
+    /* width: 980px; */
+    width:1000px;
     margin: 90px auto;
     overflow: hidden;
     border-radius: 10px;
@@ -44,8 +47,9 @@
     height: 100%;
     background-blend-mode: multiply;
     z-index: 2;
-    border-radius: 10px;
-    background-color: whitesmoke;
+    border-radius: 10px;   
+    background-color: whitesmoke; 
+    /* background-color: whitesmoke; */
 }
 
 .post_header {
@@ -134,16 +138,18 @@
     padding-bottom: 40px;
 }
 
-.button {
+.buttonDelete {
     height: 15%;
-    background-color: #54557b;
+    background-color: #327cb9;
     padding: 14px;
     margin-top: auto;
     font-size: 21px;
     color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 20px;
 }
 
-.button:hover {
+.buttonDelete:hover {
     background-color: #6f5d9c;
     color: white;
 }
@@ -168,6 +174,7 @@
     margin-top: 60px;
     position: relative;
     text-align: center;
+    /* width: 700px; */
     width: 700px;
     height: auto;
     border-radius: 20px;
@@ -220,22 +227,22 @@
     font-size: 25px;
     font-family: "Agency FB";
 }
-.btn_submit {
+.btn_submit {  
     margin-top: 30px;
-    background: #778e9c;
-    height: 60px;
+    background: #885dc0;
+    height: 50px;
     border-radius: 20px;
     color: white;
-    font-size: 26px;
+    font-size: 25px;
     cursor: pointer;
-    font-weight: 900;
+    font-weight: 700;
     box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
     transition: 0.5s;
 }
 
 .btn_submit:hover {
     color: white;
-    background-color: #8fa9b9;
+    background-color: #8f92b9;
 }
 
 #create-page,
@@ -301,4 +308,11 @@ textarea {
     background-color:  #5d7f9c;
     color: white;
 }
+
+.post_details .create_comment {
+
+    position: static;
+    margin: 20px auto 25px auto;
+}
+
 
