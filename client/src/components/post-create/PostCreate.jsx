@@ -1,10 +1,17 @@
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+
+import AuthContext from '../../contexts/authContex.jsx';
 
 import * as postService from '../../services/postService.js';
+
 
 import styles from './PostCreate.module.css';
 
 export default function PostCreate() {
+
+    const{errorHandler}=useContext(AuthContext);
+
     const navigate = useNavigate();
 
     const createPostSubmitHandler = async (e) => {
@@ -13,12 +20,15 @@ export default function PostCreate() {
         const postData = Object.fromEntries(new FormData(e.currentTarget));
 
         try {
+            // throw Error("Моята предизвикана грешка");
+            
             await postService.create(postData);
             navigate('/posts');
 
         } catch (err) {
             // Error notification
             console.log(err);
+            errorHandler(err);
         }
     }
 

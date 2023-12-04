@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+
+import AuthContext from '../../contexts/authContex.jsx';
 
 import * as postService from '../../services/postService.js';
 
@@ -7,6 +9,8 @@ import styles from './PostEdit.module.css';
 import Path from '../../paths.js';
 
 export default function PostEdit() {
+
+    const{errorHandler}=useContext(AuthContext);
 
     const navigate = useNavigate();
     const { postId } = useParams();
@@ -21,7 +25,7 @@ export default function PostEdit() {
         summary: '',
     });
 
-    const [errorMessage, setErrorMessage] = useState({});
+    
 
     useEffect(() => {
         postService.getOne(postId)
@@ -31,14 +35,9 @@ export default function PostEdit() {
             .catch(err => {
 
                 console.log(err);
+                errorHandler(err);
 
-                setErrorMessage(state=>({...state,text:`Грешка при извличане на картата от сървъра ! - ${postId}`}));
-
-                return (
-                    <Error message={errorMessage} />
-                );
-
-                
+                //setErrorMessage(state=>({...state,text:`Грешка при извличане на картата от сървъра ! - ${postId}`}));                
             });
 
 
@@ -51,18 +50,19 @@ export default function PostEdit() {
         const newPostData = Object.fromEntries(new FormData(e.currentTarget));
 
         try {
+
+            //throw new Error('Моята пред грешка Едит post failed');
+
             await postService.edit(postId, newPostData);
             navigate('/posts');
 
         } catch (err) {
             // Error notification
             console.log(err);
+            errorHandler(err);
 
-            setErrorMessage(state=>({...state,text:`Грешка при редактиране на картата от сървъра ! -  ${postId}`}));           
+            //setErrorMessage(state=>({...state,text:`Грешка при редактиране на картата от сървъра ! -  ${postId}`}));           
 
-            return (
-                <Error message={errorMessage} />
-            );
         }
     }
 

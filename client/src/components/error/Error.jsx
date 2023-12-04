@@ -1,13 +1,18 @@
 import styles from './Error.module.css';
+import { useContext } from 'react';
 
-export default function Error({ message }) {
+import AuthContext from '../../contexts/authContex';
 
-    if (message.text) {
+export default function Error() {
+
+    const {errorMessage} = useContext(AuthContext);
+
+    if (errorMessage.text) {
 
         return (
             <div className={styles.div300}>
                 <h1 style={{ color: "red", padding: '50px' }}>Opps ... something wrong !</h1>
-                <h2 style={{ color: "green", padding: '50px' }}>{message.text}</h2>
+                <h2 style={{ color: "green", padding: '50px' }}>{errorMessage.text}</h2>
             </div>
 
         );
