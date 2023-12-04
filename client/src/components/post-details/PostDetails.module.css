@@ -197,13 +197,13 @@
 }
 
 .infoSection>.details_comments li {
-    width: 400px;
+    width: 450px;  
     display: inline-block;
     position: static;
-    margin: 20px auto 25px auto;
+    margin: 20px auto 20px auto;  
     box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 16px;
-    margin-left: 60px;
+    margin-left: 40px;
     background: #6f5d9c;    
     color: white;
 }
@@ -324,5 +324,9 @@ textarea {
     /* display: flex;      */
     /* align-items: center;
     justify-content: center; */
+  }
+
+  .spanName {
+    color: aqua;
   }
 

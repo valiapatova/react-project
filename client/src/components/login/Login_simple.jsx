@@ -70,7 +70,7 @@ const Login = () => {
                     </div>
                     <div className="form-group">
                         <span className={styles.btn}>
-                            {/* <input type="submit" className={styles.btnGreen} /> */}
+                                                      
                             <button type="button"
                                 className={styles.btnGreen}
                                 onClick={submitHandler}

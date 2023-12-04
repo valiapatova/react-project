@@ -74,7 +74,7 @@ export default function PostDetails() {
                         <ul>
                             {comments.map(({ _id, text, owner: { email } }) => (
                                 <li key={_id} className={styles.comment}>
-                                    <p>{email}{text}</p>
+                                    <p><span className={styles.spanName} >{email}</span>:<br/>&nbsp;&nbsp;{text}</p>
                                 </li>
                             ))}
                         </ul>

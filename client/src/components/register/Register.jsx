@@ -14,7 +14,6 @@ import useForm from '../../hooks/useForm';
 
 const RegisterFormKeys = {
 
-    // Username: "username",
     Email: "email",
     Username: "username",
     Password: "password",
@@ -27,6 +26,7 @@ const Register = () => {
     const { registerSubmitHandler } = useContext(AuthContext);
 
     const { values, onChange, onSubmit, onReset } = useForm(registerSubmitHandler, {
+        
         [RegisterFormKeys.Email]: '',
         [RegisterFormKeys.Username]: '',
         [RegisterFormKeys.Password]: '',

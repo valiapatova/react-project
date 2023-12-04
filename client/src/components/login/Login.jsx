@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import useForm from '../../hooks/useForm.js';
-import AuthContext from '../../contexts/authContex.js';
-
 import { Link } from 'react-router-dom';
 
 import styles from './Login.module.css';
+
+import useForm from '../../hooks/useForm.js';
+import AuthContext from '../../contexts/authContex.js';
 
 
 const LoginFormKeys = {
@@ -16,16 +16,12 @@ const Login = () => {
 
     const { loginSubmitHandler } = useContext(AuthContext);
 
-    const { values, onChange, onSubmit, onReset } = useForm(loginSubmitHandler, {
-
-        //const { values, onChange, onSubmit} = useForm(loginSubmitHandler, {
+    const { values, onChange, onSubmit, onReset } = useForm(loginSubmitHandler, {        
 
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
 
     });
-
-
 
 
     return (
@@ -47,10 +43,9 @@ const Login = () => {
                             value={values[LoginFormKeys.Email]}
                             onChange={onChange}
                             onBlur={() => console.log('onBlur')}
-
                         />
-
                     </div>
+
                     <div className="form-group">
                         <label htmlFor="password">Парола</label>
                         <input
@@ -60,13 +55,11 @@ const Login = () => {
                             className="form-control"
                             value={values[LoginFormKeys.Password]}
                             onChange={onChange}
-
                         />
 
                     </div>
                     <div className="form-group">
-                        <span className={styles.btn}>
-                            {/* <input type="submit" className={styles.btnGreen} /> */}
+                        <span className={styles.btn}>                            
                             <input
                                 type="submit"
                                 className={styles.btnGreen}

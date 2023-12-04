@@ -45,6 +45,7 @@ function App() {
   });
 
   const [errorMessage, SetErrorMessage] = useState({});
+  
 
   const loginSubmitHandler = async (values) => {
 
@@ -56,7 +57,7 @@ function App() {
     console.log(result) // object from JSON returned by server
     // result --- returned from server
     // {
-    //   email: 'peter@abv.bg',
+    //    email: 'peter@abv.bg',
     //    username: 'Peter',
     //    _id: '35c62d76-8152-4626-8712-eeb96381bea8',
     //    accessToken: '2b3b3801aee5cd8fee64aed417048fe9d22398a3c5cd2e974f449b3e6883f58e'
@@ -81,32 +82,31 @@ function App() {
 
       console.log('Паролата за потвърждение не съвпада с въведената парола!');
 
-      SetErrorMessage(state=>({...state, text:'Паролата за потвърждение не съвпада с въведената парола!'}));
+      SetErrorMessage(state => ({ ...state, text: 'Паролата за потвърждение не съвпада с въведената парола!' }));
 
       navigate(Path.Error);
 
-      
-  
-    } else {   
-  
 
-    const result = await authService.register(values.email, values.username, values.password);
+    } else {
 
-    console.log(result);
 
-    //   {
-    //     "email": "valentina@abv.bg",
-    //     "username": "valentina",
-    //     "password": "123",
-    //     "_createdOn": 1700945747247,
-    //     "_id": "216542ec-9339-41d8-9686-9046609484a9",
-    //     "accessToken": "8a2496b7da54a1734349cd4408d82f7bb26856ba8635762fd7ef760a248760fd"
-    // }
+      const result = await authService.register(values.email, values.username, values.password);
 
-    setAuth(result);
-    localStorage.setItem('accessToken', result.accessToken);
+      console.log(result);
 
-    navigate(Path.Home);
+      //   {
+      //     "email": "valentina@abv.bg",
+      //     "username": "valentina",
+      //     "password": "123",
+      //     "_createdOn": 1700945747247,
+      //     "_id": "216542ec-9339-41d8-9686-9046609484a9",
+      //     "accessToken": "8a2496b7da54a1734349cd4408d82f7bb26856ba8635762fd7ef760a248760fd"
+      // }
+
+      setAuth(result);
+      localStorage.setItem('accessToken', result.accessToken);
+
+      navigate(Path.Home);
 
     }
 
@@ -117,7 +117,6 @@ function App() {
     localStorage.removeItem('accessToken');
 
     navigate(Path.Home);
-
   }
 
   const values = {
@@ -141,7 +140,7 @@ function App() {
 
         <Routes>
           <Route path={Path.Home} element={<Home />} />
-          <Route path='/about' element={<About />} />
+          <Route path={Path.About} element={<About />} />
 
           <Route path={Path.TopServices} element={<OurTopServices />} />
 

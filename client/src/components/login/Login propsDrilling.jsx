@@ -11,12 +11,12 @@ const LoginFormKeys = {
 };
 
 const Login = ({
+
     loginSubmitHandler,
+    
 }) => {
 
     const { values, onChange, onSubmit,resetHandler} = useForm(loginSubmitHandler, {
-
-    //const { values, onChange, onSubmit} = useForm(loginSubmitHandler, {
 
         [LoginFormKeys.Email] : '',
         [LoginFormKeys.Password] : '',
@@ -25,9 +25,6 @@ const Login = ({
         // password:'',
     });
    
-
-
-
     return (
 
         <div className={styles.logContainer}>
