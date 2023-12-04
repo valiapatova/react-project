@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 
-import AuthContext from '../../contexts/authContex.js';
+import AuthContext from '../../contexts/authContex.jsx';
 import Path from '../../paths.js';
 
 const InfoSection = function () {

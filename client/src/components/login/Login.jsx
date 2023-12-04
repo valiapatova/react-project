@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import styles from './Login.module.css';
 
 import useForm from '../../hooks/useForm.js';
-import AuthContext from '../../contexts/authContex.js';
+import AuthContext from '../../contexts/authContex.jsx';
 
 
 const LoginFormKeys = {

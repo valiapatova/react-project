@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import * as authService from './services/authService.js';
-import AuthContext, {AuthProvider} from './contexts/authContex.jsx';
+import AuthContext from './contexts/authContex.js';
 import Path from './paths.js';
 
 import NavigationMenu from './components/navigationMenu/NavigationMenu.jsx';
@@ -132,7 +132,7 @@ function App() {
   }
 
   return (
-    <AuthProvider value={values}>
+    <AuthContext.Provider value={values}>
 
       < div className="sub_page">
 
@@ -173,7 +173,7 @@ function App() {
 
       </div>
 
-    </AuthProvider>
+    </AuthContext.Provider>
   )
 
 }

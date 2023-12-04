@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import AuthContext from '../../contexts/authContex.js';
+import AuthContext from '../../contexts/authContex.jsx';
 
 import styles from './NavigationMenu.module.css'
 
