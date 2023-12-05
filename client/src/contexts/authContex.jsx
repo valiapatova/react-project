@@ -11,8 +11,9 @@ const AuthContext = createContext();
 // logic from App.jsx
 
 export const AuthProvider = ({
-
+    // props.children of AuthProvider
     children
+
 }) => {
 
     const navigate = useNavigate();
@@ -32,16 +33,17 @@ export const AuthProvider = ({
 
     }
 
-
     const loginSubmitHandler = async (values) => {
 
-        console.log(values);    // values, taked from Login input form.
+        console.log(values);
+        //values, taked from Login input form.
         //values   --- {Peter:"peter@abv.bg",password:"123456"}
 
         try {
             const result = await authService.login(values.email, values.password);
 
-            console.log(result) // object from JSON returned by server
+            console.log(result)
+            // object from JSON returned by server
             // result --- returned from server
             // {
             //    email: 'peter@abv.bg',
@@ -69,12 +71,11 @@ export const AuthProvider = ({
 
     };
 
-
-
     const registerSubmitHandler = async (values) => {
 
-        console.log(values); // values, taked from Register input form. 
-        //values  ---    {email: 'valentina.patova@abv.bg', password: '123', confirmPassword: '123'}    
+        console.log(values);
+        //values, taked from Register input form. 
+        //values  ---    {email: 'valentina.patova@abv.bg', username:'valentina', password: '123', confirmPassword: '123'}    
 
         if (values.password !== values.confirmPassword) {
 
@@ -91,7 +92,6 @@ export const AuthProvider = ({
                 const result = await authService.register(values.email, values.username, values.password);
 
                 console.log(result);
-
                 //   {
                 //     "email": "valentina@abv.bg",
                 //     "username": "valentina",
@@ -124,7 +124,6 @@ export const AuthProvider = ({
 
         navigate(Path.Home);
     }
-
 
 
     const values = {
