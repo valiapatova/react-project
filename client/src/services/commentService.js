@@ -10,6 +10,9 @@ export const getAll = async (postId) => {
             load: `owner=_ownerId:users`,
         });
 
+        console.log(`${baseUrl}?${query}`);
+        //http://localhost:3030/data/comments?where=postId%3D%2220fa933e-88bd-4097-a714-8431153a9f77%22&load=owner%3D_ownerId%3Ausers
+
         const result = await request.get(`${baseUrl}?${query}`);
 
         return result;
