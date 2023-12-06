@@ -1,17 +1,13 @@
 import { useEffect, useState, useContext } from "react";
 import { Link, useParams, Navigate, useNavigate } from "react-router-dom";
 
-import styles from './PostDetails.module.css';
-import Path from "../../paths.js";
-import { pathToUrl } from "../../utils/pathUtils.js";
-
 import AuthContext from '../../contexts/authContex';
-import useForm from "../../hooks/useForm.js";
-
 import * as postService from '../../services/postService.js';
 import * as commentService from '../../services/commentService.js';
 
-
+import styles from './PostDetails.module.css';
+import Path from "../../paths.js";
+import { pathToUrl } from "../../utils/pathUtils.js";
 
 export default function PostDetails() {
 
@@ -30,25 +26,20 @@ export default function PostDetails() {
             .then(setComments);
     }, [postId]);
 
-    const addCommentHandler = async (values) => {
+    const addCommentHandler = async (e) => {
+        e.preventDefault();
 
-        // e.preventDefault();
-        // const formData = new FormData(e.currentTarget);
+        const formData = new FormData(e.currentTarget);
 
         const newComment = await commentService.create(
             postId,
-            values.comment            
-            //formData.get('comment')           
+            formData.get('comment')
         );
 
         setComments(state => [...state,
         { ...newComment, owner: { email } }]
         );
     }
-
-    const { values, onChange, onSubmit, onReset } = useForm(addCommentHandler, {
-        comment: '',
-    });
 
     const deleteButtonClickHandler = async () => {
         const hasConfirmed = confirm(`Сигурни ли сте, че искате да изтриете карта за ${post.title} ?`);
@@ -83,7 +74,7 @@ export default function PostDetails() {
                         <ul>
                             {comments.map(({ _id, text, owner: { email } }) => (
                                 <li key={_id} className={styles.comment}>
-                                    <p><span className={styles.spanName} >{email}</span>:<br />&nbsp;&nbsp;{text}</p>
+                                    <p><span className={styles.spanName} >{email}</span>:<br/>&nbsp;&nbsp;{text}</p>
                                 </li>
                             ))}
                         </ul>
@@ -114,9 +105,9 @@ export default function PostDetails() {
                 <article className={styles.create_comment}>
                     <label>Добави диагноза :</label>
 
-                    <form className={styles.form} onSubmit={onSubmit}>
+                    <form className={styles.form} onSubmit={addCommentHandler}>
 
-                        <textarea name="comment" value={values.comment} onChange={onChange} placeholder="Диагноза......"></textarea>
+                        <textarea name="comment" placeholder="Диагноза......"></textarea>
 
                         <input className={styles.btn_submit} type="submit" value="Добави" />
                     </form>

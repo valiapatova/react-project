@@ -86,6 +86,7 @@ export default function PostEdit() {
                 {/* <div className={styles.heroBg_box}> */}
 
                     <section id="create-page" className={styles.auth}>
+                    
                         <form id="create" onSubmit={editPostSubmitHandler}>
                             <div className={styles.containerCreate}>
                                 <h2>Редактирай карта</h2>
