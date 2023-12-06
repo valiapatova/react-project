@@ -138,15 +138,26 @@ export default function PostCreate() {
                             >
                             </textarea>
 
-                            <input
-                             className={styles.btn_submit}
-                             type="submit"
-                             value="Създай карта"
-                            />
+                            <div className={styles.buttons}>
+
+                                <input
+                                    className={styles.btn_submit}
+                                    type="submit"
+                                    value="Създай карта"
+                                />
+
+                                <button type="button"
+                                    className={styles.btn_reset}
+                                    onClick={onReset}
+                                >
+                                    Изчисти
+                                </button>
+                                
+                            </div>
 
                         </div>
                     </form>
-                    
+
                 </section>
 
                 {/* </div> */}
