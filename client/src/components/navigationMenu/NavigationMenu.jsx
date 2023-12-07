@@ -29,8 +29,7 @@ export default function NavigationMenu() {
                         {/* <a className="navbar-brand" href="/about"> */}
                         <Link to="/about" className="navbar-brand" >
                             <span>
-                                Рагон 14 ООД
-                                {/* {isAuthenticated && <span style={{ marginLeft: '20px', color: 'red' }}> Здравей {username} ! </span>} */}
+                                Рагон 14 ООД                                
                             </span>
                         </Link>
 
