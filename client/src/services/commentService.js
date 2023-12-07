@@ -41,3 +41,17 @@ export const create = async (postId, text) => {
 
     }
 };
+
+export const edit = async (commentId, commentData) => {
+    try {
+        const result = await request.put(`${baseUrl}/${commentId}`,commentData);
+
+        return result;
+
+    } catch (error) {
+        throw new Error(`Edit comment failed with Id: ${commentId}`);
+    }
+
+};
+
+export const remove = async (commentId) => request.remove(`${baseUrl}/${commentId}`);

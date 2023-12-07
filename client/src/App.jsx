@@ -25,7 +25,9 @@ import PostDetails from './components/post-details/PostDetails.jsx'
 
 import PostCreate from './components/post-create/PostCreate.jsx'
 import PostEdit from './components/post-edit/PostEdit.jsx';
-import PostDelete from './components/post-delete/PostDelete.jsx';
+
+import CommentEdit from './components/comment-edit/CommentEdit.jsx';
+import CommentDelete from './components/comment-delete/CommentDelete.jsx';
 
 import Error from './components/error/Error.jsx';
 
@@ -57,11 +59,12 @@ function App() {
           <Route path={Path.Posts} element={<PostList />} />
           <Route path={Path.PostDetails} element={<PostDetails />} />
           <Route path={Path.PostCreate} element={<PostCreate />} />
-          <Route path={Path.PostEdit} element={<PostEdit />} />
-          <Route path={Path.PostDelete} element={<PostDelete />} />
+          <Route path={Path.PostEdit} element={<PostEdit />} />  
 
-          {/* <Route path="/team" element={<Team/>}/>
-          <Route path="/clients" element={<OurClients/>}/>  */}
+          <Route path={Path.CommentEdit} element={<CommentEdit/>} />        
+
+          <Route path={Path.CommentDelete} element={<CommentDelete/>} />
+       
 
           <Route path={Path.Login} element={<Login />} />
 

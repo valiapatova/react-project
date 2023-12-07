@@ -20,7 +20,7 @@ export default function PostDetails() {
 
     const [post, setPost] = useState({});
 
-   //const [comments, setComments] = useState([]);
+    //const [comments, setComments] = useState([]);
     const [comments, dispatch] = useReducer(reducer, []);
 
     const { postId } = useParams();
@@ -31,124 +31,140 @@ export default function PostDetails() {
             .then(setPost)
 
         commentService.getAll(postId)
-        .then((result) => {
+            .then((result) => {
+
+                dispatch({
+                    type: 'GET_ALL_COMMENTS',
+                    payload: result,
+                });
+
+                //.then(setComments);
+            });
+
+
+
+    }, [postId]);
+
+
+
+    const addCommentHandler = async (values) => {
+
+        // e.preventDefault();
+        // const formData = new FormData(e.currentTarget);
+
+        const newComment = await commentService.create(
+            postId,
+            values.comment
+            //formData.get('comment')           
+        );
+
+        newComment.owner = { email };
 
         dispatch({
-            type: 'GET_ALL_COMMENTS',
-            payload: result,
+            type: 'ADD_COMMENT',
+            payload: newComment
         });
 
-        //.then(setComments);
-    });
-
-    
-
-}, [postId]);
-
-
-
-const addCommentHandler = async (values) => {
-
-    // e.preventDefault();
-    // const formData = new FormData(e.currentTarget);
-
-    const newComment = await commentService.create(
-        postId,
-        values.comment
-        //formData.get('comment')           
-    );
-
-     newComment.owner = {email};
-
-    dispatch({
-        type: 'ADD_COMMENT',
-        payload: newComment
-    });
-
-    // setComments(state => [...state,
-    // { ...newComment, owner: { email } }]
-    // );
-}
-
-const { values, onChange, onSubmit, onReset } = useForm(addCommentHandler, {
-    comment:'',
-});
-
-const deleteButtonClickHandler = async () => {
-    const hasConfirmed = confirm(`Сигурни ли сте, че искате да изтриете карта за ${post.title} ?`);
-
-    if (hasConfirmed) {
-
-        await postService.remove(postId);
-
-        navigate(Path.Posts);
+        // setComments(state => [...state,
+        // { ...newComment, owner: { email } }]
+        // );
     }
-};
+
+    const { values, onChange, onSubmit, onReset } = useForm(addCommentHandler, {
+        comment: '',
+    });
+
+    const deleteButtonClickHandler = async () => {
+        const hasConfirmed = confirm(`Сигурни ли сте, че искате да изтриете карта за ${post.title} ?`);
+
+        if (hasConfirmed) {
+
+            await postService.remove(postId);
+
+            navigate(Path.Posts);
+        }
+    };
 
 
-return (
-    <div className={styles.heroBgDetails_box}>
-
-        <section id="post-details" className={styles.post_details}>
-
-            <h2><b>Детайли за медицинска карта</b></h2>
-            <div className={styles.infoSection}>
-                <div className={styles.post_header}>
-                    <img className={styles.post_img} src={post.imageUrl} alt={post.title} />
-                    <h1>{post.title}</h1>
-                    <span className={styles.levels}>Години: {post.maxLevel}</span>
-                    <p className={styles.type}>{post.category}</p>
-                </div>
-
-                <p className={styles.text}>{post.summary}</p>
-
-                <div className={styles.details_comments}>
-                    <h3>Диагнози:</h3>
-                    <ul>
-                        {comments.map(({ _id, text, owner: { email } }) => (
-                            <li key={_id} className={styles.comment}>
-                                <p><span className={styles.spanName} >{email}</span>:<br />&nbsp;&nbsp;{text}</p>
-                            </li>
-                        ))}
-                    </ul>
-
-                    {comments.length === 0 && (
-                        <p className={styles.no_articles}>Няма въведени диагнози</p>
-                    )}
-                </div>
 
 
-                {/* Edit/Delete buttons ( Only for creator of this post )   */}
 
-                {userId === post._ownerId && (
+    return (
+        <div className={styles.heroBgDetails_box}>
+            <section id="post-details" className={styles.post_details}>
 
-                    <div className={styles.buttons}>
-
-                        <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай</Link>
-
-                        {/* <Link to={pathToUrl(Path.PostDelete, { postId })} className={styles.button}>Изтрий</Link> */}
-                        <button className={styles.buttonDelete} onClick={deleteButtonClickHandler}>Изтрий</button>
+                <h2><b>Детайли за медицинска карта</b></h2>
+                <div className={styles.infoSection}>
+                    <div className={styles.post_header}>
+                        <img className={styles.post_img} src={post.imageUrl} alt={post.title} />
+                        <h1>{post.title}</h1>
+                        <span className={styles.levels}>Години: {post.maxLevel}</span>
+                        <p className={styles.type}>{post.category}</p>
                     </div>
 
-                )}
+                    <p className={styles.text}>{post.summary}</p>
 
-            </div>
+                    <div className={styles.details_comments}>
+                        <h3>Диагнози:</h3>
+                        <ul>
+                            {comments.map(({ _id, text, _ownerId, owner: { email } }) => (
+                                <li key={_id} className={styles.comment}>
+                                    <p><span className={styles.spanName} >{email}</span>:<br />&nbsp;&nbsp;{text}</p>
+
+                                    {userId === _ownerId && (
+
+                                        <div className={styles.buttons}>
+
+                                            <Link to={pathToUrl(Path.CommentEdit, {commentId: _id })} className={styles.button}>Редактирай</Link>
+
+                                            <Link to={pathToUrl(Path.CommentDelete, { commentId: _id })} className={styles.button}>Изтрий</Link>
+
+                                            {/* <Link to={`/comments/${_id}/delete`} className={styles.button}>Изтрий</Link> */}
+
+                                        </div>
+                                    )}
+
+                                </li>
+                            ))}
+                        </ul>
+
+                        {comments.length === 0 && (
+                            <p className={styles.no_articles}>Няма въведени диагнози</p>
+                        )}
+                    </div>
 
 
-            <article className={styles.create_comment}>
-                <label>Добави диагноза :</label>
+                    {/* Edit/Delete buttons ( Only for creator of this post )   */}
 
-                <form className={styles.form} onSubmit={onSubmit}>
+                    {userId === post._ownerId && (
 
-                    <textarea name="comment" value={values.comment} onChange={onChange} placeholder="Диагноза......"></textarea>
+                        <div className={styles.buttons}>
 
-                    <input className={styles.btn_submit} type="submit" value="Добави" />
-                </form>
+                            <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай</Link>
 
-            </article>
-        </section>
+                            {/* <Link to={pathToUrl(Path.PostDelete, { postId })} className={styles.button}>Изтрий</Link> */}
+                            <button className={styles.buttonDelete} onClick={deleteButtonClickHandler}>Изтрий</button>
+                        </div>
 
-        // </div>
+                    )}
 
-);
+                </div>
+
+
+                <article className={styles.create_comment}>
+                    <label>Добави диагноза :</label>
+
+                    <form className={styles.form} onSubmit={onSubmit}>
+
+                        <textarea name="comment" value={values.comment} onChange={onChange} placeholder="Диагноза......"></textarea>
+
+                        <input className={styles.btn_submit} type="submit" value="Добави" />
+                    </form>
+
+                </article>
+            </section>
+
+         </div>
+
+    );
 }

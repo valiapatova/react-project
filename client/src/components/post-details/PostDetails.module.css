@@ -198,7 +198,12 @@
 
 .infoSection>.details_comments li {
     width: 450px;  
+    
+    /* display:inline-table; */
+    /* display: inline-flex;  */    
     display: inline-block;
+    /* flex-wrap: wrap; */   
+
     position: static;
     margin: 20px auto 20px auto;  
     box-shadow: 8px 8px 8px 0 rgba(0, 0, 0, 0.2), 12px 12px 20px 0 rgba(0, 0, 0, 0.19);
@@ -212,6 +217,7 @@
     padding: 16px;
     font-size: 20px;
 }
+
 
 
 .create_comment>.button:hover {
@@ -303,6 +309,7 @@ textarea {
     color: rgb(255, 255, 255);
     margin-right: 25px;
     border-radius: 20px;
+   
 }
 
 .button:hover {
