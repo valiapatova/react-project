@@ -18,7 +18,7 @@ The `Web application` is a `site` for a company that deals with `Occupational me
 
 * Details – information about a specific record
 
-* Collection - `posts` and `comments` have all `CRUD` operations  to create, read, update and delete `medical cards`. 
+* Collections - `posts`, `comments`, `services` have all `CRUD` operations  to create, read, update and delete `medical cards`, `company services`
 
 * Logged-in users `create` entries in the `posts` collection and make `relationship` to the `comments` collection - intended for entering diagnoses to a specific medical card by postId. 
 
