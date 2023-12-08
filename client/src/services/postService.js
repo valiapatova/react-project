@@ -5,6 +5,7 @@ const baseUrl = 'http://localhost:3030/data/posts';
 //const baseUrl = 'http://localhost:3030/jsonstore/posts';
 
 // return result of request as Array , all posts
+
 export const getAll = async () => {
 
     try {

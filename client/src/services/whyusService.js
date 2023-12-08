@@ -55,3 +55,31 @@ export const getTopThree = async () => {
 };
 
 
+
+// return result of request for Created object on the server
+export const create = async (newData) => {
+    try {
+        const result = await request.post(baseUrl, newData)
+
+        return result;
+
+    } catch (error) {
+        throw new Error('Create service failed');
+    }
+};
+
+export const edit = async (id, newDataForUpdate) => {
+    try {
+        const result = await request.put(`${baseUrl}/${id}`,newDataForUpdate);
+
+        return result;
+
+    } catch (error) {
+        throw new Error('Edit service failed');
+    }
+
+};
+
+export const remove = async (id) => request.remove(`${baseUrl}/${id}`);
+
+

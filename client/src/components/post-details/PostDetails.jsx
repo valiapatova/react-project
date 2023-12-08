@@ -147,21 +147,7 @@ export default function PostDetails() {
                             <p className={styles.no_articles}>Няма въведени диагнози</p>
                         )}
                     </div>
-
-
-                    {/* Edit/Delete buttons ( Only for creator of this post )   */}
-
-                    {/* {userId === post._ownerId && (
-
-                        <div className={styles.buttons}>
-
-                            <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай карта</Link>
-
-                            <button className={styles.buttonDelete} onClick={deleteButtonClickHandler}>Изтрий карта</button>
-
-                        </div>
-
-                    )} */}
+       
 
                 </div>
 
