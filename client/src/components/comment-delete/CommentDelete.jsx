@@ -13,7 +13,7 @@ export default function CommentDelete() {
 
     useEffect(() => {
 
-        const hasConfirmed = confirm(`Сигурни ли сте, че искате да изтриете диагноза - ${commentId} ?`);
+        const hasConfirmed = confirm(`Сигурни ли сте, че искате да изтриете диагнозата ?`);
 
         if (hasConfirmed) {
             commentService.remove(commentId);

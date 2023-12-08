@@ -26,6 +26,17 @@ export const getAll = async (postId) => {
     }
 };
 
+export const getOne = async (commentId) => {
+    try {
+        const result = await request.get(`${baseUrl}/${commentId}`,);
+
+        return result;
+
+    } catch (error) {
+        throw new Error(`Get comment with id ${commentId} failed`);
+    }
+};
+
 export const create = async (postId, text) => {
     try {
 

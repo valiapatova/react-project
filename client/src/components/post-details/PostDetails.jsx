@@ -12,6 +12,8 @@ import reducer from './commentReducer.js'
 import * as postService from '../../services/postService.js';
 import * as commentService from '../../services/commentService.js';
 
+import CommentEdit from "../comment-edit/CommentEdit.jsx";
+
 
 
 export default function PostDetails() {
@@ -85,10 +87,6 @@ export default function PostDetails() {
         }
     };
 
-
-
-
-
     return (
         <div className={styles.heroBgDetails_box}>
             <section id="post-details" className={styles.post_details}>
@@ -107,7 +105,7 @@ export default function PostDetails() {
                     <div className={styles.details_comments}>
                         <h3>Диагнози:</h3>
                         <ul>
-                            {comments.map(({ _id, text, _ownerId, owner: { email } }) => (
+                            {comments.map(({ _id, text, _ownerId, postId, owner: { email } }) => (
                                 <li key={_id} className={styles.comment}>
                                     <p><span className={styles.spanName} >{email}</span>:<br />&nbsp;&nbsp;{text}</p>
 
@@ -115,7 +113,7 @@ export default function PostDetails() {
 
                                         <div className={styles.buttons}>
 
-                                            <Link to={pathToUrl(Path.CommentEdit, {commentId: _id })} className={styles.button}>Редактирай</Link>
+                                            <Link to={pathToUrl(Path.CommentEdit, { commentId: _id, postId: postId })} className={styles.button}>Редактирай</Link>
 
                                             <Link to={pathToUrl(Path.CommentDelete, { commentId: _id })} className={styles.button}>Изтрий</Link>
 
@@ -164,7 +162,7 @@ export default function PostDetails() {
                 </article>
             </section>
 
-         </div>
+        </div>
 
     );
 }
