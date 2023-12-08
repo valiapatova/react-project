@@ -13,11 +13,12 @@ The `Web application` is a `site` for a company that deals with `Occupational me
 
 ## `UI` have specific views:
 
-* Catalogs – list of all records - for the publicly visible services offered by the company, for medical records /cards/ viewed by a registered user.
+* Catalogs – list of all medical records and company services.
+  Services offered by the company are publicly visible, medical files/cards/ are reviewed by a registered user.
 
 * Details – information about a specific record
 
-* Collection - `posts` have all CRUD operations  to create, read, update and delete medical cards. 
+* Collection - `posts` and `comments` have all `CRUD` operations  to create, read, update and delete `medical cards`. 
 
 * Logged-in users `create` entries in the `posts` collection and make `relationship` to the `comments` collection - intended for entering diagnoses to a specific medical card by postId. 
 
