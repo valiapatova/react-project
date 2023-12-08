@@ -54,7 +54,8 @@ export default function PostEdit() {
             //throw new Error('Моята пред грешка Едит post failed');
 
             await postService.edit(postId, newPostData);
-            navigate('/posts');
+            // navigate('/posts');
+            navigate(-1);
 
         } catch (err) {
             // Error notification

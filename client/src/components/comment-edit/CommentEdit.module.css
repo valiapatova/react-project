@@ -320,8 +320,9 @@ textarea {
 .post_details .create_comment {
 
     position: static;
-    margin: 20px auto 25px auto;
+    margin: 150px auto 200px auto;   
 }
+    
 
 .heroBgDetails_box {      
     background-image: url('/images/create_img.jpg');       

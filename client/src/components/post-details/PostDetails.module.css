@@ -308,7 +308,7 @@ textarea {
     font-size: 21px;
     color: rgb(255, 255, 255);
     margin-right: 25px;
-    border-radius: 20px;
+    border-radius: 20px;   
    
 }
 
@@ -337,3 +337,44 @@ textarea {
     color: aqua;
   }
 
+  .buttons_com {
+    height: 10%;
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+.button_com_green {
+    height: 10%;
+    background-color: rgb(13, 148, 107);    
+    padding: 10px;
+    margin-top: auto;
+    font-size: 19px;
+    color: rgb(255, 255, 255);
+    margin-right: 25px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px #cbced1, -5px -5px 5px white;
+   
+}
+
+.button_com_blue {
+    height: 10%;
+    background-color: rgb(79, 66, 132);    
+    padding: 10px;
+    margin-top: auto;
+    font-size: 19px;
+    color: rgb(255, 255, 255);
+    margin-right: 25px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px #cbced1, -5px -5px 5px white;
+   
+}
+.button_com_green:hover {
+    background-color:  #5d7f9c;
+    color: white;
+}
+
+.button_com_blue:hover {
+    background-color:  #5d7f9c;
+    color: white;
+}

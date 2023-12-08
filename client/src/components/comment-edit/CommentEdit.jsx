@@ -6,7 +6,7 @@ import AuthContext from '../../contexts/authContex.jsx';
 
 import * as commentService from '../../services/commentService.js';
 
-import styles from './PostDetails.module.css';
+import styles from './CommentEdit.module.css';
 import Path from '../../paths.js';
 
 export default function CommentEdit() {
@@ -80,9 +80,9 @@ export default function CommentEdit() {
     return (
 
         <div className={styles.heroBgDetails_box}>
-            <section id="post-details" className={styles.post_details}>
-                <p>Hello</p>
 
+            <section id="post-details" className={styles.post_details}>
+                
                 <article className={styles.create_comment}>
                     <label>Редактирай диагноза :</label>
 
@@ -90,7 +90,7 @@ export default function CommentEdit() {
 
                         <textarea name="text" value={comment.text} onChange={onChange} ></textarea>
 
-                        <input className={styles.btn_submit} type="submit" value="Редактирай" />
+                        <input className={styles.btn_submit} type="submit" value="Изпрати редакцията" />
                     </form>
 
                 </article>
