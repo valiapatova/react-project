@@ -102,21 +102,21 @@ export default function PostDetails() {
 
                     <p className={styles.text}>{post.summary}</p>
 
-                    <div className={styles.details_comments}>
-
                     {/* Edit/Delete buttons ( Only for creator of this post )   */}
 
-                        {userId === post._ownerId && (
+                    {userId === post._ownerId && (
 
-                            <div className={styles.buttons}>
+                        <div className={styles.buttons}>
 
-                                <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай карта</Link>
+                            <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай карта</Link>
 
-                                <button className={styles.buttonDelete} onClick={deleteButtonClickHandler}>Изтрий карта</button>
+                            <button className={styles.buttonDelete} onClick={deleteButtonClickHandler}>Изтрий карта</button>
 
-                            </div>
+                        </div>
 
-                        )}
+                    )}
+
+                    <div className={styles.details_comments}>
 
                         <h3>Диагнози:</h3>
                         <ul>
@@ -128,15 +128,16 @@ export default function PostDetails() {
 
                                         <div className={styles.buttons_com}>
 
-                                            <Link to={pathToUrl(Path.CommentEdit, { commentId: _id, postId: postId })} className={styles.button_com_green}>Редактирай</Link>
+                                            {/* <Link to={pathToUrl(Path.CommentEdit, { commentId: _id, postId: postId })} className={styles.button_com_green}>Редактирай</Link> */}
+                                            <Link to={pathToUrl(Path.CommentEdit, { commentId: _id, postId: postId })} className={styles.button_com_green}><i class="fa fa-edit" aria-hidden="true"></i></Link>
 
-                                            <Link to={pathToUrl(Path.CommentDelete, { commentId: _id })} className={styles.button_com_blue}>Изтрий</Link>
+                                            <Link to={pathToUrl(Path.CommentDelete, { commentId: _id })} className={styles.button_com_blue}><i class="fa fa-remove"></i></Link>
 
                                             {/* <Link to={`/comments/${_id}/delete`} className={styles.button}>Изтрий</Link> */}
 
                                         </div>
                                     )}
-                                    
+
 
                                 </li>
                             ))}
