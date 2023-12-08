@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import styles from './WhyUsDetails.module.css';
+
+import * as styles from './WhyUsDetails.module.css';
+import Path from '../../paths';
 
 
-const baseUrl='http://localhost:3030/data/services';
+const baseUrl = 'http://localhost:3030/data/services';
 //const baseUrl='http://localhost:3030/jsonstore/services';
 
 export default function WhyUsDetails() {
@@ -38,7 +40,7 @@ export default function WhyUsDetails() {
 
     return (
         <div className={styles.detailContainer}>
-            <div className="box ">
+            <div className="box">
                 <div className="img-box">
                     <img src={service.imageUrl} alt="" />
                 </div>
@@ -53,8 +55,8 @@ export default function WhyUsDetails() {
                         {service.summary2}
                     </p>
 
-                    <Link to="/whyus">
-                        Върни се каталог услуги
+                    <Link to={Path.WhyUs}>                        
+                        Върни се на каталог услуги
                     </Link>
 
                 </div>

@@ -7,14 +7,15 @@ const Path = {
     Posts: '/posts',
     PostDetails: '/posts/:postId',
     PostCreate: '/posts/create',
-    PostEdit: '/posts/:postId/edit',    
-    // PostDelete: '/posts/:postId/delete',
-    //CommentEdit: '/comments/:commentId/edit',
-    CommentEdit: '/comments/:commentId/:postId',
+    PostEdit: '/posts/:postId/edit',       
     
+    CommentEdit: '/comments/:commentId/:postId',    
     CommentDelete: '/comments/:commentId/delete',
+    
     WhyUs:'/whyus',
     WhyUsDetails:'/whyus/:id',
+    WhyUsCreate:"/whyus/create",
+
     TopServices:'/services',
     About:'/about',
     NotFound: '*',
