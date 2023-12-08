@@ -16,14 +16,14 @@ export default function WhyUs() {
 
     return (
         <section className="why_section layout_padding_custom">
-
-
             <div className="container">
+
+
                 {isAuthenticated && (
 
                     <div className={styles.btn_box_custom}>
 
-                        <Link to={Path.WhyUsCreate}  >Създай услуга</Link>
+                        <Link to={Path.WhyUsCreate}  >Създай нова услуга</Link>
 
                     </div>
 

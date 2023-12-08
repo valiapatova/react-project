@@ -9,8 +9,7 @@ export default function WhyUsItem({
     summary,
 }) {
     return (
-        <div className="why_container">
-         
+        <div className="why_container">         
 
                 <div className="box">
                     <div className="img-box">

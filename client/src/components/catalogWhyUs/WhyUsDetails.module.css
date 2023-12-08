@@ -1,58 +1,4 @@
 
-.layout_padding_custom {
-  padding: 90px 0;
-}
-
-
-why_section .box {
-  margin-top: 45px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-}
-
-.why_section .box .img-box {
-  margin-bottom: 20px;
-  width: 120px;
-  height: 120px;
-  min-width: 120px;
-  min-height: 120px;
-  border-radius: 100%;
-  border: 5px solid #00204a;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.why_section .box .img-box img {
-  width: 55px;
-  height: auto;
-  fill: #00204a;
-}
-
-.why_section .box h5 {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.why_section .box p {
-  margin-bottom: 0;
-}
-
 /* Мой css*/
 .detailContainer{
     margin-top: 100px;
@@ -60,6 +6,47 @@ why_section .box {
     margin-left: 200px;
     margin-right: 500px;
   }
+
+  .buttons {
+    height: 10%;
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 40px;
+}
+
+.button {
+    height: 15%;
+    background-color: #229e3f;    
+    padding: 14px;
+    margin-top: auto;
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+    margin-right: 25px;
+    border-radius: 20px;   
+   
+}
+
+.button:hover {
+    background-color:  #5d7f9c;
+    color: white;
+}
+
+.buttonDelete {
+  height: 15%;
+  background-color: #327cb9;
+  padding: 14px;
+  margin-top: auto;
+  font-size: 21px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 20px;
+}
+
+.buttonDelete:hover {
+  background-color: #6f5d9c;
+  color: white;
+}
+
 
 
  
