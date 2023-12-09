@@ -44,6 +44,19 @@ export default function WhyUsDetails() {
 
     }, [id]);
 
+    
+        // {
+        //     "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+        //     "title": " Медицински прегледи на място",
+        //     "category": "Документи",
+        //     "maxLevel": "112",
+        //     "imageUrl": " https://res.cloudinary.com/doifgnlmu/image/upload/v1699963837/nedicalSimbol2_tttmlq.png",
+        //     "summary": " Службата разполага с вискотехнологична диагностична апаратура и предлага извършване на профилактични медицински прегледи на място в офиса на клиента, както и в собствения офис. ",
+        //     "summary2": " Прегледи: преглед с Биоскенер за квантова диагностика, пълна гама ехографии, очен лекар, очна компютърна диагностика, кардиолог – ЕКГ, вътрешни болести, невролог.",
+        //     "_createdOn": 1701270598461,
+        //     "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
+        // }
+
     const deleteButtonClickHandler = async () => {
         const hasConfirmed = confirm(`Сигурни ли сте, че искате да изтриете услугата за ${service.title} ?`);
 
@@ -81,7 +94,9 @@ export default function WhyUsDetails() {
 
                         <div className={styles.buttons}>
 
-                            {/* <Link to={pathToUrl(Path.PostEdit, { postId })} className={styles.button}>Редактирай карта</Link> */}
+                            {/* <Link to={pathToUrl(Path.WhyUsEdit, {whyusId:service._id})} className={styles.button}>Редактирай услуга</Link> */}
+
+                            <Link to={`/whyus/${service._id}/edit`} className={styles.button}>Редактирай услуга</Link>
 
                             <button className={styles.buttonDelete} onClick={deleteButtonClickHandler}>Изтрий услуга</button>
 

@@ -38,7 +38,7 @@ export const getTopThree = async () => {
         //sortBy:`_createdOn desc`,       
 
         offset: 0,
-        pageSize: 4,
+        pageSize: 3,
     }); 
 
     //const query1=encodeURIComponent(`offset=0&pageSize=2`);       

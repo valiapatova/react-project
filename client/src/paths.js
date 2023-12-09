@@ -15,6 +15,7 @@ const Path = {
     WhyUs:'/whyus',
     WhyUsDetails:'/whyus/:id',
     WhyUsCreate:"/whyus/create",
+    WhyUsEdit: '/whyus/:whyusId/edit', 
 
     TopServices:'/services',
     About:'/about',

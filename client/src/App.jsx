@@ -21,6 +21,7 @@ import OurTopServices from './components/ourServices/OurTopServices.jsx';
 import WhyUs from './components/catalogWhyUs/WhyUs.jsx';
 import WhyUsDetails from './components/catalogWhyUs/WhyUsDetails.jsx';
 import WhyUsCreate from './components/catalogWhyUs-create/WhyUsCreate.jsx';
+import WhyUsEdit from './components/catalogWhyUs-edit/WhyUsEdit.jsx';
 
 import PostList from './components/post-list/PostList.jsx'
 import PostDetails from './components/post-details/PostDetails.jsx'
@@ -59,6 +60,7 @@ function App() {
           <Route path={Path.WhyUs} element={<WhyUs />} />
           <Route path={Path.WhyUsDetails} element={<WhyUsDetails />} />
           <Route path={Path.WhyUsCreate} element= {<WhyUsCreate/>} />
+          <Route path={Path.WhyUsEdit} element={<WhyUsEdit/>} />
 
           <Route path={Path.Posts} element={<PostList />} />
           <Route path={Path.PostDetails} element={<PostDetails />} />
@@ -67,7 +69,7 @@ function App() {
 
           <Route path={Path.CommentEdit} element={<CommentEdit/>} />       
           <Route path={Path.CommentDelete} element={<CommentDelete/>} />
-       
+                 
           <Route path={Path.Login} element={<Login />} />
           <Route path={Path.Register} element={<Register />} />
           <Route path={Path.Logout} element={<Logout />} />
