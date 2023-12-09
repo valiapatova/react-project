@@ -143,29 +143,6 @@ const Register = () => {
                         />
                     </div>
 
-                    {/* <div className="form-group">
-                    <label htmlFor="firstName">Име</label>
-                    <input type="text"
-                        name="firstName"
-                        id="firstName"
-                        className="form-control"
-                        value={values.firstName}
-                        onChange={onChange}
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="lastName">Фамилия</label>
-                    <input type="text"
-                        name="lastName"
-                        id="lastName"
-                        className="form-control"
-                        value={values.lastName}
-                        onChange={onChange}
-                    />
-                </div> */}
-
-
-
                     <div className="form-group">
                         <button
                             type="submit"

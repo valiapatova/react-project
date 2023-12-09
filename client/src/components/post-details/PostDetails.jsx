@@ -12,8 +12,6 @@ import reducer from './commentReducer.js'
 import * as postService from '../../services/postService.js';
 import * as commentService from '../../services/commentService.js';
 
-import CommentEdit from "../comment-edit/CommentEdit.jsx";
-
 
 
 export default function PostDetails() {
@@ -129,10 +127,9 @@ export default function PostDetails() {
                                         <div className={styles.buttons_com}>
 
                                             {/* <Link to={pathToUrl(Path.CommentEdit, { commentId: _id, postId: postId })} className={styles.button_com_green}>Редактирай</Link> */}
-                                            <Link to={pathToUrl(Path.CommentEdit, { commentId: _id, postId: postId })} className={styles.button_com_green}><i class="fa fa-edit" aria-hidden="true"></i></Link>
+                                            <Link to={pathToUrl(Path.CommentEdit, { commentId: _id, postId: postId })} className={styles.button_com_green}><i className="fa fa-edit" aria-hidden="true"></i></Link>
 
-                                            <Link to={pathToUrl(Path.CommentDelete, { commentId: _id })} className={styles.button_com_blue}><i class="fa fa-remove"></i></Link>
-
+                                            <Link to={pathToUrl(Path.CommentDelete, { commentId: _id })} className={styles.button_com_blue}><i className="fa fa-remove"></i></Link>
                                             {/* <Link to={`/comments/${_id}/delete`} className={styles.button}>Изтрий</Link> */}
 
                                         </div>

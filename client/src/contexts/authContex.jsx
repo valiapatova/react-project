@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom';
 
 import * as authService from '../services/authService.js';
 import Path from "../paths.js";
+//import useLocalStorageState from "../hooks/todo/useLocalStorageState.js";
 
 
 const AuthContext = createContext();
 
 // logic from App.jsx
-
 export const AuthProvider = ({
+
     // props.children of AuthProvider
     children
 
@@ -24,12 +25,13 @@ export const AuthProvider = ({
         return {};
     });
 
+    // const [auth, setAuth] = useLocalStorageState('auth', {});
+
     const [errorMessage, setErrorMessage] = useState({});
 
     const errorHandler = (err) => {
         setErrorMessage(state => ({ ...state, text: `${err.message}` }));
         navigate(Path.Error);
-
 
     }
 
@@ -37,14 +39,13 @@ export const AuthProvider = ({
 
         console.log(values);
         //values, taked from Login input form.
-        //values   --- {Peter:"peter@abv.bg",password:"123456"}
+        //{Peter:"peter@abv.bg",password:"123456"}
 
         try {
             const result = await authService.login(values.email, values.password);
 
             console.log(result)
-            // object from JSON returned by server
-            // result --- returned from server
+            // object from JSON returned by server           
             // {
             //    email: 'peter@abv.bg',
             //    username: 'Peter',
@@ -63,9 +64,6 @@ export const AuthProvider = ({
 
         } catch (error) {
 
-            // setErrorMessage(state => ({ ...state, text: `${error.message}` }));
-            // navigate(Path.Error);
-
             errorHandler(error);
         }
 
@@ -75,7 +73,7 @@ export const AuthProvider = ({
 
         console.log(values);
         //values, taked from Register input form. 
-        //values  ---    {email: 'valentina.patova@abv.bg', username:'valentina', password: '123', confirmPassword: '123'}    
+        // {email: 'valentina.patova@abv.bg', username:'valentina', password: '123', confirmPassword: '123'}    
 
         if (values.password !== values.confirmPassword) {
 
@@ -108,12 +106,8 @@ export const AuthProvider = ({
 
             } catch (error) {
 
-                // setErrorMessage(state => ({ ...state, text: `${error.message}` }));
-                // navigate(Path.Error);
-
                 errorHandler(error);
             }
-
         }
 
     };
@@ -139,9 +133,7 @@ export const AuthProvider = ({
         isAuthenticated: !!auth.accessToken,
 
     }
-
-
-
+    
     return (
         <AuthContext.Provider value={values}>
             {children}
