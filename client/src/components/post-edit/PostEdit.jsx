@@ -36,8 +36,7 @@ export default function PostEdit() {
 
                 console.log(err);
                 errorHandler(err);
-
-                //setErrorMessage(state=>({...state,text:`Грешка при извличане на картата от сървъра ! - ${postId}`}));                
+                              
             });
 
 
@@ -49,20 +48,15 @@ export default function PostEdit() {
 
         const newPostData = Object.fromEntries(new FormData(e.currentTarget));
 
-        try {
+        try {           
 
-            //throw new Error('Моята пред грешка Едит post failed');
-
-            await postService.edit(postId, newPostData);
-            // navigate('/posts');
+            await postService.edit(postId, newPostData);            
             navigate(-1);
 
         } catch (err) {
-            // Error notification
+            
             console.log(err);
-            errorHandler(err);
-
-            //setErrorMessage(state=>({...state,text:`Грешка при редактиране на картата от сървъра ! -  ${postId}`}));           
+            errorHandler(err);                      
 
         }
     }

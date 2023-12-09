@@ -3,11 +3,9 @@ import { useEffect, useState, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import AuthContext from '../../contexts/authContex.jsx';
-
 import * as commentService from '../../services/commentService.js';
-
 import styles from './CommentEdit.module.css';
-import Path from '../../paths.js';
+
 
 export default function CommentEdit() {
 
@@ -19,12 +17,9 @@ export default function CommentEdit() {
 
     console.log(`postId: ${postId} commentId:${commentId}`)
 
-
     const [comment, setComment] = useState({
         text : '',        
     });
-
-
 
     useEffect(() => {
         commentService.getOne(commentId)
@@ -32,13 +27,9 @@ export default function CommentEdit() {
                 setComment(result);
             })
             .catch(err => {
-
                 console.log(err);
-                errorHandler(err);
-
-                //setErrorMessage(state=>({...state,text:`Грешка при извличане на диагноза от сървъра ! - ${commentId}`}));                
+                errorHandler(err);                            
             });
-
 
     }, [commentId]);
 
@@ -49,20 +40,15 @@ export default function CommentEdit() {
         const newData = Object.fromEntries(new FormData(e.currentTarget));
         newData.postId=postId;
 
-        try {
-
-            //throw new Error('Моята пред грешка Едит post failed');
+        try {            
 
             await commentService.edit(commentId, newData);
             navigate(-1);
 
         } catch (err) {
-            // Error notification
+
             console.log(err);
-            errorHandler(err);
-
-            //setErrorMessage(state=>({...state,text:`Грешка при редактиране на диагноза от сървъра ! -  ${commentId}`}));           
-
+            errorHandler(err);                      
         }
     }
 
@@ -74,8 +60,6 @@ export default function CommentEdit() {
         }));
 
     };
-
-
 
     return (
 
@@ -94,15 +78,6 @@ export default function CommentEdit() {
                     </form>
 
                 </article>
-
-
-
-
-
-
-
-
-
 
             </section>
         </div>

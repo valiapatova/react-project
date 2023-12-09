@@ -21,17 +21,14 @@ const WhyUsFormKeys = {
 
 export default function WhyUsCreate() {
 
-
     const { errorHandler } = useContext(AuthContext);
-
     
     const navigate = useNavigate();
 
     const createWhyUsSubmitHandler = async (values) => {
 
-        try {
-            // throw Error("Моята предизвикана грешка");
-
+        try {   
+                    
             await whyusService.create(values);
             navigate('/whyus');
 
@@ -41,15 +38,6 @@ export default function WhyUsCreate() {
             errorHandler(err);
         }
     }
-
-    // const initialFormValuesState = {
-    //     title: '',
-    //     category: '',
-    //     maxLevel: '',
-    //     imageUrl: '',
-    //     summary: '',
-    //     summary2: '',
-    // }
 
     const { values, onChange, onSubmit, onReset } = useForm(createWhyUsSubmitHandler, {
         [WhyUsFormKeys.Title]: '',

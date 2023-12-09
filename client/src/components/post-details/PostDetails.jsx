@@ -46,16 +46,11 @@ export default function PostDetails() {
     }, [postId]);
 
 
-
-    const addCommentHandler = async (values) => {
-
-        // e.preventDefault();
-        // const formData = new FormData(e.currentTarget);
+    const addCommentHandler = async (values) => {     
 
         const newComment = await commentService.create(
             postId,
-            values.comment
-            //formData.get('comment')           
+            values.comment                      
         );
 
         newComment.owner = { email };

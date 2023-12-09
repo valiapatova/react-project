@@ -5,12 +5,6 @@ import styles from './Register.module.css';
 import AuthContext from '../../contexts/authContex';
 import useForm from '../../hooks/useForm';
 
-// const initialFormValuesState = {
-//     username: "",
-//     password: "",
-//     confirmPassword: "",
-//     email: ""
-// };
 
 const RegisterFormKeys = {
 

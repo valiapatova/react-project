@@ -5,18 +5,8 @@ import AuthContext from '../../contexts/authContex.jsx';
 import useForm from '../../hooks/useForm.js';
 
 import * as postService from '../../services/postService.js';
-
-
 import styles from './PostCreate.module.css';
 
-
-// const initialFormValuesState = {
-//         title: '',
-//         category: '',
-//         maxLevel: '',
-//         imageUrl: '',
-//         summary: '',
-//     }
 
 const CreatePostFormKeys = {
 
@@ -27,9 +17,6 @@ const CreatePostFormKeys = {
     Summary: "summary",
 }
 
-
-
-
 export default function PostCreate() {
 
     const { errorHandler } = useContext(AuthContext);
@@ -38,12 +25,7 @@ export default function PostCreate() {
 
     const createPostSubmitHandler = async (values) => {
 
-        //e.preventDefault();
-        //const postData = Object.fromEntries(new FormData(e.currentTarget));
-
         try {
-            // throw Error("Моята предизвикана грешка");
-
             await postService.create(values);
             navigate('/posts');
 
@@ -53,14 +35,6 @@ export default function PostCreate() {
             errorHandler(err);
         }
     }
-
-    // const initialFormValuesState = {
-    //     title: '',
-    //     category: '',
-    //     maxLevel: '',
-    //     imageUrl: '',
-    //     summary: '',
-    // }
 
     const { values, onChange, onSubmit, onReset } = useForm(createPostSubmitHandler, {
         [CreatePostFormKeys.Title]: '',
