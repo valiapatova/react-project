@@ -14,7 +14,8 @@ The `Web application` is a `site` for a company that deals with `Occupational me
 ## `UI` have specific views:
 
 * Catalogs – list of all medical records and company services.
-  Services offered by the company are publicly visible, medical files/cards/ are reviewed by a registered user.
+  Services offered by the company are publicly visible.
+  Registered user can create, reaad, edit an delete medical cards and company services.
 
 * Details – information about a specific record
 
@@ -192,13 +193,13 @@ Example:
 [
     {
         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-        "title": "some string",
-        "category": "some string",
-        "maxLevel": "29",
-        "imageUrl": "https://res.cloudinary.com/doifgnlmu/image/upload/v1699963837/nedicalSimbol2_tttmlq.png",
-        "summary": "Открити заболявания - IE11 - Хипертония, придружаващо заболяване E11.0 - Захарен диабет",
-        "_createdOn": 1701270598461,
-        "_id": "4215d709-bf77-475f-8bb4-e6443d9cd3bf"
+        "title": "Валя Иванова",
+        "category": "Сателит EООД",
+        "maxLevel": "34",
+        "imageUrl": "https://res.cloudinary.com/doifgnlmu/image/upload/v1699963836/medicalSimvol3_toxfgb.jpg",
+        "summary": "Клинично здрава",
+        "_createdOn": 1701271471202,
+        "_id": "261c1acd-9fb8-4022-8df7-7e64634b9f5d"
     },
      ...
 ]
@@ -215,16 +216,18 @@ http://localhost:3030/data/services/
 [
    {
         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-        "title": " Some title string...",
-        "category": " some category string...",
-        "maxLevel": "some number...",
-        "imageUrl": " some imageUrl ...",
-        "summary": " some description of service... ",
-        "_createdOn": 1701270598461,
-        "_id": "3564027f-adcd-4425-b2c0-1253d2386c0c"
+        "title": "Оценка на риска",
+        "category": "Документи",
+        "maxLevel": "113",
+        "imageUrl": "https://res.cloudinary.com/doifgnlmu/image/upload/v1699963836/medicalSimvol3_toxfgb.jpg",
+        "summary": "Разработване на програма и оценка на риска,
+        "summary2": "Оценката на риска обхваща: Оценка на риска на работна среда. Помещения и работни места, използвани суровини и материали. Оценка на риска на работно място..",
+        "_createdOn": 1701271471202,
+        "_id": "7b3143e1-d6df-4e67-bd7e-5f8b03f2fd3f"
     },
     ...
 ]
+
 ```
 
 ### Endpoints: `comments`
@@ -245,8 +248,8 @@ http://localhost:3030/data/comments?postId=3564027f-adcd-4425-b2c0-1253d2386c0c
 ```
 [
     {
-        "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-        "content": "I11 - хипертония",
+       "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+        "text": "I11 - хипертония",
         "postId": "4215d709-bf77-475f-8bb4-e6443d9cd3bf",
         "_createdOn": 1701270598461,
         "_id": "0a272c58-b7ea-4e09-a000-7ec988248f66"
