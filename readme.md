@@ -29,8 +29,8 @@ The `Web application` is a `site` for a company that deals with `Occupational me
 
 ## `React-project` web application  `Techniques`:
 
-* Use React.js for the client-side.
-* Communicate to a remote service (via REST)
+* Uses React.js for the client-side.
+* Communicates to a remote service (via REST)
 * Implement authentication
 * Implement client-side routing
 * Use of programming concepts, specific to the React library: functional components, bound forms, synthetic events, Component Styling, React Hooks, Context API and etc.
