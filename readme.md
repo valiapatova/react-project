@@ -2,7 +2,7 @@
 
 # Description
 
-`React-project` designs and implements a `web` application (`Single Page Application`) using for UI `React` libriry for `JavaScript` and for back-end  `RESTfull Api`* - *SoftUni Practice Server* to feching response of requests.
+`React-project` is a `web` application (`Single Page Application`) using for UI `React` library for `JavaScript` and for back-end  `RESTfull Api`* - *SoftUni Practice Server* to fetch response of requests.
 
 The `Web application` is a `site` for a company that deals with `Occupational medicine`.
 
